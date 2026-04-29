@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saved · Spanish Claw</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ url_for('main.index') }}">Spanish Claw</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="{{ url_for('main.default_lesson') }}">Lesson</a>
+        <a href="{{ url_for('main.pronunciation') }}">Pronunciation</a>
+        <a aria-current="page" href="{{ url_for('main.saved') }}">Saved</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+      </nav>
+    </header>
+
+    <main class="saved-shell" data-page="saved">
+      <section class="saved-header">
+        <p class="section-kicker">Saved</p>
+        <h1>Saved Items</h1>
+        <p>这里展示你在 Lesson 页面保存的单词和句子。首版使用浏览器 localStorage 保存，适合演示学习沉淀流程。</p>
+      </section>
+
+      <section class="saved-toolbar" aria-label="收藏筛选">
+        <button class="filter-button active" type="button" data-filter="all">All</button>
+        <button class="filter-button" type="button" data-filter="word">Words</button>
+        <button class="filter-button" type="button" data-filter="sentence">Sentences</button>
+      </section>
+
+      <section id="saved-list" class="saved-list" aria-live="polite"></section>
+    </main>
+
+    <div id="toast" class="toast" hidden></div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

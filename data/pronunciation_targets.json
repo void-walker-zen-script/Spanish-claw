@@ -1,0 +1,46 @@
+{
+  "targets": [
+    {
+      "id": "target-manana",
+      "type": "word",
+      "target": "manana",
+      "display_text": "manana",
+      "subtitle": "练习 n 和 a 的开合稳定度",
+      "mouth_hint": "嘴巴自然张开，双唇放松，注意第二个音节的鼻音过渡。",
+      "correction_hint": "如果相似度偏低，先放慢速度，把 ma-na-na 三个音节分开练。",
+      "encouragements": {
+        "low": "已经开始抓到节奏了，再慢一点会更稳。",
+        "medium": "口型方向不错，继续保持开合稳定。",
+        "high": "很接近示范了，语流自然度很好。"
+      }
+    },
+    {
+      "id": "target-perro",
+      "type": "word",
+      "target": "perro",
+      "display_text": "perro",
+      "subtitle": "练习 rr 颤音前的口腔准备",
+      "mouth_hint": "嘴唇不要太紧，舌尖靠近上齿龈，先做短促的 r 音准备。",
+      "correction_hint": "如果颤音困难，先练 pe-ro，再逐步延长 r 的震动。",
+      "encouragements": {
+        "low": "rr 本来就需要时间，先把嘴唇放松。",
+        "medium": "已经有颤音的形状了，试着让舌尖更轻。",
+        "high": "很好，perro 的口型和节奏都很清楚。"
+      }
+    },
+    {
+      "id": "target-jamon",
+      "type": "word",
+      "target": "jamon",
+      "display_text": "jamon",
+      "subtitle": "练习 j 的喉部摩擦感和 o 的圆唇",
+      "mouth_hint": "j 音从喉部轻轻摩擦，不要读成英语 j；o 音嘴唇略圆。",
+      "correction_hint": "先单独练 ja，再接 mon，避免把 j 发得太靠前。",
+      "encouragements": {
+        "low": "先找到 j 的喉部摩擦位置，不用急着连起来。",
+        "medium": "j 的方向对了，继续注意 o 的圆唇。",
+        "high": "很棒，jamon 的口型已经很有西语味道。"
+      }
+    }
+  ]
+}

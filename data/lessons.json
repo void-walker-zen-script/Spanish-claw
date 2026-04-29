@@ -1,0 +1,454 @@
+[
+  {
+    "id": 1,
+    "slug": "cafeteria-madrid",
+    "title": "Una mañana en Madrid",
+    "level": "A2-B1",
+    "scene": "Cafeteria",
+    "category": "Scenes",
+    "summary": "一段发生在马德里咖啡馆的日常对话，围绕迟到、点餐和周末计划展开。",
+    "story_intro": "Lucía 和 Javier 约在马德里市中心一家咖啡馆见面。Lucía 因为错过公交而稍微迟到，两个人在点咖啡时顺便聊起了周末安排。",
+    "characters": [
+      {
+        "name": "Lucía",
+        "role": "朋友",
+        "description": "今天稍微迟到了几分钟。"
+      },
+      {
+        "name": "Javier",
+        "role": "朋友",
+        "description": "先到咖啡馆等 Lucía。"
+      },
+      {
+        "name": "Camarero",
+        "role": "服务员",
+        "description": "负责为他们点单。"
+      }
+    ],
+    "learning_goals": [
+      "学会描述迟到和解释原因",
+      "学会在咖啡馆点单",
+      "学会谈论简单的周末计划"
+    ],
+    "keywords": [
+      "mañana",
+      "cafetería",
+      "quedarse",
+      "pedir",
+      "plan",
+      "fin de semana"
+    ],
+    "grammar_points": [
+      "haber + participio 的基础感知",
+      "过去时语境中的常见表达",
+      "点单常见句型：¿Qué van a tomar?"
+    ],
+    "audio": {
+      "full_lesson": {
+        "lucia_voice": "/audio/cafeteria/full_lucia.mp3",
+        "diego_voice": "/audio/cafeteria/full_diego.mp3",
+        "teacher_mode": "/audio/cafeteria/full_teacher.mp3"
+      }
+    },
+    "transcript": [
+      {
+        "id": "caf_n_1",
+        "type": "narration",
+        "speaker": "Narration",
+        "speaker_cn": "旁白",
+        "spanish": "Lucía llega unos minutos tarde a una cafetería del centro de Madrid.",
+        "chinese": "Lucía 迟到了几分钟，来到马德里市中心的一家咖啡馆。",
+        "clickable_words": ["llega", "tarde", "cafetería", "centro"],
+        "sentence_audio_key": "caf_n_1"
+      },
+      {
+        "id": "caf_d_1",
+        "type": "dialogue",
+        "speaker": "Lucía",
+        "speaker_cn": "Lucía",
+        "spanish": "Perdón por llegar tarde. Había perdido el autobús.",
+        "chinese": "抱歉我来晚了。我错过公交车了。",
+        "clickable_words": ["perdón", "llegar", "tarde", "había", "perdido", "autobús"],
+        "sentence_audio_key": "caf_d_1"
+      },
+      {
+        "id": "caf_d_2",
+        "type": "dialogue",
+        "speaker": "Javier",
+        "speaker_cn": "Javier",
+        "spanish": "No pasa nada. Yo también acabo de llegar.",
+        "chinese": "没关系。我也刚到。",
+        "clickable_words": ["pasa", "nada", "también", "acabo", "llegar"],
+        "sentence_audio_key": "caf_d_2"
+      },
+      {
+        "id": "caf_n_2",
+        "type": "narration",
+        "speaker": "Narration",
+        "speaker_cn": "旁白",
+        "spanish": "Se sientan cerca de la ventana y miran el menú.",
+        "chinese": "他们坐在窗边，开始看菜单。",
+        "clickable_words": ["sientan", "cerca", "ventana", "menú"],
+        "sentence_audio_key": "caf_n_2"
+      },
+      {
+        "id": "caf_d_3",
+        "type": "dialogue",
+        "speaker": "Camarero",
+        "speaker_cn": "服务员",
+        "spanish": "Buenos días. ¿Qué van a tomar?",
+        "chinese": "早上好。你们想点什么？",
+        "clickable_words": ["buenos", "días", "van", "tomar"],
+        "sentence_audio_key": "caf_d_3"
+      },
+      {
+        "id": "caf_d_4",
+        "type": "dialogue",
+        "speaker": "Lucía",
+        "speaker_cn": "Lucía",
+        "spanish": "Para mí, un café con leche, por favor.",
+        "chinese": "我要一杯牛奶咖啡，谢谢。",
+        "clickable_words": ["para", "mí", "café", "leche", "por", "favor"],
+        "sentence_audio_key": "caf_d_4"
+      },
+      {
+        "id": "caf_d_5",
+        "type": "dialogue",
+        "speaker": "Javier",
+        "speaker_cn": "Javier",
+        "spanish": "Yo quiero un té y una tostada.",
+        "chinese": "我想要一杯茶和一份吐司。",
+        "clickable_words": ["quiero", "té", "tostada"],
+        "sentence_audio_key": "caf_d_5"
+      },
+      {
+        "id": "caf_n_3",
+        "type": "narration",
+        "speaker": "Narration",
+        "speaker_cn": "旁白",
+        "spanish": "Mientras esperan, hablan de sus planes para el fin de semana.",
+        "chinese": "等待时，他们聊起了周末计划。",
+        "clickable_words": ["mientras", "esperan", "hablan", "planes", "fin de semana"],
+        "sentence_audio_key": "caf_n_3"
+      },
+      {
+        "id": "caf_d_6",
+        "type": "dialogue",
+        "speaker": "Javier",
+        "speaker_cn": "Javier",
+        "spanish": "Este sábado quiero ir al parque si hace buen tiempo.",
+        "chinese": "这个周六如果天气好，我想去公园。",
+        "clickable_words": ["sábado", "quiero", "ir", "parque", "hace", "buen", "tiempo"],
+        "sentence_audio_key": "caf_d_6"
+      },
+      {
+        "id": "caf_d_7",
+        "type": "dialogue",
+        "speaker": "Lucía",
+        "speaker_cn": "Lucía",
+        "spanish": "Suena bien. Yo todavía no tengo ningún plan.",
+        "chinese": "听起来不错。我还没有任何计划。",
+        "clickable_words": ["suena", "bien", "todavía", "tengo", "ningún", "plan"],
+        "sentence_audio_key": "caf_d_7"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "restaurant-dinner",
+    "title": "Una cena tranquila",
+    "level": "A2-B1",
+    "scene": "Restaurant",
+    "category": "Scenes",
+    "summary": "一段发生在餐厅里的对话，包含订位、点菜、提出要求和买单。",
+    "story_intro": "Ana 和 Marcos 晚上去一家小餐厅吃饭。他们先确认预订，再向服务员询问推荐菜，最后请对方结账。",
+    "characters": [
+      {
+        "name": "Ana",
+        "role": "顾客",
+        "description": "第一次来这家餐厅。"
+      },
+      {
+        "name": "Marcos",
+        "role": "顾客",
+        "description": "想尝试今天的推荐菜。"
+      },
+      {
+        "name": "Camarera",
+        "role": "服务员",
+        "description": "接待并为他们介绍菜单。"
+      }
+    ],
+    "learning_goals": [
+      "学会餐厅订位和确认预订",
+      "学会询问推荐菜和点餐",
+      "学会礼貌地提出需求与结账"
+    ],
+    "keywords": [
+      "reserva",
+      "mesa",
+      "plato del día",
+      "recomendar",
+      "cuenta",
+      "sin"
+    ],
+    "grammar_points": [
+      "querer 的常见用法",
+      "礼貌表达：¿Nos puede...?",
+      "介词和否定需求表达：sin..."
+    ],
+    "audio": {
+      "full_lesson": {
+        "lucia_voice": "/audio/restaurant/full_lucia.mp3",
+        "diego_voice": "/audio/restaurant/full_diego.mp3",
+        "teacher_mode": "/audio/restaurant/full_teacher.mp3"
+      }
+    },
+    "transcript": [
+      {
+        "id": "res_n_1",
+        "type": "narration",
+        "speaker": "Narration",
+        "speaker_cn": "旁白",
+        "spanish": "Ana y Marcos entran en un restaurante pequeño y acogedor.",
+        "chinese": "Ana 和 Marcos 走进一家小而温馨的餐厅。",
+        "clickable_words": ["entran", "restaurante", "pequeño", "acogedor"],
+        "sentence_audio_key": "res_n_1"
+      },
+      {
+        "id": "res_d_1",
+        "type": "dialogue",
+        "speaker": "Camarera",
+        "speaker_cn": "服务员",
+        "spanish": "Buenas noches. ¿Tienen reserva?",
+        "chinese": "晚上好。你们有预订吗？",
+        "clickable_words": ["buenas", "noches", "tienen", "reserva"],
+        "sentence_audio_key": "res_d_1"
+      },
+      {
+        "id": "res_d_2",
+        "type": "dialogue",
+        "speaker": "Ana",
+        "speaker_cn": "Ana",
+        "spanish": "Sí, una mesa para dos a nombre de Ana López.",
+        "chinese": "有的，一张两人桌，预订名字是 Ana López。",
+        "clickable_words": ["mesa", "dos", "nombre"],
+        "sentence_audio_key": "res_d_2"
+      },
+      {
+        "id": "res_n_2",
+        "type": "narration",
+        "speaker": "Narration",
+        "speaker_cn": "旁白",
+        "spanish": "La camarera los acompaña a una mesa cerca del fondo.",
+        "chinese": "服务员带他们到里面靠后的一张桌子。",
+        "clickable_words": ["acompaña", "mesa", "cerca", "fondo"],
+        "sentence_audio_key": "res_n_2"
+      },
+      {
+        "id": "res_d_3",
+        "type": "dialogue",
+        "speaker": "Marcos",
+        "speaker_cn": "Marcos",
+        "spanish": "¿Qué nos recomienda hoy?",
+        "chinese": "你今天推荐什么？",
+        "clickable_words": ["recomienda", "hoy"],
+        "sentence_audio_key": "res_d_3"
+      },
+      {
+        "id": "res_d_4",
+        "type": "dialogue",
+        "speaker": "Camarera",
+        "speaker_cn": "服务员",
+        "spanish": "El plato del día es muy popular, y también tenemos una sopa casera excelente.",
+        "chinese": "今日特餐很受欢迎，我们也有很棒的家常汤。",
+        "clickable_words": ["plato del día", "popular", "tenemos", "sopa", "casera", "excelente"],
+        "sentence_audio_key": "res_d_4"
+      },
+      {
+        "id": "res_d_5",
+        "type": "dialogue",
+        "speaker": "Ana",
+        "speaker_cn": "Ana",
+        "spanish": "Entonces, para mí la sopa, pero sin cebolla, por favor.",
+        "chinese": "那我要汤，不过不要洋葱，谢谢。",
+        "clickable_words": ["entonces", "para mí", "sopa", "sin", "cebolla", "por favor"],
+        "sentence_audio_key": "res_d_5"
+      },
+      {
+        "id": "res_d_6",
+        "type": "dialogue",
+        "speaker": "Marcos",
+        "speaker_cn": "Marcos",
+        "spanish": "Yo voy a pedir el plato del día.",
+        "chinese": "我要点今日特餐。",
+        "clickable_words": ["voy a", "pedir", "plato del día"],
+        "sentence_audio_key": "res_d_6"
+      },
+      {
+        "id": "res_n_3",
+        "type": "narration",
+        "speaker": "Narration",
+        "speaker_cn": "旁白",
+        "spanish": "Después de cenar, piden la cuenta y se preparan para salir.",
+        "chinese": "晚饭后，他们请服务员结账，准备离开。",
+        "clickable_words": ["después", "cenar", "piden", "cuenta", "preparan", "salir"],
+        "sentence_audio_key": "res_n_3"
+      },
+      {
+        "id": "res_d_7",
+        "type": "dialogue",
+        "speaker": "Ana",
+        "speaker_cn": "Ana",
+        "spanish": "Cuando pueda, ¿nos trae la cuenta?",
+        "chinese": "您方便的时候，可以把账单拿给我们吗？",
+        "clickable_words": ["cuando", "pueda", "nos", "trae", "cuenta"],
+        "sentence_audio_key": "res_d_7"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "library-study-time",
+    "title": "Una tarde en la biblioteca",
+    "level": "A2-B1",
+    "scene": "Library",
+    "category": "Scenes",
+    "summary": "一段发生在图书馆里的对话，涉及找书、借阅、自习和安静规则。",
+    "story_intro": "Sofía 和 Daniel 在大学图书馆见面准备复习考试。Sofía 想找一本参考书，Daniel 则想确认自习区和借阅规则。",
+    "characters": [
+      {
+        "name": "Sofía",
+        "role": "学生",
+        "description": "正在找一本语言学参考书。"
+      },
+      {
+        "name": "Daniel",
+        "role": "学生",
+        "description": "想找一个安静的位置复习。"
+      },
+      {
+        "name": "Bibliotecaria",
+        "role": "馆员",
+        "description": "负责帮助他们找书并说明借阅规则。"
+      }
+    ],
+    "learning_goals": [
+      "学会在图书馆询问找书",
+      "学会询问借阅规则",
+      "学会描述学习安排和安静需求"
+    ],
+    "keywords": [
+      "biblioteca",
+      "préstamo",
+      "devolver",
+      "silencio",
+      "repasar",
+      "estantería"
+    ],
+    "grammar_points": [
+      "tener que 的基础用法",
+      "可以/需要类表达：poder, necesitar",
+      "位置与方向表达"
+    ],
+    "audio": {
+      "full_lesson": {
+        "lucia_voice": "/audio/library/full_lucia.mp3",
+        "diego_voice": "/audio/library/full_diego.mp3",
+        "teacher_mode": "/audio/library/full_teacher.mp3"
+      }
+    },
+    "transcript": [
+      {
+        "id": "lib_n_1",
+        "type": "narration",
+        "speaker": "Narration",
+        "speaker_cn": "旁白",
+        "spanish": "Sofía y Daniel llegan a la biblioteca de la universidad por la tarde.",
+        "chinese": "下午，Sofía 和 Daniel 来到大学图书馆。",
+        "clickable_words": ["llegan", "biblioteca", "universidad", "tarde"],
+        "sentence_audio_key": "lib_n_1"
+      },
+      {
+        "id": "lib_d_1",
+        "type": "dialogue",
+        "speaker": "Sofía",
+        "speaker_cn": "Sofía",
+        "spanish": "Estoy buscando un libro de lingüística, pero no lo encuentro.",
+        "chinese": "我在找一本语言学的书，但我找不到它。",
+        "clickable_words": ["estoy buscando", "libro", "lingüística", "encuentro"],
+        "sentence_audio_key": "lib_d_1"
+      },
+      {
+        "id": "lib_d_2",
+        "type": "dialogue",
+        "speaker": "Bibliotecaria",
+        "speaker_cn": "馆员",
+        "spanish": "Puede estar en la estantería del segundo piso.",
+        "chinese": "它可能在二楼的书架上。",
+        "clickable_words": ["puede", "estar", "estantería", "segundo piso"],
+        "sentence_audio_key": "lib_d_2"
+      },
+      {
+        "id": "lib_d_3",
+        "type": "dialogue",
+        "speaker": "Daniel",
+        "speaker_cn": "Daniel",
+        "spanish": "¿También hay una zona tranquila para estudiar?",
+        "chinese": "这里也有安静的学习区吗？",
+        "clickable_words": ["también", "hay", "zona", "tranquila", "estudiar"],
+        "sentence_audio_key": "lib_d_3"
+      },
+      {
+        "id": "lib_d_4",
+        "type": "dialogue",
+        "speaker": "Bibliotecaria",
+        "speaker_cn": "馆员",
+        "spanish": "Sí, al fondo a la derecha. Allí hay que hablar muy bajo.",
+        "chinese": "有，在最里面靠右边。那里说话要很小声。",
+        "clickable_words": ["al fondo", "derecha", "hay que", "hablar", "bajo"],
+        "sentence_audio_key": "lib_d_4"
+      },
+      {
+        "id": "lib_n_2",
+        "type": "narration",
+        "speaker": "Narration",
+        "speaker_cn": "旁白",
+        "spanish": "Mientras Sofía busca el libro, Daniel revisa las reglas de préstamo.",
+        "chinese": "Sofía 找书的时候，Daniel 在看借阅规则。",
+        "clickable_words": ["mientras", "busca", "revisa", "reglas", "préstamo"],
+        "sentence_audio_key": "lib_n_2"
+      },
+      {
+        "id": "lib_d_5",
+        "type": "dialogue",
+        "speaker": "Daniel",
+        "speaker_cn": "Daniel",
+        "spanish": "¿Cuántos días puedo llevarme este libro?",
+        "chinese": "这本书我可以借走几天？",
+        "clickable_words": ["cuántos", "días", "puedo", "llevarme", "libro"],
+        "sentence_audio_key": "lib_d_5"
+      },
+      {
+        "id": "lib_d_6",
+        "type": "dialogue",
+        "speaker": "Bibliotecaria",
+        "speaker_cn": "馆员",
+        "spanish": "Normalmente, una semana. Luego tiene que devolverlo o renovarlo.",
+        "chinese": "通常是一周。然后你得还书，或者续借。",
+        "clickable_words": ["normalmente", "semana", "tiene que", "devolverlo", "renovarlo"],
+        "sentence_audio_key": "lib_d_6"
+      },
+      {
+        "id": "lib_d_7",
+        "type": "dialogue",
+        "speaker": "Sofía",
+        "speaker_cn": "Sofía",
+        "spanish": "Perfecto, gracias. Vamos a estudiar aquí una hora.",
+        "chinese": "太好了，谢谢。我们打算在这里学习一个小时。",
+        "clickable_words": ["perfecto", "gracias", "vamos a", "estudiar", "hora"],
+        "sentence_audio_key": "lib_d_7"
+      }
+    ]
+  }
+]

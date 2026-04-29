@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pronunciation Coach · Spanish Claw</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ url_for('main.index') }}">Spanish Claw</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="{{ url_for('main.default_lesson') }}">Lesson</a>
+        <a aria-current="page" href="{{ url_for('main.pronunciation') }}">Pronunciation</a>
+        <a href="{{ url_for('main.saved') }}">Saved</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+      </nav>
+    </header>
+
+    <main class="pronunciation-shell" data-page="pronunciation">
+      <section class="practice-column" aria-labelledby="pronunciation-title">
+        <div class="lesson-meta">
+          <p class="tag">Pronunciation Coach</p>
+          <h1 id="pronunciation-title">边练边纠</h1>
+          <p>选择练习目标，听标准发音，对准摄像头练习口型，再查看相似概率、鼓励反馈和纠正建议。</p>
+        </div>
+
+        <section class="practice-card target-card" aria-label="当前练习目标">
+          <div>
+            <p class="section-kicker">Current Target</p>
+            <h2 id="target-text">{{ targets[0].display_text }}</h2>
+            <p id="target-subtitle">{{ targets[0].subtitle }}</p>
+          </div>
+          <div class="target-tabs" role="list" aria-label="练习目标列表">
+            {% for target in targets %}
+              <button
+                class="target-chip{% if loop.first %} active{% endif %}"
+                type="button"
+                data-target-id="{{ target.id }}"
+              >
+                {{ target.display_text }}
+              </button>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="practice-card demo-card" aria-label="标准示范区">
+          <div>
+            <p class="section-kicker">Standard Demo</p>
+            <h2>先听标准发音，再开始练习。</h2>
+            <p id="mouth-hint">{{ targets[0].mouth_hint }}</p>
+          </div>
+          <div class="audio-controls compact-controls">
+            <label class="select-label" for="pronunciation-voice-select">Voice</label>
+            <select id="pronunciation-voice-select" class="voice-select" data-audio-voice></select>
+            <button id="demo-button" class="secondary-button" type="button">播放标准发音</button>
+            <button id="slow-demo-button" class="secondary-button" type="button">慢速播放</button>
+          </div>
+        </section>
+
+        <section class="camera-card" aria-label="摄像头预览区">
+          <video id="camera-preview" autoplay muted playsinline></video>
+          <div id="camera-placeholder" class="camera-placeholder">
+            <p class="section-kicker">Camera Preview</p>
+            <h2>摄像头预览区</h2>
+            <p>点击“开始练习”后，浏览器会请求摄像头权限。首版只做 Web 演示，不上传视频。</p>
+          </div>
+        </section>
+
+        <div class="practice-actions">
+          <button id="start-camera-button" class="primary-button" type="button">开始练习</button>
+          <button id="retry-button" class="secondary-button" type="button">重新练习</button>
+        </div>
+      </section>
+
+      <aside class="feedback-column" aria-label="纠音反馈区">
+        <section class="feedback-card score-card">
+          <p class="section-kicker">Similarity</p>
+          <div id="score-value" class="score-value">--%</div>
+          <p id="score-caption">等待练习开始</p>
+        </section>
+
+        <section class="feedback-card">
+          <p class="section-kicker">Encouragement</p>
+          <h2 id="encouragement-title">准备好了就开始</h2>
+          <p id="encouragement-text">把注意力放在嘴唇开合和发音节奏上，一次练一个目标就够了。</p>
+        </section>
+
+        <section class="feedback-card">
+          <p class="section-kicker">Correction Tip</p>
+          <p id="correction-hint">{{ targets[0].correction_hint }}</p>
+        </section>
+
+        <section class="feedback-card">
+          <p class="section-kicker">Practice History</p>
+          <div id="practice-history" class="practice-history">
+            <p class="muted">还没有练习记录。</p>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <div id="toast" class="toast" hidden></div>
+
+    <script>
+      window.PRONUNCIATION_TARGETS = {{ targets | tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='audio.js') }}"></script>
+    <script src="{{ url_for('static', filename='pronunciation.js') }}"></script>
+  </body>
+</html>

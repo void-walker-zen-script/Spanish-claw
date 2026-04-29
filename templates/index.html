@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spanish Claw</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ url_for('main.index') }}">Spanish Claw</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="{{ url_for('main.default_lesson') }}">Lesson</a>
+        <a href="{{ url_for('main.pronunciation') }}">Pronunciation</a>
+        <a href="{{ url_for('main.saved') }}">Saved</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+      </nav>
+    </header>
+
+    <main class="home-shell">
+      <section class="hero product-hero">
+        <div>
+          <p class="eyebrow">Spanish listening, grammar, and pronunciation in one flow</p>
+          <h1>Learn Spanish through scenes, not isolated words.</h1>
+          <p class="hero-copy">
+            Spanish Claw turns everyday situations into interactive lessons: listen to a story, tap words and dialogue lines,
+            review grammar patterns, and move into pronunciation practice when you are ready to speak.
+          </p>
+          <div class="hero-actions">
+            {% if default_lesson %}
+              <a class="primary-button" href="{{ url_for('main.lesson_page', lesson_id=default_lesson.slug) }}">Start a Scene</a>
+            {% endif %}
+            <a class="secondary-button" href="{{ url_for('main.pronunciation') }}">Practice Pronunciation</a>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <p class="section-kicker">MVP Flow</p>
+          <ol class="flow-list">
+            <li>Choose a real-life scene</li>
+            <li>Listen and tap words or dialogue</li>
+            <li>Save useful expressions</li>
+            <li>Practice pronunciation</li>
+          </ol>
+        </aside>
+      </section>
+
+      <section class="path-grid" aria-label="Learning paths">
+        <a class="path-card" href="#featured-scenes">
+          <span>Scenes</span>
+          <strong>Learn through daily situations</strong>
+          <p>Cafeteria, restaurant, library, travel, and more.</p>
+        </a>
+        <a class="path-card" href="#grammar-essentials">
+          <span>Grammar</span>
+          <strong>Notice useful patterns</strong>
+          <p>Conjugation, articles, ser vs estar, and sentence frames.</p>
+        </a>
+        <a class="path-card" href="{{ url_for('main.pronunciation') }}">
+          <span>Pronunciation</span>
+          <strong>Practice what you hear</strong>
+          <p>Use standard audio and visual feedback to train output.</p>
+        </a>
+      </section>
+
+      <section id="featured-scenes" class="content-section">
+        <div class="section-heading">
+          <p class="section-kicker">Scenes</p>
+          <h2>Featured Scenes</h2>
+          <p>Start with familiar places, then learn the words, sentence patterns, and expressions that actually appear there.</p>
+        </div>
+        <div class="scene-grid">
+          {% for lesson in lessons %}
+            <article class="scene-card featured-card">
+              <p class="tag">{{ lesson.level }} · {{ lesson.scene }}</p>
+              <h3>{{ lesson.title }}</h3>
+              <p>{{ lesson.summary }}</p>
+              <a class="text-link" href="{{ url_for('main.lesson_page', lesson_id=lesson.slug) }}">Open Scene</a>
+            </article>
+          {% endfor %}
+          {% for scene in ["Classroom", "Supermarket", "Travel"] %}
+            <article class="scene-card muted-card">
+              <p class="tag">Coming Soon</p>
+              <h3>{{ scene }}</h3>
+              <p>Scene lesson structure is ready for this topic.</p>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section id="grammar-essentials" class="content-section">
+        <div class="section-heading">
+          <p class="section-kicker">Grammar</p>
+          <h2>Grammar Essentials</h2>
+          <p>Grammar appears as patterns inside scenes, so users can connect rules to real dialogue.</p>
+        </div>
+        <div class="grammar-grid">
+          {% for item in ["Verb Conjugation", "Gender and Number", "Articles", "Ser vs Estar", "Common Sentence Patterns"] %}
+            <article class="grammar-card">
+              <h3>{{ item }}</h3>
+              <p>Practice this pattern through story lines, keywords, and dialogue examples.</p>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

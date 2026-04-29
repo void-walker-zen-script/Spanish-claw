@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About · Spanish Claw</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ url_for('main.index') }}">Spanish Claw</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="{{ url_for('main.default_lesson') }}">Lesson</a>
+        <a href="{{ url_for('main.pronunciation') }}">Pronunciation</a>
+        <a href="{{ url_for('main.saved') }}">Saved</a>
+        <a aria-current="page" href="{{ url_for('main.about') }}">About</a>
+      </nav>
+    </header>
+
+    <main class="about-shell">
+      <section class="saved-header">
+        <p class="section-kicker">About</p>
+        <h1>Spanish Claw</h1>
+        <p>
+          Spanish Claw 是一个面向西班牙语学习者的 Web MVP，尝试把听力、查词、表达学习和发音训练整合进同一个连续流程中。
+        </p>
+      </section>
+
+      <section class="about-grid">
+        <article class="lesson-card">
+          <p class="tag">Lesson</p>
+          <h2>边听边查</h2>
+          <p>在真实语境中播放材料、切换标准声音、点击词句，并查看翻译、原形、变位和表达差异。</p>
+        </article>
+        <article class="lesson-card">
+          <p class="tag">Pronunciation</p>
+          <h2>边练边纠</h2>
+          <p>选择练习目标，听标准发音，对准摄像头练习口型，并获得相似概率和鼓励式反馈。</p>
+        </article>
+        <article class="lesson-card">
+          <p class="tag">Saved</p>
+          <h2>学习沉淀</h2>
+          <p>把值得复习的词句保存下来，让一次点击查询变成长期可积累的个人学习资产。</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
