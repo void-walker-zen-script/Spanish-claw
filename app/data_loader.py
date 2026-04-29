@@ -13,12 +13,20 @@ def load_json(filename):
 
 
 def get_lessons():
-    return load_json("lessons.json")["lessons"]
+    data = load_json("lessons.json")
+    if isinstance(data, list):
+        return data
+    return data.get("lessons", [])
 
 
-def get_lesson(lesson_id):
+def get_lesson(lesson_ref):
+    ref = str(lesson_ref)
     return next(
-        (lesson for lesson in get_lessons() if lesson["id"] == lesson_id),
+        (
+            lesson
+            for lesson in get_lessons()
+            if str(lesson.get("id")) == ref or lesson.get("slug") == ref
+        ),
         None,
     )
 

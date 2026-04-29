@@ -24,7 +24,7 @@ def default_lesson():
     lesson = get_default_lesson()
     if lesson is None:
         abort(404)
-    return lesson_page(lesson["id"])
+    return lesson_page(lesson.get("slug") or lesson["id"])
 
 
 @main.route("/lesson/<lesson_id>")

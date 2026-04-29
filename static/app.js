@@ -143,6 +143,92 @@ function renderInlineList(items) {
   return items && items.length ? items.join(" / ") : "-";
 }
 
+function renderDefaultLessonCard(lesson) {
+  const keywords = lesson.keywords || [];
+  const grammarPoints = lesson.grammar_points || [];
+
+  return `
+    <p class="section-kicker">Lesson Summary</p>
+    <h2>${lesson.scene || lesson.title || "Lesson"}</h2>
+    <p>${lesson.summary || "先听全文，再点击单词或句子查看解释。"}</p>
+    <dl class="field-grid">
+      <div>
+        <dt>Keywords</dt>
+        <dd>${keywords.length ? keywords.join(" · ") : "-"}</dd>
+      </div>
+      <div>
+        <dt>Grammar Points</dt>
+        <dd>${renderList(grammarPoints)}</dd>
+      </div>
+    </dl>
+  `;
+}
+
+function renderDefaultPanel(lesson) {
+  const panel = document.querySelector("#insight-card");
+  if (!panel) return;
+
+  panel.className = "insight-card";
+  panel.innerHTML = renderDefaultLessonCard(lesson);
+}
+
+function normalizeKey(value) {
+  return (value || "")
+    .toString()
+    .trim()
+    .toLowerCase()
+    .replace(/[.,¿?¡!:;]+$/g, "");
+}
+
+function findTranscriptLine(lesson, key) {
+  const normalizedKey = normalizeKey(key);
+  const transcript = lesson.transcript || [];
+  const sentences = lesson.sentences || [];
+
+  return transcript.find((line) => line.id === key || normalizeKey(line.id) === normalizedKey)
+    || sentences.find((line) => line.sentence_id === key || line.insight_key === key)
+    || null;
+}
+
+function createFallbackWordEntry(key) {
+  return {
+    key,
+    type: "word",
+    text: key,
+    audio_text: key,
+    translation: "这个词已经可以点击，详细词条可在 vocab.json 中继续补充。",
+    pos: "word",
+    lemma: "-",
+    conjugation: "-",
+    common_usage: "结合当前句子理解这个词。",
+    native_usage: "后续可补充更自然的表达差异。",
+    example: "-",
+    synonyms: [],
+    antonyms: []
+  };
+}
+
+function createSentenceEntry(line) {
+  return {
+    key: line.id || line.sentence_id || line.insight_key,
+    type: "sentence",
+    text: line.spanish || line.text,
+    audio_text: line.spanish || line.audio_text || line.text,
+    translation: line.chinese || line.translation,
+    speaker: line.speaker_cn || line.speaker,
+    line_type: line.type,
+    usage_scene: line.type === "narration"
+      ? "旁白用于交代场景和动作背景。"
+      : `${line.speaker_cn || line.speaker || "人物"} 的自然对话表达。`,
+    structure_note: line.clickable_words && line.clickable_words.length
+      ? `重点词：${line.clickable_words.join(" / ")}`
+      : "可以结合整句语境理解表达。",
+    natural_expression: line.spanish || line.text,
+    alternatives: [],
+    pronunciation_prompt: "可以先播放本句，再模仿语速和停顿。"
+  };
+}
+
 function clearSelected() {
   document.querySelectorAll(".selected").forEach((element) => {
     element.classList.remove("selected");
@@ -151,11 +237,15 @@ function clearSelected() {
 
 function selectEntry(key, trigger) {
   const data = window.SPANISH_CLAW_DATA;
-  const entry = data.entries[key];
+  const normalizedKey = normalizeKey(key);
+  const transcriptLine = findTranscriptLine(data.lesson, key);
+  const entry = data.entries[key]
+    || data.entries[normalizedKey]
+    || (transcriptLine ? createSentenceEntry(transcriptLine) : null)
+    || createFallbackWordEntry(normalizedKey || key);
   const panel = document.querySelector("#insight-card");
 
-  if (!entry || !panel) {
-    showToast("这个词暂时还没有解释");
+  if (!panel) {
     return;
   }
 
@@ -182,6 +272,8 @@ function selectEntry(key, trigger) {
 function setupLessonPage() {
   if (!window.SPANISH_CLAW_DATA) return;
   const lesson = window.SPANISH_CLAW_DATA.lesson;
+
+  renderDefaultPanel(lesson);
 
   document.querySelector("#play-lesson-button")?.addEventListener("click", () => {
     const lines = lesson.transcript || lesson.sentences || [];

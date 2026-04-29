@@ -17,37 +17,47 @@
       </nav>
     </header>
 
-    <main class="lesson-shell upgraded-lesson" data-page="lesson">
+    <main class="lesson-shell" data-page="lesson">
       <section class="lesson-main" aria-labelledby="lesson-title">
-        <header class="lesson-hero-card">
+        <section class="lesson-meta">
           <p class="tag">{{ lesson.scene }} · {{ lesson.level }}</p>
           <h1 id="lesson-title">{{ lesson.title }}</h1>
+          <p>{{ lesson.summary }}</p>
+        </section>
+
+        <section class="lesson-card" aria-label="Story introduction">
+          <p class="section-kicker">Story Intro</p>
+          <h2>进入场景</h2>
           <p>{{ lesson.story_intro }}</p>
-          <div class="lesson-meta-grid">
-            <section>
-              <p class="section-kicker">Characters</p>
-              <ul class="compact-list">
-                {% for character in lesson.characters %}
-                  <li><strong>{{ character.name }}</strong> — {{ character.role }}</li>
-                {% endfor %}
-              </ul>
-            </section>
-            <section>
-              <p class="section-kicker">Learning Goals</p>
-              <ul class="compact-list">
-                {% for goal in lesson.learning_goals %}
-                  <li>{{ goal }}</li>
-                {% endfor %}
-              </ul>
-            </section>
-          </div>
-        </header>
+        </section>
+
+        <section class="lesson-cards" aria-label="Lesson overview">
+          <article class="lesson-card">
+            <p class="section-kicker">Characters</p>
+            {% for character in lesson.characters %}
+              <p>
+                <strong>{{ character.name }}</strong>
+                · {{ character.role }}
+                {% if character.description %}<br>{{ character.description }}{% endif %}
+              </p>
+            {% endfor %}
+          </article>
+
+          <article class="lesson-card">
+            <p class="section-kicker">Learning Goals</p>
+            <ul>
+              {% for goal in lesson.learning_goals %}
+                <li>{{ goal }}</li>
+              {% endfor %}
+            </ul>
+          </article>
+        </section>
 
         <section class="audio-control-card" aria-label="Lesson audio controls">
           <div>
             <p class="section-kicker">Lesson Audio</p>
             <h2>Listen first, then explore the scene.</h2>
-            <p>Choose a voice, play the full scene, then tap narration, dialogue, or keywords for focused explanation.</p>
+            <p>选择一个标准声音，先播放全文建立语境；再点击单词或句子查看解释。</p>
           </div>
           <div class="audio-controls">
             <label class="select-label" for="lesson-voice-select">Voice</label>
@@ -57,68 +67,86 @@
           </div>
         </section>
 
-        <section class="transcript scene-transcript" aria-label="Spanish scene transcript">
+        <section class="transcript" aria-label="Spanish scene transcript">
           <div class="transcript-guide">
-            <p class="section-kicker">Scene Transcript</p>
-            <p>Narration gives context. Dialogue shows natural speech. Tap a keyword or the full line to update the insight panel.</p>
+            <p class="section-kicker">Transcript</p>
+            <p>旁白用于理解场景，对话用于学习真实表达。点击高亮词查看词卡；点击整句查看句子层解释；Play Sentence 保留在每条文本旁边。</p>
           </div>
 
-          {% for item in lesson.transcript %}
-            <article class="scene-line {{ item.type }}">
-              <div class="line-meta">
-                <span class="line-type">{{ item.type }}</span>
-                {% if item.speaker %}
-                  <strong class="speaker-label">{{ item.speaker }}</strong>
-                {% endif %}
-                <button class="sentence-play-button" type="button" data-sentence-text="{{ item.spanish }}">Play Line</button>
-              </div>
-              <p class="sentence line-spanish" role="button" tabindex="0" data-entry-key="{{ item.insight_key }}">
-                {% for token in item.tokens %}
-                  {% if token.key is defined %}
-                    <button class="token token-clickable" type="button" data-entry-key="{{ token.key }}">{{ token.text }}</button>
-                  {% else %}
-                    <span class="token">{{ token.text }}</span>
-                  {% endif %}
-                {% endfor %}
-              </p>
-              <p class="translation-line">{{ item.chinese }}</p>
-            </article>
-          {% endfor %}
+          <section aria-label="Narration lines">
+            <p class="section-kicker">Narration</p>
+            {% for item in lesson.transcript %}
+              {% if item.type == "narration" %}
+                <article class="sentence-block">
+                  <button class="sentence-play-button" type="button" data-sentence-text="{{ item.spanish }}">Play Sentence</button>
+                  <p class="tag">{{ item.speaker_cn or "旁白" }}</p>
+                  <p class="sentence" role="button" tabindex="0" data-entry-key="{{ item.id }}">
+                    {% for raw_token in item.spanish.split(" ") %}
+                      {% set clean_token = raw_token.strip(".,¿?¡!:;").lower() %}
+                      {% if clean_token in item.clickable_words %}
+                        <button class="token token-clickable" type="button" data-entry-key="{{ clean_token }}">{{ raw_token }}</button>
+                      {% else %}
+                        <span class="token">{{ raw_token }}</span>
+                      {% endif %}
+                    {% endfor %}
+                  </p>
+                  <p class="translation-line">{{ item.chinese }}</p>
+                </article>
+              {% endif %}
+            {% endfor %}
+          </section>
+
+          <section aria-label="Dialogue lines">
+            <p class="section-kicker">Dialogue</p>
+            {% for item in lesson.transcript %}
+              {% if item.type == "dialogue" %}
+                <article class="sentence-block">
+                  <button class="sentence-play-button" type="button" data-sentence-text="{{ item.spanish }}">Play Sentence</button>
+                  <p class="tag">{{ item.speaker_cn or item.speaker }}</p>
+                  <p class="sentence" role="button" tabindex="0" data-entry-key="{{ item.id }}">
+                    {% for raw_token in item.spanish.split(" ") %}
+                      {% set clean_token = raw_token.strip(".,¿?¡!:;").lower() %}
+                      {% if clean_token in item.clickable_words %}
+                        <button class="token token-clickable" type="button" data-entry-key="{{ clean_token }}">{{ raw_token }}</button>
+                      {% else %}
+                        <span class="token">{{ raw_token }}</span>
+                      {% endif %}
+                    {% endfor %}
+                  </p>
+                  <p class="translation-line">{{ item.chinese }}</p>
+                </article>
+              {% endif %}
+            {% endfor %}
+          </section>
         </section>
       </section>
 
       <aside class="insight-panel" aria-live="polite" aria-label="Insight panel">
-        <div
-          id="insight-card"
-          class="insight-card lesson-default-card"
-          data-default-summary="{{ lesson.summary }}"
-        >
+        <div id="insight-card" class="insight-card">
           <p class="section-kicker">Lesson Summary</p>
           <h2>{{ lesson.scene }}</h2>
           <p>{{ lesson.summary }}</p>
 
-          <section class="default-insight-section">
-            <h3>Keywords</h3>
-            <div class="chip-list">
-              {% for keyword in lesson.keywords %}
-                <span class="info-chip">{{ keyword }}</span>
-              {% endfor %}
+          <div class="field-grid">
+            <div>
+              <dt>Keywords</dt>
+              <dd>
+                {% for keyword in lesson.keywords %}
+                  {{ keyword }}{% if not loop.last %} · {% endif %}
+                {% endfor %}
+              </dd>
             </div>
-          </section>
-
-          <section class="default-insight-section">
-            <h3>Grammar Points</h3>
-            <ul>
-              {% for point in lesson.grammar_points %}
-                <li>{{ point }}</li>
-              {% endfor %}
-            </ul>
-          </section>
-
-          <section class="default-insight-section">
-            <h3>Usage Hint</h3>
-            <p>Start by listening to the full scene. Then tap a highlighted word for a word card, or tap a full line for a sentence card.</p>
-          </section>
+            <div>
+              <dt>Grammar Points</dt>
+              <dd>
+                <ul>
+                  {% for point in lesson.grammar_points %}
+                    <li>{{ point }}</li>
+                  {% endfor %}
+                </ul>
+              </dd>
+            </div>
+          </div>
         </div>
       </aside>
     </main>
