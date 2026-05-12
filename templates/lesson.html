@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ lesson.title }} · Spanish Claw</title>
+    <title>{{ lesson.title }} - Spanish Claw</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
@@ -19,34 +19,34 @@
 
     <main class="lesson-shell" data-page="lesson">
       <section class="lesson-main" aria-labelledby="lesson-title">
-        <section class="lesson-meta">
-          <p class="tag">{{ lesson.scene }} · {{ lesson.level }}</p>
+        <header class="lesson-meta lesson-course-header" aria-label="Lesson header">
+          <p class="tag">Lesson</p>
           <h1 id="lesson-title">{{ lesson.title }}</h1>
-          <p>{{ lesson.summary }}</p>
-        </section>
-
-        <section class="lesson-card" aria-label="Story introduction">
-          <p class="section-kicker">Story Intro</p>
-          <h2>进入场景</h2>
-          <p>{{ lesson.story_intro }}</p>
-        </section>
+          <div class="lesson-header-details" aria-label="Lesson details">
+            <span>Level: {{ lesson.level }}</span>
+            <span>Scene: {{ lesson.scene }}</span>
+          </div>
+          <p>{{ lesson.summary_zh or lesson.summary }}</p>
+        </header>
 
         <section class="lesson-cards" aria-label="Lesson overview">
           <article class="lesson-card">
-            <p class="section-kicker">Characters</p>
+            <p class="section-kicker">人物</p>
             {% for character in lesson.characters %}
               <p>
                 <strong>{{ character.name }}</strong>
-                · {{ character.role }}
-                {% if character.description %}<br>{{ character.description }}{% endif %}
+                - {{ character.role_zh or character.role }}
+                {% if character.description_zh or character.description %}
+                  <br>{{ character.description_zh or character.description }}
+                {% endif %}
               </p>
             {% endfor %}
           </article>
 
           <article class="lesson-card">
-            <p class="section-kicker">Learning Goals</p>
+            <p class="section-kicker">学习目标</p>
             <ul>
-              {% for goal in lesson.learning_goals %}
+              {% for goal in lesson.learning_goals_zh or lesson.learning_goals %}
                 <li>{{ goal }}</li>
               {% endfor %}
             </ul>
@@ -57,12 +57,13 @@
           <div>
             <p class="section-kicker">Lesson Audio</p>
             <h2>Listen first, then explore the scene.</h2>
-            <p>选择一个标准声音，先播放全文建立语境；再点击单词或句子查看解释。</p>
+            <p>Choose a voice, play the full lesson, then click words, phrases, or sentences to study them in context.</p>
           </div>
           <div class="audio-controls">
             <label class="select-label" for="lesson-voice-select">Voice</label>
             <select id="lesson-voice-select" class="voice-select" data-audio-voice></select>
             <button id="play-lesson-button" class="primary-button" type="button">Play Full Lesson</button>
+            <button id="slow-lesson-button" class="secondary-button" type="button">Slow Full Lesson</button>
             <button id="stop-lesson-button" class="secondary-button" type="button">Stop</button>
           </div>
         </section>
@@ -70,50 +71,82 @@
         <section class="transcript" aria-label="Spanish scene transcript">
           <div class="transcript-guide">
             <p class="section-kicker">Transcript</p>
-            <p>旁白用于理解场景，对话用于学习真实表达。点击高亮词查看词卡；点击整句查看句子层解释；Play Sentence 保留在每条文本旁边。</p>
+            <p>Read the Spanish first, use the English line for meaning, and use the structure hint to notice how the sentence works.</p>
           </div>
 
-          <section aria-label="Narration lines">
+          <section class="transcript-group narration-group" aria-label="Narration lines">
             <p class="section-kicker">Narration</p>
             {% for item in lesson.transcript %}
               {% if item.type == "narration" %}
-                <article class="sentence-block">
+                <article class="sentence-block narration-block">
                   <button class="sentence-play-button" type="button" data-sentence-text="{{ item.spanish }}">Play Sentence</button>
-                  <p class="tag">{{ item.speaker_cn or "旁白" }}</p>
+                  <p class="tag narration-label">{{ item.speaker_label_en or item.speaker or "Narration" }}</p>
                   <p class="sentence" role="button" tabindex="0" data-entry-key="{{ item.id }}">
+                    {% set clickable_words = item.clickable_words or [] %}
                     {% for raw_token in item.spanish.split(" ") %}
                       {% set clean_token = raw_token.strip(".,¿?¡!:;").lower() %}
-                      {% if clean_token in item.clickable_words %}
+                      {% if clean_token in clickable_words %}
                         <button class="token token-clickable" type="button" data-entry-key="{{ clean_token }}">{{ raw_token }}</button>
                       {% else %}
                         <span class="token">{{ raw_token }}</span>
                       {% endif %}
                     {% endfor %}
                   </p>
-                  <p class="translation-line">{{ item.chinese }}</p>
+                  {% if item.english %}
+                    <p class="translation-line">{{ item.english }}</p>
+                  {% endif %}
+                  {% if item.structure_hint_en %}
+                    <p class="structure-hint"><strong>Structure:</strong> {{ item.structure_hint_en }}</p>
+                  {% endif %}
+                  {% if item.clickable_items %}
+                    <div class="clickable-items" aria-label="Clickable items">
+                      <p class="section-kicker">Clickable Items</p>
+                      {% for clickable in item.clickable_items %}
+                        <button class="token token-clickable" type="button" data-entry-key="{{ clickable.vocab_key or clickable.spanish_text }}">
+                          {{ clickable.spanish_text }}
+                        </button>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
                 </article>
               {% endif %}
             {% endfor %}
           </section>
 
-          <section aria-label="Dialogue lines">
+          <section class="transcript-group dialogue-group" aria-label="Dialogue lines">
             <p class="section-kicker">Dialogue</p>
             {% for item in lesson.transcript %}
               {% if item.type == "dialogue" %}
-                <article class="sentence-block">
+                <article class="sentence-block dialogue-block">
                   <button class="sentence-play-button" type="button" data-sentence-text="{{ item.spanish }}">Play Sentence</button>
-                  <p class="tag">{{ item.speaker_cn or item.speaker }}</p>
+                  <p class="tag speaker-name">{{ item.speaker_label_en or item.speaker }}</p>
                   <p class="sentence" role="button" tabindex="0" data-entry-key="{{ item.id }}">
+                    {% set clickable_words = item.clickable_words or [] %}
                     {% for raw_token in item.spanish.split(" ") %}
                       {% set clean_token = raw_token.strip(".,¿?¡!:;").lower() %}
-                      {% if clean_token in item.clickable_words %}
+                      {% if clean_token in clickable_words %}
                         <button class="token token-clickable" type="button" data-entry-key="{{ clean_token }}">{{ raw_token }}</button>
                       {% else %}
                         <span class="token">{{ raw_token }}</span>
                       {% endif %}
                     {% endfor %}
                   </p>
-                  <p class="translation-line">{{ item.chinese }}</p>
+                  {% if item.english %}
+                    <p class="translation-line">{{ item.english }}</p>
+                  {% endif %}
+                  {% if item.structure_hint_en %}
+                    <p class="structure-hint"><strong>Structure:</strong> {{ item.structure_hint_en }}</p>
+                  {% endif %}
+                  {% if item.clickable_items %}
+                    <div class="clickable-items" aria-label="Clickable items">
+                      <p class="section-kicker">Clickable Items</p>
+                      {% for clickable in item.clickable_items %}
+                        <button class="token token-clickable" type="button" data-entry-key="{{ clickable.vocab_key or clickable.spanish_text }}">
+                          {{ clickable.spanish_text }}
+                        </button>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
                 </article>
               {% endif %}
             {% endfor %}
@@ -125,14 +158,14 @@
         <div id="insight-card" class="insight-card">
           <p class="section-kicker">Lesson Summary</p>
           <h2>{{ lesson.scene }}</h2>
-          <p>{{ lesson.summary }}</p>
+          <p>{{ lesson.summary_zh or lesson.summary }}</p>
 
           <div class="field-grid">
             <div>
               <dt>Keywords</dt>
               <dd>
                 {% for keyword in lesson.keywords %}
-                  {{ keyword }}{% if not loop.last %} · {% endif %}
+                  {{ keyword }}{% if not loop.last %} - {% endif %}
                 {% endfor %}
               </dd>
             </div>
@@ -140,7 +173,7 @@
               <dt>Grammar Points</dt>
               <dd>
                 <ul>
-                  {% for point in lesson.grammar_points %}
+                  {% for point in lesson.grammar_points_zh or lesson.grammar_points %}
                     <li>{{ point }}</li>
                   {% endfor %}
                 </ul>
@@ -154,8 +187,20 @@
     <div id="toast" class="toast" hidden></div>
 
     <script>
+      const lessonData = {{ lesson | tojson }};
+      lessonData.summary_en = lessonData.summary_zh || lessonData.summary_en;
+      lessonData.summary = lessonData.summary_zh || lessonData.summary;
+      lessonData.grammar_points_en = lessonData.grammar_points_zh || lessonData.grammar_points_en || [];
+      lessonData.grammar_points = lessonData.grammar_points_zh || lessonData.grammar_points || [];
+      lessonData.transcript = (lessonData.transcript || []).map((line) => ({
+        ...line,
+        chinese_zh: line.chinese_zh || line.chinese,
+        chinese: line.english || line.chinese,
+        clickable_words: line.clickable_words || (line.clickable_items || []).map((item) => item.vocab_key)
+      }));
+
       window.SPANISH_CLAW_DATA = {
-        lesson: {{ lesson | tojson }},
+        lesson: lessonData,
         entries: {{ vocab_entries | tojson }}
       };
     </script>
