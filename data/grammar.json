@@ -1,0 +1,199 @@
+{
+  "grammar_essentials": [
+    {
+      "id": "grammar-verb-conjugation",
+      "slug": "verb-conjugation",
+      "title": "Verb Conjugation",
+      "title_zh": "动词变位",
+      "level": "A1-B1",
+      "summary_zh": "掌握西语动词如何根据主语和时态变化，是理解句子动作和表达日常需求的基础。",
+      "focus": [
+        "present tense endings",
+        "subject-verb agreement",
+        "regular -ar, -er, and -ir verbs",
+        "common irregular verbs"
+      ],
+      "examples": [
+        {
+          "spanish": "Yo estudio en la biblioteca.",
+          "english": "I study in the library.",
+          "structure_hint_en": "Subject + conjugated verb + place.",
+          "grammar_note_zh": "estudiar 是 -ar 动词，yo 对应现在时变位 estudio。"
+        },
+        {
+          "spanish": "Nosotros comemos en el restaurante.",
+          "english": "We eat at the restaurant.",
+          "structure_hint_en": "Subject + conjugated verb + location phrase.",
+          "grammar_note_zh": "comer 是 -er 动词，nosotros 对应现在时变位 comemos。"
+        },
+        {
+          "spanish": "Ella pide un cafe.",
+          "english": "She orders a coffee.",
+          "structure_hint_en": "Subject + conjugated verb + object.",
+          "grammar_note_zh": "pedir 是常见变干动词，ella 对应 pide。"
+        }
+      ],
+      "related_lessons": [
+        "cafeteria-madrid",
+        "restaurant-dinner",
+        "library-study-time"
+      ]
+    },
+    {
+      "id": "grammar-gender-number",
+      "slug": "gender-number",
+      "title": "Gender & Number",
+      "title_zh": "阴阳性与单复数",
+      "level": "A1",
+      "summary_zh": "西语名词、冠词和形容词通常需要在阴阳性和单复数上保持一致。",
+      "focus": [
+        "masculine and feminine nouns",
+        "singular and plural forms",
+        "adjective agreement",
+        "noun phrase patterns"
+      ],
+      "examples": [
+        {
+          "spanish": "La mesa esta libre.",
+          "english": "The table is free.",
+          "structure_hint_en": "Article + noun + verb + adjective.",
+          "grammar_note_zh": "mesa 是阴性单数，所以使用 la，形容词 libre 在这里形式不变。"
+        },
+        {
+          "spanish": "Los libros son interesantes.",
+          "english": "The books are interesting.",
+          "structure_hint_en": "Plural article + plural noun + verb + plural adjective.",
+          "grammar_note_zh": "libros 是阳性复数，所以使用 los，形容词 interesante 变为 interesantes。"
+        },
+        {
+          "spanish": "Necesito dos servilletas limpias.",
+          "english": "I need two clean napkins.",
+          "structure_hint_en": "Verb + number + plural noun + plural adjective.",
+          "grammar_note_zh": "servilletas 是阴性复数，形容词 limpio 要配合为 limpias。"
+        }
+      ],
+      "related_lessons": [
+        "cafeteria-madrid",
+        "restaurant-dinner",
+        "library-study-time"
+      ]
+    },
+    {
+      "id": "grammar-articles",
+      "slug": "articles",
+      "title": "Articles",
+      "title_zh": "冠词",
+      "level": "A1",
+      "summary_zh": "冠词帮助说明名词是特指还是泛指，并且要和名词的阴阳性、单复数一致。",
+      "focus": [
+        "definite articles",
+        "indefinite articles",
+        "article agreement",
+        "common article omissions"
+      ],
+      "examples": [
+        {
+          "spanish": "Quiero un cafe con leche.",
+          "english": "I want a coffee with milk.",
+          "structure_hint_en": "Verb + indefinite article + noun + phrase.",
+          "grammar_note_zh": "un 表示一个泛指的阳性单数名词 cafe。"
+        },
+        {
+          "spanish": "La cuenta, por favor.",
+          "english": "The bill, please.",
+          "structure_hint_en": "Definite article + noun + polite phrase.",
+          "grammar_note_zh": "cuenta 是阴性单数，点餐场景中通常用 la cuenta 表示特指账单。"
+        },
+        {
+          "spanish": "Hay unos estudiantes en la sala.",
+          "english": "There are some students in the room.",
+          "structure_hint_en": "Hay + indefinite plural article + noun + place phrase.",
+          "grammar_note_zh": "unos 表示一些阳性复数的人或物，这里对应 estudiantes。"
+        }
+      ],
+      "related_lessons": [
+        "cafeteria-madrid",
+        "restaurant-dinner",
+        "library-study-time"
+      ]
+    },
+    {
+      "id": "grammar-ser-vs-estar",
+      "slug": "ser-vs-estar",
+      "title": "Ser vs Estar",
+      "title_zh": "Ser 与 Estar",
+      "level": "A1-A2",
+      "summary_zh": "ser 常用于身份、性质和来源，estar 常用于位置、状态和临时情况。",
+      "focus": [
+        "identity and description with ser",
+        "location with estar",
+        "temporary states with estar",
+        "meaning changes with adjectives"
+      ],
+      "examples": [
+        {
+          "spanish": "El camarero es amable.",
+          "english": "The waiter is kind.",
+          "structure_hint_en": "Subject + ser + characteristic.",
+          "grammar_note_zh": "amable 描述人的特质，所以使用 ser。"
+        },
+        {
+          "spanish": "La biblioteca esta cerca.",
+          "english": "The library is nearby.",
+          "structure_hint_en": "Subject + estar + location description.",
+          "grammar_note_zh": "表达地点或位置时通常使用 estar。"
+        },
+        {
+          "spanish": "La mesa esta ocupada.",
+          "english": "The table is occupied.",
+          "structure_hint_en": "Subject + estar + temporary state.",
+          "grammar_note_zh": "ocupada 表示当前状态，不是永久属性，所以用 estar。"
+        }
+      ],
+      "related_lessons": [
+        "cafeteria-madrid",
+        "restaurant-dinner",
+        "library-study-time"
+      ]
+    },
+    {
+      "id": "grammar-common-sentence-patterns",
+      "slug": "common-sentence-patterns",
+      "title": "Common Sentence Patterns",
+      "title_zh": "常用句型",
+      "level": "A1-B1",
+      "summary_zh": "常用句型能帮助学习者快速组织点餐、询问、请求和描述场景中的自然表达。",
+      "focus": [
+        "polite requests",
+        "asking for information",
+        "expressing needs",
+        "describing routines and situations"
+      ],
+      "examples": [
+        {
+          "spanish": "Me gustaria reservar una mesa.",
+          "english": "I would like to reserve a table.",
+          "structure_hint_en": "Me gustaria + infinitive + object.",
+          "grammar_note_zh": "Me gustaria 比 quiero 更礼貌，适合餐厅和服务场景。"
+        },
+        {
+          "spanish": "Donde esta la sala de estudio?",
+          "english": "Where is the study room?",
+          "structure_hint_en": "Question word + estar + noun phrase.",
+          "grammar_note_zh": "询问地点时使用 donde 加 estar。"
+        },
+        {
+          "spanish": "Puede traerme el menu, por favor?",
+          "english": "Can you bring me the menu, please?",
+          "structure_hint_en": "Puede + infinitive + indirect object + direct object.",
+          "grammar_note_zh": "Puede 加动词原形构成礼貌请求，me 表示“给我”。"
+        }
+      ],
+      "related_lessons": [
+        "cafeteria-madrid",
+        "restaurant-dinner",
+        "library-study-time"
+      ]
+    }
+  ]
+}

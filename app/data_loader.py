@@ -43,3 +43,18 @@ def get_vocab_entries():
 
 def get_pronunciation_targets():
     return load_json("pronunciation_targets.json")["targets"]
+
+
+def get_grammar_essentials():
+    return load_json("grammar.json").get("grammar_essentials", [])
+
+
+def get_grammar_module(slug):
+    return next(
+        (
+            module
+            for module in get_grammar_essentials()
+            if module.get("slug") == slug
+        ),
+        None,
+    )

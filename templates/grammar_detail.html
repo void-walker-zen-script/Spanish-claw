@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ module.title }} - Grammar Essentials - Spanish Claw</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ url_for('main.index') }}">Spanish Claw</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="{{ url_for('main.default_lesson') }}">Lesson</a>
+        <a href="{{ url_for('main.pronunciation') }}">Pronunciation</a>
+        <a href="{{ url_for('main.saved') }}">Saved</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+        <a aria-current="page" href="{{ url_for('main.grammar') }}">Grammar</a>
+      </nav>
+    </header>
+
+    <main class="lesson-shell">
+      <nav class="lesson-toc" aria-label="Grammar sections">
+        <p class="section-kicker">Grammar Menu</p>
+        <a href="#overview">Overview</a>
+        <a href="#focus">Focus</a>
+        <a href="#examples">Examples</a>
+        <a href="#related-lessons">Related Lessons</a>
+      </nav>
+
+      <section class="lesson-main" aria-labelledby="grammar-detail-title">
+        <details id="overview" class="lesson-section lesson-section-hero" open>
+          <summary>Overview</summary>
+          <header class="lesson-meta lesson-course-header" aria-label="Grammar header">
+            <p class="tag">{{ module.level }}</p>
+            <h1 id="grammar-detail-title">{{ module.title }}</h1>
+            <h2>{{ module.title_zh }}</h2>
+            <p>{{ module.summary_zh }}</p>
+          </header>
+        </details>
+
+        <details id="focus" class="lesson-section" open>
+          <summary>Focus</summary>
+          <section class="lesson-cards" aria-label="Grammar focus">
+            <article class="lesson-card">
+              <p class="section-kicker">Focus</p>
+              <ul>
+                {% for item in module.focus %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </article>
+          </section>
+        </details>
+
+        <details id="examples" class="lesson-section" open>
+          <summary>Examples</summary>
+          <section class="lesson-cards" aria-label="Grammar examples">
+            {% for example in module.examples %}
+              <article class="lesson-card">
+                <p class="section-kicker">Spanish</p>
+                <h2>{{ example.spanish }}</h2>
+                <p><strong>English</strong><br>{{ example.english }}</p>
+                <p><strong>Structure</strong><br>{{ example.structure_hint_en }}</p>
+                <p><strong>语法说明</strong><br>{{ example.grammar_note_zh }}</p>
+              </article>
+            {% endfor %}
+          </section>
+        </details>
+
+        <details id="related-lessons" class="lesson-section" open>
+          <summary>Related Lessons</summary>
+          <section class="lesson-cards" aria-label="Related lessons">
+            <article class="lesson-card">
+              <p class="section-kicker">Related Lessons</p>
+              <ul>
+                {% for lesson_slug in module.related_lessons %}
+                  <li>
+                    <a class="text-link" href="{{ url_for('main.lesson_page', lesson_id=lesson_slug) }}">{{ lesson_slug }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </article>
+          </section>
+        </details>
+      </section>
+    </main>
+  </body>
+</html>

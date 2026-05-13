@@ -280,6 +280,78 @@ a {
   margin: 0 0 8px;
 }
 
+.home-shell .content-section[aria-labelledby="grammar-title"] {
+  margin: 34px 0 72px;
+  padding: 42px;
+  border: 1px solid rgba(15, 118, 110, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.09), rgba(245, 158, 11, 0.08)),
+    rgba(255, 255, 255, 0.58);
+  box-shadow: 0 24px 70px rgba(31, 41, 51, 0.08);
+}
+
+.home-shell .content-section[aria-labelledby="grammar-title"] .section-heading {
+  margin-bottom: 28px;
+}
+
+.home-shell .content-section[aria-labelledby="grammar-title"] .section-heading h1 {
+  margin: 0 0 10px;
+  font-size: clamp(40px, 5.6vw, 68px);
+  line-height: 1.04;
+}
+
+.home-shell .content-section[aria-labelledby="grammar-title"] .grammar-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.home-shell .content-section[aria-labelledby="grammar-title"] .grammar-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 260px;
+  border-color: rgba(15, 118, 110, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 249, 246, 0.9)),
+    var(--surface);
+  box-shadow: 0 16px 42px rgba(31, 41, 51, 0.08);
+}
+
+.home-shell .content-section[aria-labelledby="grammar-title"] .grammar-card .tag {
+  width: fit-content;
+  margin-bottom: 4px;
+  padding: 4px 10px;
+  border: 1px solid rgba(15, 118, 110, 0.16);
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--primary-dark);
+  font-size: 12px;
+}
+
+.home-shell .content-section[aria-labelledby="grammar-title"] .grammar-card h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 23px;
+  line-height: 1.15;
+}
+
+.home-shell .content-section[aria-labelledby="grammar-title"] .grammar-card h3 {
+  margin: -4px 0 0;
+  color: var(--primary-dark);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.home-shell .content-section[aria-labelledby="grammar-title"] .grammar-card p:not(.tag) {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.home-shell .content-section[aria-labelledby="grammar-title"] .grammar-card .text-link {
+  margin-top: auto;
+}
+
 .muted-card {
   background: var(--surface-soft);
   box-shadow: none;
@@ -1200,6 +1272,84 @@ a:focus-visible,
   border-radius: 999px;
   background: var(--primary);
   content: "";
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] .lesson-meta {
+  border-color: rgba(15, 118, 110, 0.18);
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(245, 158, 11, 0.08)),
+    var(--surface);
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] .lesson-meta h1 {
+  margin-bottom: 8px;
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] .lesson-meta h2 {
+  margin: 0 0 18px;
+  color: var(--primary-dark);
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.18;
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] .lesson-meta p:not(.tag) {
+  padding-left: 16px;
+  border-left: 4px solid var(--primary);
+  color: #475467;
+  font-size: 18px;
+  line-height: 1.78;
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] #examples .lesson-cards {
+  grid-template-columns: 1fr;
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] #examples .lesson-card {
+  gap: 12px;
+  border-color: rgba(15, 118, 110, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 244, 239, 0.82)),
+    var(--surface);
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] #examples .lesson-card h2 {
+  margin: 0;
+  color: var(--primary-dark);
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.16;
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] #examples .lesson-card p:nth-of-type(2) {
+  color: var(--text);
+  font-size: 18px;
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] #examples .lesson-card p:nth-of-type(3) {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(15, 118, 110, 0.07);
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] #examples .lesson-card p:nth-of-type(4) {
+  padding: 12px 14px;
+  border-left: 4px solid var(--focus);
+  border-radius: 8px;
+  background: rgba(245, 158, 11, 0.1);
+  color: #475467;
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] #examples .lesson-card strong {
+  color: var(--primary-dark);
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.lesson-main[aria-labelledby="grammar-detail-title"] #focus .lesson-card,
+.lesson-main[aria-labelledby="grammar-detail-title"] #related-lessons .lesson-card {
+  border-color: rgba(15, 118, 110, 0.12);
 }
 
 .lesson-shell .audio-control-card {

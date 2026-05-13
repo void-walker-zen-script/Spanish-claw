@@ -91,15 +91,39 @@
         <div class="section-heading">
           <p class="section-kicker">Grammar</p>
           <h2>Grammar Essentials</h2>
-          <p>Grammar appears as patterns inside scenes, so users can connect rules to real dialogue.</p>
+          <p>Grammar Essentials helps learners use English as a bridge to understand Spanish structure.</p>
         </div>
         <div class="grammar-grid">
-          {% for item in ["Verb Conjugation", "Gender and Number", "Articles", "Ser vs Estar", "Common Sentence Patterns"] %}
-            <article class="grammar-card">
-              <h3>{{ item }}</h3>
-              <p>Practice this pattern through story lines, keywords, and dialogue examples.</p>
-            </article>
-          {% endfor %}
+          <article class="grammar-card">
+            <p class="tag">A1-B1</p>
+            <h3>Verb Conjugation</h3>
+            <p>理解动词如何随着主语和时态变化，帮助你看懂句子里的动作。</p>
+            <a class="text-link" href="{{ url_for('main.grammar_detail', slug='verb-conjugation') }}">View Grammar</a>
+          </article>
+          <article class="grammar-card">
+            <p class="tag">A1</p>
+            <h3>Gender &amp; Number</h3>
+            <p>掌握名词、冠词和形容词在阴阳性与单复数上的一致关系。</p>
+            <a class="text-link" href="{{ url_for('main.grammar_detail', slug='gender-number') }}">View Grammar</a>
+          </article>
+          <article class="grammar-card">
+            <p class="tag">A1</p>
+            <h3>Articles</h3>
+            <p>学会用冠词区分特指和泛指，并和名词保持形式一致。</p>
+            <a class="text-link" href="{{ url_for('main.grammar_detail', slug='articles') }}">View Grammar</a>
+          </article>
+          <article class="grammar-card">
+            <p class="tag">A1-A2</p>
+            <h3>Ser vs Estar</h3>
+            <p>区分身份、性质、位置和临时状态，减少常见表达混淆。</p>
+            <a class="text-link" href="{{ url_for('main.grammar_detail', slug='ser-vs-estar') }}">View Grammar</a>
+          </article>
+          <article class="grammar-card">
+            <p class="tag">A1-B1</p>
+            <h3>Common Sentence Patterns</h3>
+            <p>用常见句型快速组织请求、询问、点餐和日常描述。</p>
+            <a class="text-link" href="{{ url_for('main.grammar_detail', slug='common-sentence-patterns') }}">View Grammar</a>
+          </article>
         </div>
       </section>
     </main>

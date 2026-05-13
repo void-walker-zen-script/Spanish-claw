@@ -222,6 +222,28 @@
                 </ul>
               </dd>
             </div>
+            {% if lesson.grammar_points_zh or lesson.grammar_points %}
+              <div>
+                <dt>Related Grammar</dt>
+                <dd>
+                  <ul>
+                    {% if lesson.slug == "cafeteria-madrid" %}
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='articles') }}">Articles</a></li>
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='gender-number') }}">Gender &amp; Number</a></li>
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='common-sentence-patterns') }}">Common Sentence Patterns</a></li>
+                    {% elif lesson.slug == "restaurant-dinner" %}
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='articles') }}">Articles</a></li>
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='ser-vs-estar') }}">Ser vs Estar</a></li>
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='common-sentence-patterns') }}">Common Sentence Patterns</a></li>
+                    {% elif lesson.slug == "library-study-time" %}
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='verb-conjugation') }}">Verb Conjugation</a></li>
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='ser-vs-estar') }}">Ser vs Estar</a></li>
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='gender-number') }}">Gender &amp; Number</a></li>
+                    {% endif %}
+                  </ul>
+                </dd>
+              </div>
+            {% endif %}
           </div>
         </div>
       </aside>

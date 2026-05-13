@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grammar Essentials - Spanish Claw</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ url_for('main.index') }}">Spanish Claw</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="{{ url_for('main.default_lesson') }}">Lesson</a>
+        <a href="{{ url_for('main.pronunciation') }}">Pronunciation</a>
+        <a href="{{ url_for('main.saved') }}">Saved</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+        <a aria-current="page" href="{{ url_for('main.grammar') }}">Grammar</a>
+      </nav>
+    </header>
+
+    <main class="home-shell">
+      <section class="content-section" aria-labelledby="grammar-title">
+        <div class="section-heading">
+          <p class="section-kicker">Grammar</p>
+          <h1 id="grammar-title">Grammar Essentials</h1>
+          <p>Use focused grammar modules to connect Spanish patterns with real scene dialogue.</p>
+        </div>
+
+        <div class="grammar-grid">
+          {% for module in grammar_essentials %}
+            <article class="grammar-card">
+              <p class="tag">{{ module.level }}</p>
+              <h2>{{ module.title }}</h2>
+              <h3>{{ module.title_zh }}</h3>
+              <p>{{ module.summary_zh }}</p>
+              <a class="text-link" href="{{ url_for('main.grammar_detail', slug=module.slug) }}">进入详情页</a>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

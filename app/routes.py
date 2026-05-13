@@ -2,6 +2,8 @@ from flask import Blueprint, abort, jsonify, render_template
 
 from app.data_loader import (
     get_default_lesson,
+    get_grammar_essentials,
+    get_grammar_module,
     get_lesson,
     get_lessons,
     get_pronunciation_targets,
@@ -50,6 +52,22 @@ def pronunciation():
         "pronunciation.html",
         targets=get_pronunciation_targets(),
     )
+
+
+@main.route("/grammar")
+def grammar():
+    return render_template(
+        "grammar.html",
+        grammar_essentials=get_grammar_essentials(),
+    )
+
+
+@main.route("/grammar/<slug>")
+def grammar_detail(slug):
+    module = get_grammar_module(slug)
+    if module is None:
+        abort(404)
+    return render_template("grammar_detail.html", module=module)
 
 
 @main.route("/about")
