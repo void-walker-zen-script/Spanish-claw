@@ -102,6 +102,28 @@ function speakSpanish(text, rate = AUDIO_RATES.normal) {
   });
 }
 
+function speakText(text, lang = "es-ES", rate = 1) {
+  const cleanText = (text || "").trim();
+  if (!cleanText || !window.speechSynthesis || typeof SpeechSynthesisUtterance === "undefined") return;
+
+  if (speechSynthesis.speaking || speechSynthesis.pending) {
+    speechSynthesis.cancel();
+  }
+
+  const utterance = new SpeechSynthesisUtterance();
+  utterance.text = cleanText;
+  utterance.lang = lang;
+  utterance.rate = rate;
+
+  const voices = speechSynthesis.getVoices();
+  const matchedVoice = voices.find((voice) => voice.lang === lang || voice.lang.startsWith(`${lang}-`));
+  if (matchedVoice) {
+    utterance.voice = matchedVoice;
+  }
+
+  speechSynthesis.speak(utterance);
+}
+
 function normalizeAudioSource(source) {
   if (!source) return "";
   if (typeof HTMLAudioElement !== "undefined" && source instanceof HTMLAudioElement) {
@@ -260,6 +282,7 @@ function renderWordCard(entry, lesson) {
 
 function renderSentenceCard(entry, lesson) {
   const favorite = isFavorite(entry, lesson.id);
+  const speechText = entry.spanish || entry.spanish_text || entry.text || "";
   return `
     <p class="section-kicker">Sentence Card</p>
     <div class="card-heading">
@@ -278,6 +301,12 @@ function renderSentenceCard(entry, lesson) {
     </dl>
     <button class="secondary-button card-audio-button" type="button" data-action="play-entry">
       Play Sentence
+    </button>
+    <button class="secondary-button speech-normal-btn" type="button" data-speech-text="${escapeHtml(speechText)}">
+      Play Normal
+    </button>
+    <button class="secondary-button speech-slow-btn" type="button" data-speech-text="${escapeHtml(speechText)}">
+      Play Slow
     </button>
     <button class="save-button" type="button" data-action="favorite">
       ${favorite ? "Saved" : "Save"}
@@ -561,6 +590,23 @@ function setupLessonPage() {
   const lesson = window.SPANISH_CLAW_DATA.lesson;
 
   renderDefaultPanel(lesson);
+
+  const insightCard = document.querySelector("#insight-card");
+  insightCard?.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    const normalButton = target.closest(".speech-normal-btn");
+    if (normalButton && insightCard.contains(normalButton)) {
+      speakText(normalButton.dataset.speechText, "es-ES", 1);
+      return;
+    }
+
+    const slowButton = target.closest(".speech-slow-btn");
+    if (slowButton && insightCard.contains(slowButton)) {
+      speakText(slowButton.dataset.speechText, "es-ES", 0.7);
+    }
+  });
 
   document.querySelector("#play-lesson-button")?.addEventListener("click", () => {
     playFullLesson(lesson, AUDIO_RATES.normal);
