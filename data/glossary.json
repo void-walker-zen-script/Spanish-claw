@@ -1,0 +1,244 @@
+{
+  "terms": [
+    {
+      "id": "stem-changing-verb",
+      "term_zh": "变词干动词",
+      "term_en": "stem-changing verb",
+      "short_explanation_zh": "变词干动词也叫 stem-changing verb，指某些西语动词变位时词干元音会发生变化。",
+      "detailed_explanation_zh": "变词干动词也叫 stem-changing verb。它指某些西语动词在变位时，词干中的元音会发生变化，但词尾仍然按对应主语和时态变化。pedir 是 e → i 类型，所以 ella pide 中的 pide 来自动词 pedir。其他常见类型包括 pensar: e → ie，以及 dormir: o → ue。",
+      "spanish_examples": [
+        "Ella pide un café.",
+        "Yo pienso en la respuesta.",
+        "Él duerme ocho horas."
+      ],
+      "english_examples": [
+        "She orders a coffee.",
+        "I think about the answer.",
+        "He sleeps eight hours."
+      ],
+      "related_terms": [
+        "动词变位",
+        "动词",
+        "现在时"
+      ]
+    },
+    {
+      "id": "verb-conjugation",
+      "term_zh": "动词变位",
+      "term_en": "verb conjugation",
+      "short_explanation_zh": "动词变位是指动词根据主语、时态、语气等因素改变形式。",
+      "detailed_explanation_zh": "西语动词通常不会一直保持原形，而是会根据主语和时态改变词尾，有些动词还会发生词干变化。学习动词变位可以帮助你判断谁在做动作，以及动作发生在什么时候。",
+      "spanish_examples": [
+        "Yo estudio español.",
+        "Nosotros comemos juntos."
+      ],
+      "english_examples": [
+        "I study Spanish.",
+        "We eat together."
+      ],
+      "related_terms": [
+        "动词",
+        "主语",
+        "现在时",
+        "变词干动词"
+      ]
+    },
+    {
+      "id": "subject",
+      "term_zh": "主语",
+      "term_en": "subject",
+      "short_explanation_zh": "主语表示句子中执行动作或被描述的人、事物或概念。",
+      "detailed_explanation_zh": "主语通常回答“谁”或“什么”在做动作。在西语中，主语可以明确写出，也可以通过动词变位体现出来。",
+      "spanish_examples": [
+        "María estudia en la biblioteca.",
+        "Nosotros vivimos en Madrid."
+      ],
+      "english_examples": [
+        "María studies in the library.",
+        "We live in Madrid."
+      ],
+      "related_terms": [
+        "动词",
+        "动词变位"
+      ]
+    },
+    {
+      "id": "verb",
+      "term_zh": "动词",
+      "term_en": "verb",
+      "short_explanation_zh": "动词表示动作、状态或存在。",
+      "detailed_explanation_zh": "动词是句子的核心成分之一。西语动词通常需要变位，例如 comer 可以变成 como、comes、come、comemos 等形式。",
+      "spanish_examples": [
+        "Ella come una manzana.",
+        "La mesa está libre."
+      ],
+      "english_examples": [
+        "She eats an apple.",
+        "The table is free."
+      ],
+      "related_terms": [
+        "动词变位",
+        "主语",
+        "宾语"
+      ]
+    },
+    {
+      "id": "object",
+      "term_zh": "宾语",
+      "term_en": "object",
+      "short_explanation_zh": "宾语表示动作影响到的人或事物。",
+      "detailed_explanation_zh": "宾语通常回答“做什么”或“对谁做”。例如在 Quiero un café 中，un café 是 quiero 这个动作的对象。",
+      "spanish_examples": [
+        "Quiero un café.",
+        "Leo un libro."
+      ],
+      "english_examples": [
+        "I want a coffee.",
+        "I read a book."
+      ],
+      "related_terms": [
+        "动词",
+        "主语",
+        "冠词"
+      ]
+    },
+    {
+      "id": "adverbial",
+      "term_zh": "状语",
+      "term_en": "adverbial",
+      "short_explanation_zh": "状语补充说明动作发生的时间、地点、方式、原因或条件。",
+      "detailed_explanation_zh": "状语不是句子的核心动作，但它能让句子信息更完整。它可以说明什么时候、在哪里、怎样、为什么或在什么条件下发生。",
+      "spanish_examples": [
+        "Estudio por la tarde.",
+        "Comemos en el restaurante."
+      ],
+      "english_examples": [
+        "I study in the afternoon.",
+        "We eat at the restaurant."
+      ],
+      "related_terms": [
+        "动词",
+        "从句",
+        "现在时"
+      ]
+    },
+    {
+      "id": "clause",
+      "term_zh": "从句",
+      "term_en": "clause",
+      "short_explanation_zh": "从句是句子中的一个小句，通常包含自己的主语和动词。",
+      "detailed_explanation_zh": "从句可以补充原因、条件、时间、目的等信息。它通常依附在主句上，让表达更完整。",
+      "spanish_examples": [
+        "Voy si tengo tiempo.",
+        "Cuando llegas, empezamos."
+      ],
+      "english_examples": [
+        "I will go if I have time.",
+        "When you arrive, we start."
+      ],
+      "related_terms": [
+        "主语",
+        "动词",
+        "状语"
+      ]
+    },
+    {
+      "id": "article",
+      "term_zh": "冠词",
+      "term_en": "article",
+      "short_explanation_zh": "冠词放在名词前，用来表示特指、泛指，并和名词保持阴阳性与单复数一致。",
+      "detailed_explanation_zh": "西语冠词包括定冠词 el、la、los、las 和不定冠词 un、una、unos、unas。冠词要配合名词的性和数。",
+      "spanish_examples": [
+        "La cuenta, por favor.",
+        "Quiero un café."
+      ],
+      "english_examples": [
+        "The bill, please.",
+        "I want a coffee."
+      ],
+      "related_terms": [
+        "阴阳性",
+        "宾语"
+      ]
+    },
+    {
+      "id": "gender",
+      "term_zh": "阴阳性",
+      "term_en": "gender",
+      "short_explanation_zh": "阴阳性是西语名词的重要特征，会影响冠词和形容词形式。",
+      "detailed_explanation_zh": "西语名词通常分为阳性和阴性。冠词和形容词需要与名词保持一致，例如 el libro 和 la mesa。",
+      "spanish_examples": [
+        "El libro es interesante.",
+        "La mesa está limpia."
+      ],
+      "english_examples": [
+        "The book is interesting.",
+        "The table is clean."
+      ],
+      "related_terms": [
+        "冠词",
+        "宾语"
+      ]
+    },
+    {
+      "id": "question-word",
+      "term_zh": "疑问词",
+      "term_en": "question word",
+      "short_explanation_zh": "疑问词用于提出信息类问题，例如问地点、人物、时间、原因或方式。",
+      "detailed_explanation_zh": "常见西语疑问词包括 qué、quién、dónde、cuándo、por qué、cómo、cuánto 等。它们帮助学习者获得具体信息。",
+      "spanish_examples": [
+        "¿Dónde está la biblioteca?",
+        "¿Qué quieres beber?"
+      ],
+      "english_examples": [
+        "Where is the library?",
+        "What do you want to drink?"
+      ],
+      "related_terms": [
+        "主语",
+        "动词",
+        "现在时"
+      ]
+    },
+    {
+      "id": "present-tense",
+      "term_zh": "现在时",
+      "term_en": "present tense",
+      "short_explanation_zh": "现在时用于表达现在发生的动作、习惯、事实或一般情况。",
+      "detailed_explanation_zh": "西语现在时常用于日常对话。它可以表达正在发生的事情、经常做的事情，也可以表达事实或稳定状态。",
+      "spanish_examples": [
+        "Vivo en Madrid.",
+        "Ella estudia español."
+      ],
+      "english_examples": [
+        "I live in Madrid.",
+        "She studies Spanish."
+      ],
+      "related_terms": [
+        "动词变位",
+        "动词",
+        "主语"
+      ]
+    },
+    {
+      "id": "ser-vs-estar",
+      "term_zh": "ser vs estar",
+      "term_en": "ser vs estar",
+      "short_explanation_zh": "ser 和 estar 都可以表示“是”，但 ser 常用于身份和特质，estar 常用于位置和状态。",
+      "detailed_explanation_zh": "ser 通常描述身份、来源、职业、性质等较稳定的信息；estar 常用于地点、临时状态、情绪或结果状态。区分两者是西语初学者的重要语法点。",
+      "spanish_examples": [
+        "Ella es profesora.",
+        "La mesa está ocupada."
+      ],
+      "english_examples": [
+        "She is a teacher.",
+        "The table is occupied."
+      ],
+      "related_terms": [
+        "动词",
+        "现在时",
+        "状语"
+      ]
+    }
+  ]
+}

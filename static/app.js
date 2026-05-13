@@ -236,7 +236,7 @@ function renderWordCard(entry, lesson) {
   const favorite = isFavorite(entry, lesson.id);
   const spanishExpression = entry.spanish_text || entry.text || entry.key || "-";
   const englishExpression = entry.english_text || entry.english || entry.translation_en || "-";
-  const structureNote = entry.structure_note || entry.structure_hint_en || "-";
+  const structureNote = entry.structure_note || entry.structure_hint_zh || entry.structure_hint_en || "-";
 
   return `
     <p class="section-kicker">Expression Card</p>
@@ -251,7 +251,7 @@ function renderWordCard(entry, lesson) {
       <div><dt>西语表达</dt><dd>${escapeHtml(spanishExpression)}</dd></div>
       <div><dt>English</dt><dd>${escapeHtml(englishExpression)}</dd></div>
       <div><dt>中文释义</dt><dd>${escapeHtml(entry.translation || "-")}</dd></div>
-      <div><dt>结构说明</dt><dd>${escapeHtml(structureNote)}</dd></div>
+      <div><dt>结构提示</dt><dd>${escapeHtml(structureNote)}</dd></div>
       <div><dt>原形</dt><dd>${escapeHtml(entry.lemma || "-")}</dd></div>
       <div><dt>变位说明</dt><dd>${escapeHtml(entry.conjugation || "-")}</dd></div>
       <div><dt>一般表达</dt><dd>${escapeHtml(entry.common_usage || "-")}</dd></div>
@@ -295,7 +295,7 @@ function renderSentenceCard(entry, lesson) {
     <dl class="field-grid">
       <div><dt>English</dt><dd>${escapeHtml(entry.english_text || entry.translation || "-")}</dd></div>
       <div><dt>中文释义</dt><dd>${escapeHtml(entry.translation_zh || "-")}</dd></div>
-      <div><dt>结构说明</dt><dd>${escapeHtml(entry.structure_note || "-")}</dd></div>
+      <div><dt>结构提示</dt><dd>${escapeHtml(entry.structure_note || "-")}</dd></div>
       <div><dt>口语表达</dt><dd>${escapeHtml(entry.natural_expression || "-")}</dd></div>
       <div><dt>Pronunciation</dt><dd>${escapeHtml(entry.pronunciation_prompt || "可进入 Pronunciation 模块继续练习。")}</dd></div>
     </dl>
@@ -450,7 +450,7 @@ function createClickableItemEntry(context, key) {
     pos: item.type || "expression",
     lemma: "-",
     conjugation: "-",
-    structure_note: line.structure_hint_en || "-",
+    structure_note: line.structure_hint_zh || line.structure_hint_en || "-",
     common_usage: line.english || "-",
     native_usage: "-",
     example: line.spanish || "-",
@@ -467,7 +467,7 @@ function mergeClickableItemContext(entry, context) {
     ...entry,
     spanish_text: entry.spanish_text || item.spanish_text,
     english_text: entry.english_text || item.english_text,
-    structure_note: entry.structure_note || line.structure_hint_en,
+    structure_note: entry.structure_note || line.structure_hint_zh || line.structure_hint_en,
     audio_text: entry.audio_text || item.spanish_text || entry.text
   };
 }
@@ -486,7 +486,7 @@ function createSentenceEntry(line) {
     usage_scene: line.type === "narration"
       ? "Narration gives scene and action context."
       : `${line.speaker_label_en || line.speaker || "Speaker"} uses this as natural dialogue.`,
-    structure_note: line.structure_hint_en || "Read it as a full sentence in context.",
+    structure_note: line.structure_hint_zh || line.structure_hint_en || "结合上下文作为完整句子理解。",
     natural_expression: line.spanish || line.text,
     alternatives: [],
     pronunciation_prompt: "Play the sentence first, then imitate its rhythm and pauses."

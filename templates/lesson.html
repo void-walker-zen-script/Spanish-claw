@@ -113,7 +113,7 @@
           <section class="transcript" aria-label="Spanish scene transcript">
             <div class="transcript-guide">
               <p class="section-kicker">Transcript</p>
-              <p>Read the Spanish first, use the English line for meaning, and use the structure hint to notice how the sentence works.</p>
+              <p>先读 Spanish 原句，再用 English counterpart 确认意思，并通过中文结构提示理解句子如何组织。</p>
             </div>
 
             <section class="transcript-group narration-group" aria-label="Narration lines">
@@ -137,8 +137,8 @@
                     {% if item.english %}
                       <p class="translation-line">{{ item.english }}</p>
                     {% endif %}
-                    {% if item.structure_hint_en %}
-                      <p class="structure-hint"><strong>Structure:</strong> {{ item.structure_hint_en }}</p>
+                    {% if item.structure_hint_zh or item.structure_hint_en %}
+                      <p class="structure-hint"><strong>结构提示：</strong> {{ item.structure_hint_zh or item.structure_hint_en }}</p>
                     {% endif %}
                     {% if item.clickable_items %}
                       <div class="clickable-items" aria-label="Clickable items">
@@ -176,8 +176,8 @@
                     {% if item.english %}
                       <p class="translation-line">{{ item.english }}</p>
                     {% endif %}
-                    {% if item.structure_hint_en %}
-                      <p class="structure-hint"><strong>Structure:</strong> {{ item.structure_hint_en }}</p>
+                    {% if item.structure_hint_zh or item.structure_hint_en %}
+                      <p class="structure-hint"><strong>结构提示：</strong> {{ item.structure_hint_zh or item.structure_hint_en }}</p>
                     {% endif %}
                     {% if item.clickable_items %}
                       <div class="clickable-items" aria-label="Clickable items">

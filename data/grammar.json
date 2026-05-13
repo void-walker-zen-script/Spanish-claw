@@ -18,18 +18,21 @@
           "spanish": "Yo estudio en la biblioteca.",
           "english": "I study in the library.",
           "structure_hint_en": "Subject + conjugated verb + place.",
+          "structure_hint_zh": "主语 + 变位动词 + 地点状语。",
           "grammar_note_zh": "estudiar 是 -ar 动词，yo 对应现在时变位 estudio。"
         },
         {
           "spanish": "Nosotros comemos en el restaurante.",
           "english": "We eat at the restaurant.",
           "structure_hint_en": "Subject + conjugated verb + location phrase.",
+          "structure_hint_zh": "主语 + 变位动词 + 地点短语。",
           "grammar_note_zh": "comer 是 -er 动词，nosotros 对应现在时变位 comemos。"
         },
         {
           "spanish": "Ella pide un café.",
           "english": "She orders a coffee.",
           "structure_hint_en": "Subject + conjugated verb + object.",
+          "structure_hint_zh": "主语 + 变位动词 + 宾语。",
           "grammar_note_zh": "pedir 是常见变干动词，ella 对应 pide。"
         }
       ],
@@ -70,18 +73,21 @@
           "spanish": "La mesa está libre.",
           "english": "The table is free.",
           "structure_hint_en": "Article + noun + estar + adjective.",
+          "structure_hint_zh": "冠词 + 名词 + estar + 形容词。",
           "grammar_note_zh": "mesa 是阴性单数，所以使用 la；libre 在这里阴阳性形式不变。"
         },
         {
           "spanish": "Los libros son interesantes.",
           "english": "The books are interesting.",
           "structure_hint_en": "Plural article + plural noun + ser + plural adjective.",
+          "structure_hint_zh": "复数冠词 + 复数名词 + ser + 复数形容词。",
           "grammar_note_zh": "libros 是阳性复数，所以使用 los，形容词 interesante 变为 interesantes。"
         },
         {
           "spanish": "Necesito dos servilletas limpias.",
           "english": "I need two clean napkins.",
           "structure_hint_en": "Verb + number + plural noun + plural adjective.",
+          "structure_hint_zh": "动词 + 数量词 + 复数名词 + 复数形容词。",
           "grammar_note_zh": "servilletas 是阴性复数，形容词 limpio 要配合为 limpias。"
         }
       ],
@@ -122,18 +128,21 @@
           "spanish": "Quiero un café con leche.",
           "english": "I want a coffee with milk.",
           "structure_hint_en": "Verb + indefinite article + noun + phrase.",
+          "structure_hint_zh": "动词 + 不定冠词 + 名词 + 补充短语。",
           "grammar_note_zh": "un 表示一个泛指的阳性单数名词 café。"
         },
         {
           "spanish": "La cuenta, por favor.",
           "english": "The bill, please.",
           "structure_hint_en": "Definite article + noun + polite phrase.",
+          "structure_hint_zh": "定冠词 + 名词 + 礼貌表达。",
           "grammar_note_zh": "cuenta 是阴性单数，点餐场景中通常用 la cuenta 表示特指账单。"
         },
         {
           "spanish": "Hay unos estudiantes en la sala.",
           "english": "There are some students in the room.",
           "structure_hint_en": "Hay + indefinite plural article + noun + place phrase.",
+          "structure_hint_zh": "Hay + 复数不定冠词 + 名词 + 地点短语。",
           "grammar_note_zh": "unos 表示一些阳性复数的人或物，这里对应 estudiantes。"
         }
       ],
@@ -174,18 +183,21 @@
           "spanish": "El camarero es amable.",
           "english": "The waiter is kind.",
           "structure_hint_en": "Subject + ser + characteristic.",
+          "structure_hint_zh": "主语 + ser + 特质描述。",
           "grammar_note_zh": "amable 描述人的特质，所以使用 ser。"
         },
         {
           "spanish": "La biblioteca está cerca.",
           "english": "The library is nearby.",
           "structure_hint_en": "Subject + estar + location description.",
+          "structure_hint_zh": "主语 + estar + 位置描述。",
           "grammar_note_zh": "表达地点或位置时通常使用 estar。"
         },
         {
           "spanish": "La mesa está ocupada.",
           "english": "The table is occupied.",
           "structure_hint_en": "Subject + estar + temporary state.",
+          "structure_hint_zh": "主语 + estar + 临时状态。",
           "grammar_note_zh": "ocupada 表示当前状态，不是永久属性，所以用 estar。"
         }
       ],
@@ -226,18 +238,21 @@
           "spanish": "Me gustaría reservar una mesa.",
           "english": "I would like to reserve a table.",
           "structure_hint_en": "Me gustaría + infinitive + object.",
+          "structure_hint_zh": "Me gustaría + 动词原形 + 宾语。",
           "grammar_note_zh": "Me gustaría 比 quiero 更礼貌，适合餐厅和服务场景。"
         },
         {
           "spanish": "¿Dónde está la sala de estudio?",
           "english": "Where is the study room?",
           "structure_hint_en": "Question word + estar + noun phrase.",
+          "structure_hint_zh": "疑问词 + estar + 名词短语。",
           "grammar_note_zh": "询问地点时使用 dónde 加 estar。"
         },
         {
           "spanish": "¿Puede traerme el menú, por favor?",
           "english": "Can you bring me the menu, please?",
           "structure_hint_en": "Puede + infinitive + indirect object + direct object.",
+          "structure_hint_zh": "Puede + 动词原形 + 间接宾语 + 直接宾语。",
           "grammar_note_zh": "Puede 加动词原形构成礼貌请求，me 表示“给我”。"
         }
       ],
@@ -279,18 +294,21 @@
           "spanish": "¿Dónde está la cafetería?",
           "english": "Where is the cafeteria?",
           "structure_hint_en": "Dónde + estar + noun phrase.",
+          "structure_hint_zh": "Dónde + estar + 名词短语。",
           "grammar_note_zh": "dónde 用来询问地点，常和 estar 搭配。"
         },
         {
           "spanish": "¿Qué quieres beber?",
           "english": "What do you want to drink?",
           "structure_hint_en": "Qué + conjugated verb + infinitive.",
+          "structure_hint_zh": "Qué + 变位动词 + 动词原形。",
           "grammar_note_zh": "qué 用来询问具体事物或选择，这里询问想喝什么。"
         },
         {
           "spanish": "¿Cuándo empieza la clase?",
           "english": "When does the class start?",
           "structure_hint_en": "Cuándo + conjugated verb + subject.",
+          "structure_hint_zh": "Cuándo + 变位动词 + 主语。",
           "grammar_note_zh": "cuándo 用来询问时间，适合课程、预约和日程场景。"
         }
       ],
