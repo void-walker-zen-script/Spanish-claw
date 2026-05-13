@@ -272,10 +272,8 @@ function renderSentenceCard(entry, lesson) {
     <dl class="field-grid">
       <div><dt>English</dt><dd>${escapeHtml(entry.english_text || entry.translation || "-")}</dd></div>
       <div><dt>中文释义</dt><dd>${escapeHtml(entry.translation_zh || "-")}</dd></div>
-      <div><dt>使用场景</dt><dd>${escapeHtml(entry.usage_scene || "-")}</dd></div>
       <div><dt>结构说明</dt><dd>${escapeHtml(entry.structure_note || "-")}</dd></div>
-      <div><dt>更自然表达</dt><dd>${escapeHtml(entry.natural_expression || "-")}</dd></div>
-      <div><dt>可替换表达</dt><dd>${renderInlineList(entry.alternatives)}</dd></div>
+      <div><dt>口语表达</dt><dd>${escapeHtml(entry.natural_expression || "-")}</dd></div>
       <div><dt>Pronunciation</dt><dd>${escapeHtml(entry.pronunciation_prompt || "可进入 Pronunciation 模块继续练习。")}</dd></div>
     </dl>
     <button class="secondary-button card-audio-button" type="button" data-action="play-entry">
