@@ -1,5 +1,6 @@
-from flask import Blueprint, abort, jsonify, render_template
+from flask import Blueprint, abort, jsonify, render_template, request
 
+from app.ai_helper import ask_claw
 from app.data_loader import (
     get_default_lesson,
     get_grammar_essentials,
@@ -96,3 +97,9 @@ def api_vocab():
 @main.route("/api/pronunciation-targets")
 def api_pronunciation_targets():
     return jsonify({"targets": get_pronunciation_targets()})
+
+
+@main.route("/api/ask-claw", methods=["POST"])
+def api_ask_claw():
+    payload = request.get_json(silent=True) or {}
+    return jsonify(ask_claw(payload))
