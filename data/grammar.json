@@ -6,7 +6,7 @@
       "title": "Verb Conjugation",
       "title_zh": "动词变位",
       "level": "A1-B1",
-      "summary_zh": "掌握西语动词如何根据主语和时态变化，是理解句子动作和表达日常需求的基础。",
+      "summary_zh": "掌握西语动词如何根据主语和时态变化，是理解动作、需求和日常对话的基础。",
       "focus": [
         "present tense endings",
         "subject-verb agreement",
@@ -27,7 +27,7 @@
           "grammar_note_zh": "comer 是 -er 动词，nosotros 对应现在时变位 comemos。"
         },
         {
-          "spanish": "Ella pide un cafe.",
+          "spanish": "Ella pide un café.",
           "english": "She orders a coffee.",
           "structure_hint_en": "Subject + conjugated verb + object.",
           "grammar_note_zh": "pedir 是常见变干动词，ella 对应 pide。"
@@ -37,7 +37,20 @@
         "cafeteria-madrid",
         "restaurant-dinner",
         "library-study-time"
-      ]
+      ],
+      "source_inspiration_tags": [
+        "Grammar Essentials",
+        "Comprehensible Input",
+        "Grammar Reference",
+        "Structured Examples"
+      ],
+      "related_scene_tags": [
+        "daily routine",
+        "restaurant",
+        "library",
+        "basic communication"
+      ],
+      "content_generation_note": "Use source_pool only to understand common verb-sequencing needs and beginner grammar organization. Generate original Spanish examples and explanations for Spanish Claw."
     },
     {
       "id": "grammar-gender-number",
@@ -54,15 +67,15 @@
       ],
       "examples": [
         {
-          "spanish": "La mesa esta libre.",
+          "spanish": "La mesa está libre.",
           "english": "The table is free.",
-          "structure_hint_en": "Article + noun + verb + adjective.",
-          "grammar_note_zh": "mesa 是阴性单数，所以使用 la，形容词 libre 在这里形式不变。"
+          "structure_hint_en": "Article + noun + estar + adjective.",
+          "grammar_note_zh": "mesa 是阴性单数，所以使用 la；libre 在这里阴阳性形式不变。"
         },
         {
           "spanish": "Los libros son interesantes.",
           "english": "The books are interesting.",
-          "structure_hint_en": "Plural article + plural noun + verb + plural adjective.",
+          "structure_hint_en": "Plural article + plural noun + ser + plural adjective.",
           "grammar_note_zh": "libros 是阳性复数，所以使用 los，形容词 interesante 变为 interesantes。"
         },
         {
@@ -76,7 +89,20 @@
         "cafeteria-madrid",
         "restaurant-dinner",
         "library-study-time"
-      ]
+      ],
+      "source_inspiration_tags": [
+        "Beginner Spanish",
+        "Grammar Reference",
+        "Grammar Practice",
+        "Chinese Learner Scenes"
+      ],
+      "related_scene_tags": [
+        "food",
+        "shopping",
+        "classroom",
+        "daily conversation"
+      ],
+      "content_generation_note": "Use source_pool to identify learner-friendly noun phrase patterns. Keep all examples original and tied to Spanish Claw scenes."
     },
     {
       "id": "grammar-articles",
@@ -93,10 +119,10 @@
       ],
       "examples": [
         {
-          "spanish": "Quiero un cafe con leche.",
+          "spanish": "Quiero un café con leche.",
           "english": "I want a coffee with milk.",
           "structure_hint_en": "Verb + indefinite article + noun + phrase.",
-          "grammar_note_zh": "un 表示一个泛指的阳性单数名词 cafe。"
+          "grammar_note_zh": "un 表示一个泛指的阳性单数名词 café。"
         },
         {
           "spanish": "La cuenta, por favor.",
@@ -115,7 +141,20 @@
         "cafeteria-madrid",
         "restaurant-dinner",
         "library-study-time"
-      ]
+      ],
+      "source_inspiration_tags": [
+        "Grammar Essentials",
+        "Grammar Activities",
+        "Grammar Reference",
+        "Beginner Dialogues"
+      ],
+      "related_scene_tags": [
+        "restaurant",
+        "shop",
+        "library",
+        "basic communication"
+      ],
+      "content_generation_note": "Use source_pool to organize article patterns by definite and indefinite use. Do not copy outside lesson examples; rewrite for Spanish Claw situations."
     },
     {
       "id": "grammar-ser-vs-estar",
@@ -138,13 +177,13 @@
           "grammar_note_zh": "amable 描述人的特质，所以使用 ser。"
         },
         {
-          "spanish": "La biblioteca esta cerca.",
+          "spanish": "La biblioteca está cerca.",
           "english": "The library is nearby.",
           "structure_hint_en": "Subject + estar + location description.",
           "grammar_note_zh": "表达地点或位置时通常使用 estar。"
         },
         {
-          "spanish": "La mesa esta ocupada.",
+          "spanish": "La mesa está ocupada.",
           "english": "The table is occupied.",
           "structure_hint_en": "Subject + estar + temporary state.",
           "grammar_note_zh": "ocupada 表示当前状态，不是永久属性，所以用 estar。"
@@ -154,7 +193,20 @@
         "cafeteria-madrid",
         "restaurant-dinner",
         "library-study-time"
-      ]
+      ],
+      "source_inspiration_tags": [
+        "Grammar Essentials",
+        "Grammar in Context",
+        "Structured Examples",
+        "Beginner Spanish"
+      ],
+      "related_scene_tags": [
+        "daily life",
+        "restaurant",
+        "housing",
+        "library"
+      ],
+      "content_generation_note": "Use source_pool to understand common contexts for identity, location, and state. Create original contrastive examples for Spanish Claw."
     },
     {
       "id": "grammar-common-sentence-patterns",
@@ -171,19 +223,19 @@
       ],
       "examples": [
         {
-          "spanish": "Me gustaria reservar una mesa.",
+          "spanish": "Me gustaría reservar una mesa.",
           "english": "I would like to reserve a table.",
-          "structure_hint_en": "Me gustaria + infinitive + object.",
-          "grammar_note_zh": "Me gustaria 比 quiero 更礼貌，适合餐厅和服务场景。"
+          "structure_hint_en": "Me gustaría + infinitive + object.",
+          "grammar_note_zh": "Me gustaría 比 quiero 更礼貌，适合餐厅和服务场景。"
         },
         {
-          "spanish": "Donde esta la sala de estudio?",
+          "spanish": "¿Dónde está la sala de estudio?",
           "english": "Where is the study room?",
           "structure_hint_en": "Question word + estar + noun phrase.",
-          "grammar_note_zh": "询问地点时使用 donde 加 estar。"
+          "grammar_note_zh": "询问地点时使用 dónde 加 estar。"
         },
         {
-          "spanish": "Puede traerme el menu, por favor?",
+          "spanish": "¿Puede traerme el menú, por favor?",
           "english": "Can you bring me the menu, please?",
           "structure_hint_en": "Puede + infinitive + indirect object + direct object.",
           "grammar_note_zh": "Puede 加动词原形构成礼貌请求，me 表示“给我”。"
@@ -193,7 +245,74 @@
         "cafeteria-madrid",
         "restaurant-dinner",
         "library-study-time"
-      ]
+      ],
+      "source_inspiration_tags": [
+        "Everyday Conversations",
+        "Small Talk",
+        "Real Conversation",
+        "Scenario Bank"
+      ],
+      "related_scene_tags": [
+        "daily conversation",
+        "restaurant",
+        "travel",
+        "greeting",
+        "small talk"
+      ],
+      "content_generation_note": "Use source_pool for conversation-function categories only. Generate original sentence frames with Spanish + English counterparts."
+    },
+    {
+      "id": "grammar-question-words",
+      "slug": "question-words",
+      "title": "Question Words",
+      "title_zh": "疑问词",
+      "level": "A1-A2",
+      "summary_zh": "疑问词帮助学习者询问地点、人物、原因、方式、时间和数量，是日常对话的核心工具。",
+      "focus": [
+        "where, what, who, when, why, how",
+        "question word placement",
+        "question marks and intonation",
+        "scene-based information requests"
+      ],
+      "examples": [
+        {
+          "spanish": "¿Dónde está la cafetería?",
+          "english": "Where is the cafeteria?",
+          "structure_hint_en": "Dónde + estar + noun phrase.",
+          "grammar_note_zh": "dónde 用来询问地点，常和 estar 搭配。"
+        },
+        {
+          "spanish": "¿Qué quieres beber?",
+          "english": "What do you want to drink?",
+          "structure_hint_en": "Qué + conjugated verb + infinitive.",
+          "grammar_note_zh": "qué 用来询问具体事物或选择，这里询问想喝什么。"
+        },
+        {
+          "spanish": "¿Cuándo empieza la clase?",
+          "english": "When does the class start?",
+          "structure_hint_en": "Cuándo + conjugated verb + subject.",
+          "grammar_note_zh": "cuándo 用来询问时间，适合课程、预约和日程场景。"
+        }
+      ],
+      "related_lessons": [
+        "cafeteria-madrid",
+        "restaurant-dinner",
+        "library-study-time"
+      ],
+      "source_inspiration_tags": [
+        "Grammar Activities",
+        "Teacher Resources",
+        "Interactive Practice",
+        "Beginner Dialogues"
+      ],
+      "related_scene_tags": [
+        "classroom",
+        "daily conversation",
+        "restaurant",
+        "travel",
+        "functions"
+      ],
+      "content_generation_note": "Inspired by the activity-organization approach of ProfeDeELE question-word practice, but all prompts, examples, and explanations must be original Spanish Claw content."
     }
   ]
 }
