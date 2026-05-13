@@ -1,0 +1,313 @@
+{
+  "sources": [
+    {
+      "id": "dreaming-spanish",
+      "name": "Dreaming Spanish",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/@DreamingSpanish",
+      "source_type": "video channel",
+      "useful_for": [
+        "Scenes",
+        "Comprehensible Input",
+        "Video Inspiration",
+        "Listening"
+      ],
+      "scene_tags": [
+        "daily life",
+        "travel",
+        "food",
+        "beginner stories"
+      ],
+      "grammar_tags": [
+        "basic sentence patterns",
+        "present tense",
+        "question words"
+      ],
+      "pronunciation_tags": [],
+      "level_tags": [
+        "Superbeginner",
+        "Beginner",
+        "Intermediate"
+      ],
+      "content_inspiration": "Use as a reference for comprehensible scene pacing, beginner-friendly storytelling, and visual context that supports listening.",
+      "copyright_note": "这些来源只作为内部灵感、场景标签、主题分类和语法组织参考，不直接复制完整字幕、视频、音频、画面或原始课程内容。Spanish Claw 的正式内容必须原创改写。"
+    },
+    {
+      "id": "espanol-con-juan",
+      "name": "Español con Juan",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/@espanolconjuan",
+      "source_type": "video channel",
+      "useful_for": [
+        "Story-based Lessons",
+        "Intermediate Listening",
+        "Grammar in Context"
+      ],
+      "scene_tags": [
+        "daily life",
+        "story",
+        "culture",
+        "personal experience"
+      ],
+      "grammar_tags": [
+        "past tense",
+        "subjunctive awareness",
+        "connectors"
+      ],
+      "pronunciation_tags": [],
+      "level_tags": [
+        "Intermediate",
+        "Upper Intermediate"
+      ],
+      "content_inspiration": "Use as inspiration for story-driven lessons that introduce grammar through personal experience and cultural context.",
+      "copyright_note": "这些来源只作为内部灵感、场景标签、主题分类和语法组织参考，不直接复制完整字幕、视频、音频、画面或原始课程内容。Spanish Claw 的正式内容必须原创改写。"
+    },
+    {
+      "id": "easy-spanish",
+      "name": "Easy Spanish",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/@EasySpanish",
+      "source_type": "video channel",
+      "useful_for": [
+        "Real Conversation",
+        "Street Interviews",
+        "Culture"
+      ],
+      "scene_tags": [
+        "street conversation",
+        "housing",
+        "commute",
+        "work",
+        "friendship"
+      ],
+      "grammar_tags": [
+        "question words",
+        "opinions",
+        "daily expressions"
+      ],
+      "pronunciation_tags": [],
+      "level_tags": [
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "content_inspiration": "Use to identify natural conversation topics, interview-style prompts, and everyday opinion language.",
+      "copyright_note": "这些来源只作为内部灵感、场景标签、主题分类和语法组织参考，不直接复制完整字幕、视频、音频、画面或原始课程内容。Spanish Claw 的正式内容必须原创改写。"
+    },
+    {
+      "id": "spanish-after-hours",
+      "name": "Spanish After Hours",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/@spanishafterhours",
+      "source_type": "video channel",
+      "useful_for": [
+        "Comprehensible Input",
+        "Daily Scenes",
+        "Slow Listening"
+      ],
+      "scene_tags": [
+        "shop",
+        "home",
+        "vlog",
+        "daily routine"
+      ],
+      "grammar_tags": [
+        "present tense",
+        "common verbs",
+        "sentence patterns"
+      ],
+      "pronunciation_tags": [],
+      "level_tags": [
+        "Beginner",
+        "Intermediate"
+      ],
+      "content_inspiration": "Use as inspiration for slow, cozy, daily-scene listening materials and clear input for lower-level learners.",
+      "copyright_note": "这些来源只作为内部灵感、场景标签、主题分类和语法组织参考，不直接复制完整字幕、视频、音频、画面或原始课程内容。Spanish Claw 的正式内容必须原创改写。"
+    },
+    {
+      "id": "hola-spanish",
+      "name": "Hola Spanish",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/@HolaSpanish",
+      "source_type": "video channel",
+      "useful_for": [
+        "Everyday Conversations",
+        "Small Talk",
+        "Conversation Practice"
+      ],
+      "scene_tags": [
+        "daily conversation",
+        "future plans",
+        "small talk"
+      ],
+      "grammar_tags": [
+        "future tense",
+        "question words",
+        "conversation patterns"
+      ],
+      "pronunciation_tags": [],
+      "level_tags": [
+        "Beginner",
+        "Intermediate"
+      ],
+      "content_inspiration": "Use to plan everyday dialogue prompts, small-talk exchanges, and future-plan conversation patterns.",
+      "copyright_note": "这些来源只作为内部灵感、场景标签、主题分类和语法组织参考，不直接复制完整字幕、视频、音频、画面或原始课程内容。Spanish Claw 的正式内容必须原创改写。"
+    },
+    {
+      "id": "butterfly-spanish",
+      "name": "Butterfly Spanish",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/@ButterflySpanish",
+      "source_type": "video channel",
+      "useful_for": [
+        "Grammar Essentials",
+        "Pronunciation",
+        "Beginner Spanish"
+      ],
+      "scene_tags": [
+        "classroom style",
+        "basic communication"
+      ],
+      "grammar_tags": [
+        "verb conjugation",
+        "articles",
+        "ser vs estar",
+        "pronouns",
+        "questions"
+      ],
+      "pronunciation_tags": [
+        "r",
+        "rr",
+        "vowels",
+        "common pronunciation"
+      ],
+      "level_tags": [
+        "A1",
+        "A2"
+      ],
+      "content_inspiration": "Use as a reference for beginner grammar sequencing, pronunciation focus areas, and common learner questions.",
+      "copyright_note": "这些来源只作为内部灵感、场景标签、主题分类和语法组织参考，不直接复制完整字幕、视频、音频、画面或原始课程内容。Spanish Claw 的正式内容必须原创改写。"
+    },
+    {
+      "id": "profedeele",
+      "name": "ProfeDeELE",
+      "platform": "Website",
+      "url": "https://www.profedeele.es/",
+      "source_type": "website",
+      "useful_for": [
+        "Grammar Activities",
+        "Teacher Resources",
+        "Interactive Practice"
+      ],
+      "scene_tags": [
+        "classroom",
+        "daily life",
+        "functions"
+      ],
+      "grammar_tags": [
+        "question words",
+        "articles",
+        "pronouns",
+        "verb forms"
+      ],
+      "pronunciation_tags": [],
+      "level_tags": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "content_inspiration": "Use to understand activity types, grammar categorization, and classroom-friendly practice formats.",
+      "copyright_note": "这些来源只作为内部灵感、场景标签、主题分类和语法组织参考，不直接复制完整字幕、视频、音频、画面或原始课程内容。Spanish Claw 的正式内容必须原创改写。"
+    },
+    {
+      "id": "lingolia-spanish",
+      "name": "Lingolia Spanish",
+      "platform": "Website",
+      "url": "https://espanol.lingolia.com/",
+      "source_type": "website",
+      "useful_for": [
+        "Grammar Reference",
+        "Grammar Practice",
+        "Structured Examples"
+      ],
+      "scene_tags": [
+        "grammar reference"
+      ],
+      "grammar_tags": [
+        "conjugation",
+        "gender and number",
+        "articles",
+        "ser vs estar",
+        "tenses"
+      ],
+      "pronunciation_tags": [],
+      "level_tags": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "content_inspiration": "Use as a reference for grammar topic taxonomy, structured examples, and progression from rules to practice.",
+      "copyright_note": "这些来源只作为内部灵感、场景标签、主题分类和语法组织参考，不直接复制完整字幕、视频、音频、画面或原始课程内容。Spanish Claw 的正式内容必须原创改写。"
+    },
+    {
+      "id": "bilibili-spanish-scenario-teaching",
+      "name": "Bilibili 西班牙语情景教学合集",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/",
+      "source_type": "video collection",
+      "useful_for": [
+        "Chinese Learner Scenes",
+        "Beginner Dialogues",
+        "Scenario Bank"
+      ],
+      "scene_tags": [
+        "restaurant",
+        "shopping",
+        "travel",
+        "greeting",
+        "daily conversation"
+      ],
+      "grammar_tags": [
+        "basic sentence patterns",
+        "question words"
+      ],
+      "pronunciation_tags": [],
+      "level_tags": [
+        "A1",
+        "A2"
+      ],
+      "content_inspiration": "Use to identify scenario categories and common beginner dialogue needs for Chinese-speaking learners.",
+      "copyright_note": "这些来源只作为内部灵感、场景标签、主题分类和语法组织参考，不直接复制完整字幕、视频、音频、画面或原始课程内容。Spanish Claw 的正式内容必须原创改写。"
+    },
+    {
+      "id": "bilibili-basic-daily-spanish-dialogue",
+      "name": "Bilibili 西语基础日常对话",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/",
+      "source_type": "video collection",
+      "useful_for": [
+        "Daily Dialogue Inspiration",
+        "Chinese Learner Input"
+      ],
+      "scene_tags": [
+        "self introduction",
+        "weather",
+        "family",
+        "time",
+        "shopping"
+      ],
+      "grammar_tags": [
+        "basic verbs",
+        "articles",
+        "gender and number"
+      ],
+      "pronunciation_tags": [],
+      "level_tags": [
+        "A1"
+      ],
+      "content_inspiration": "Use to organize beginner daily dialogue themes and Chinese learner-friendly communication functions.",
+      "copyright_note": "这些来源只作为内部灵感、场景标签、主题分类和语法组织参考，不直接复制完整字幕、视频、音频、画面或原始课程内容。Spanish Claw 的正式内容必须原创改写。"
+    }
+  ]
+}
