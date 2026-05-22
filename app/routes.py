@@ -1,6 +1,6 @@
 from flask import Blueprint, abort, jsonify, render_template, request
 
-from app.ai.provider_manager import resolve_provider
+from app.ai.provider_manager import get_available_providers, resolve_provider
 from app.data_loader import (
     get_default_lesson,
     get_grammar_essentials,
@@ -126,6 +126,11 @@ def api_vocab():
 @main.route("/api/pronunciation-targets")
 def api_pronunciation_targets():
     return jsonify({"targets": get_pronunciation_targets()})
+
+
+@main.route("/api/ai-providers")
+def api_ai_providers():
+    return jsonify({"providers": get_available_providers()})
 
 
 @main.route("/api/ask-claw", methods=["POST"])
