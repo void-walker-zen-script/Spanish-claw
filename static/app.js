@@ -745,9 +745,81 @@ function getAskClawContext(panel) {
   ].filter(Boolean).join("\n");
 }
 
-function renderAskClawResponse(container, data) {
-  const fallbackNote = data.source === "local_glossary"
-    ? `<p class="ask-claw-fallback">当前使用 Local Glossary fallback。</p>`
+let askClawProvidersPromise;
+
+function loadAskClawProviders() {
+  if (!askClawProvidersPromise) {
+    askClawProvidersPromise = fetch("/api/ai-providers")
+      .then((response) => response.json())
+      .then((data) => data.providers || [])
+      .catch(() => []);
+  }
+  return askClawProvidersPromise;
+}
+
+function updateAskClawModelPlaceholder(panel) {
+  const providerSelect = panel.querySelector(".ask-claw-provider");
+  const modelInput = panel.querySelector(".ask-claw-model");
+  const selectedOption = providerSelect?.selectedOptions?.[0];
+  const defaultModel = selectedOption?.dataset.defaultModel || "";
+  if (modelInput) {
+    modelInput.placeholder = defaultModel ? `Use provider default: ${defaultModel}` : "Use provider default";
+  }
+}
+
+function populateAskClawProviderSelect(panel, providers) {
+  const providerSelect = panel.querySelector(".ask-claw-provider");
+  const sendButton = panel.querySelector(".ask-claw-send");
+  if (!providerSelect) return;
+
+  providerSelect.innerHTML = "";
+
+  if (!providers.length) {
+    const option = document.createElement("option");
+    option.value = "";
+    option.textContent = "No providers available";
+    providerSelect.appendChild(option);
+    providerSelect.disabled = true;
+    if (sendButton) sendButton.disabled = true;
+    updateAskClawModelPlaceholder(panel);
+    return;
+  }
+
+  providers.forEach((provider) => {
+    const option = document.createElement("option");
+    option.value = provider.id;
+    option.textContent = provider.name;
+    option.dataset.defaultModel = provider.default_model || "";
+    providerSelect.appendChild(option);
+  });
+
+  providerSelect.disabled = false;
+  if (sendButton) sendButton.disabled = false;
+  updateAskClawModelPlaceholder(panel);
+}
+
+function getAskClawProviderLabel(provider, request = {}) {
+  const key = (provider || "").toLowerCase();
+  return request.providerLabels?.[key] || provider || "-";
+}
+
+function renderAskClawResponse(container, data, request = {}) {
+  const requestedProvider = (request.provider || "").toLowerCase();
+  const actualProvider = (data.provider || "").toLowerCase();
+  const fallbackMessages = [];
+
+  if (requestedProvider && actualProvider && requestedProvider !== actualProvider) {
+    fallbackMessages.push(
+      `你选择了 ${getAskClawProviderLabel(requestedProvider, request)}，但该 provider 当前未配置或不可用，已切换到 ${getAskClawProviderLabel(actualProvider, request)} fallback。`
+    );
+  }
+
+  if (data.source === "local_glossary") {
+    fallbackMessages.push("当前使用本地术语库回答，能力有限。");
+  }
+
+  const fallbackNote = fallbackMessages.length
+    ? `<div class="ask-claw-fallback-card">${fallbackMessages.map((message) => `<p>${escapeHtml(message)}</p>`).join("")}</div>`
     : "";
 
   container.hidden = false;
@@ -768,6 +840,15 @@ function setupAskClawPanels() {
     const responseBox = panel.querySelector(".ask-claw-response");
     if (!sendButton || !responseBox) return;
 
+    sendButton.disabled = true;
+    loadAskClawProviders().then((providers) => {
+      populateAskClawProviderSelect(panel, providers);
+    });
+
+    panel.querySelector(".ask-claw-provider")?.addEventListener("change", () => {
+      updateAskClawModelPlaceholder(panel);
+    });
+
     sendButton.addEventListener("click", async () => {
       const question = panel.querySelector(".ask-claw-question")?.value.trim() || "";
       if (!question) {
@@ -775,14 +856,19 @@ function setupAskClawPanels() {
           answer: "请先输入一个问题。",
           provider: "-",
           model: "-",
-          source: "-"
+      source: "-"
         });
         return;
       }
 
+      const providerSelect = panel.querySelector(".ask-claw-provider");
+      const providerLabels = Array.from(providerSelect?.options || []).reduce((labels, option) => {
+        if (option.value) labels[option.value] = option.textContent;
+        return labels;
+      }, {});
       const payload = {
         question,
-        provider: panel.querySelector(".ask-claw-provider")?.value || "",
+        provider: providerSelect?.value || "",
         model: panel.querySelector(".ask-claw-model")?.value.trim() || "",
         page_type: panel.dataset.pageType || "",
         lesson_slug: panel.dataset.lessonSlug || "",
@@ -790,6 +876,7 @@ function setupAskClawPanels() {
         selected_text: getAskClawSelectedText(panel),
         context: getAskClawContext(panel)
       };
+      const requestMeta = { ...payload, providerLabels };
 
       sendButton.disabled = true;
       responseBox.hidden = false;
@@ -802,14 +889,14 @@ function setupAskClawPanels() {
           body: JSON.stringify(payload)
         });
         const data = await response.json();
-        renderAskClawResponse(responseBox, data);
+        renderAskClawResponse(responseBox, data, requestMeta);
       } catch (error) {
         renderAskClawResponse(responseBox, {
           answer: "Ask Claw 暂时无法连接，请稍后再试。",
           provider: payload.provider || "-",
           model: payload.model || "-",
           source: "-"
-        });
+        }, requestMeta);
       } finally {
         sendButton.disabled = false;
       }

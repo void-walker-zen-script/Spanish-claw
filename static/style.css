@@ -749,8 +749,7 @@ a {
   gap: 6px;
 }
 
-.ask-claw-meta span,
-.ask-claw-fallback {
+.ask-claw-meta span {
   padding: 4px 8px;
   border-radius: 999px;
   background: rgba(15, 118, 110, 0.08);
@@ -759,10 +758,19 @@ a {
   font-weight: 800;
 }
 
-.ask-claw-response .ask-claw-fallback {
-  width: fit-content;
-  background: rgba(245, 158, 11, 0.16);
+.ask-claw-fallback-card {
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  border-radius: 8px;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.ask-claw-response .ask-claw-fallback-card p {
   color: #92400e;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .lesson-default-card h2 {
