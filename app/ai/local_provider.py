@@ -4,7 +4,7 @@ from pathlib import Path
 from app.ai.base_provider import BaseProvider
 
 
-UNKNOWN_ANSWER = "这个问题后续会由外部 AI 模型回答。"
+UNKNOWN_ANSWER = "这个问题暂时没有匹配到本地术语。后续会由外部 AI 模型回答，或可补充到 vocab/glossary。"
 
 
 class LocalProvider(BaseProvider):
@@ -20,15 +20,56 @@ class LocalProvider(BaseProvider):
         with self.glossary_path.open("r", encoding="utf-8") as file:
             return json.load(file).get("terms", [])
 
-    def _find_term(self, question, context):
-        text = f"{question or ''} {context or ''}".lower()
+    def _match_term(self, text):
+        normalized_text = (text or "").lower()
+        if not normalized_text:
+            return None
+
         for term in self.terms:
             term_zh = (term.get("term_zh") or "").lower()
             term_en = (term.get("term_en") or "").lower()
-            if term_zh and term_zh in text:
+            if term_zh and term_zh in normalized_text:
                 return term
-            if term_en and term_en in text:
+            if term_en and term_en in normalized_text:
                 return term
+        return None
+
+    def _extract_selected_text(self, context):
+        for line in (context or "").splitlines():
+            key, _, value = line.partition(":")
+            if key.strip().lower() == "selected_text":
+                selected_text = value.strip()
+                return "" if selected_text == "-" else selected_text
+        return ""
+
+    def _can_use_context_fallback(self, question):
+        normalized_question = (question or "").strip().lower()
+        if not normalized_question:
+            return False
+        return normalized_question in {
+            "这是什么意思",
+            "这个是什么意思",
+            "这是什么",
+            "这个是什么",
+            "解释一下",
+            "帮我解释一下",
+            "what does this mean",
+            "what is this",
+            "explain this",
+        }
+
+    def _find_term(self, question, context):
+        question_match = self._match_term(question)
+        if question_match:
+            return question_match
+
+        selected_text_match = self._match_term(self._extract_selected_text(context))
+        if selected_text_match:
+            return selected_text_match
+
+        if self._can_use_context_fallback(question):
+            return self._match_term(context)
+
         return None
 
     def ask(self, question, context="", system_prompt="", model=None):
