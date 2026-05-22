@@ -3,8 +3,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 
-from app.ai.base_provider import BaseProvider
-from app.ai.local_provider import LocalProvider
+from app.ai.base_provider import BaseProvider, ProviderUnavailableError
 from app.config import GEMINI_API_KEY, GEMINI_MODEL
 
 
@@ -14,7 +13,7 @@ DEFAULT_SYSTEM_PROMPT = """
 请用简体中文解释，并用英语作为桥梁解释西语结构。
 西语例句保留西语，必要时提供 English counterpart。
 不要直接复制外部来源内容。
-回答要简洁。
+回答要简洁、像学习助手。
 """.strip()
 
 
@@ -25,7 +24,7 @@ class GeminiProvider(BaseProvider):
 
     def ask(self, question, context="", system_prompt="", model=None):
         if not GEMINI_API_KEY:
-            return LocalProvider().ask(question, context, system_prompt, model)
+            raise ProviderUnavailableError("Gemini API key is not configured.")
 
         prompt = system_prompt or DEFAULT_SYSTEM_PROMPT
         user_text = "\n".join(
@@ -58,8 +57,8 @@ class GeminiProvider(BaseProvider):
         try:
             with urlopen(request, timeout=30) as response:
                 data = json.loads(response.read().decode("utf-8"))
-        except (HTTPError, URLError, TimeoutError):
-            return LocalProvider().ask(question, context, system_prompt)
+        except (HTTPError, URLError, TimeoutError) as error:
+            raise ProviderUnavailableError("Gemini API request failed.") from error
 
         candidates = data.get("candidates") or []
         if not candidates:

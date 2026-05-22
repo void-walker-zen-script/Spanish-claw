@@ -35,22 +35,32 @@ PROVIDER_METADATA = {
     "local": {
         "name": "Local Glossary",
         "default_model": "local",
+        "cost_tier": "free",
+        "best_for": "local glossary and basic vocabulary explanations",
     },
     "openai": {
         "name": "OpenAI",
         "default_model": OPENAI_MODEL,
+        "cost_tier": "medium",
+        "best_for": "high-quality Spanish learning explanations",
     },
     "gemini": {
-        "name": "Gemini",
+        "name": "Gemini 2.5 Flash-Lite",
         "default_model": GEMINI_MODEL,
+        "cost_tier": "low",
+        "best_for": "high-volume grammar and word explanations",
     },
     "claude": {
         "name": "Claude",
         "default_model": CLAUDE_MODEL,
+        "cost_tier": "medium",
+        "best_for": "clear tutoring explanations and writing help",
     },
     "deepseek": {
         "name": "DeepSeek",
         "default_model": DEEPSEEK_MODEL,
+        "cost_tier": "low",
+        "best_for": "cost-efficient grammar and vocabulary Q&A",
     },
 }
 
@@ -70,6 +80,8 @@ def get_available_providers():
             "id": provider_id,
             "name": metadata["name"],
             "default_model": metadata["default_model"],
+            "cost_tier": metadata["cost_tier"],
+            "best_for": metadata["best_for"],
         }
         for provider_id, metadata in PROVIDER_METADATA.items()
         if is_provider_available(provider_id)

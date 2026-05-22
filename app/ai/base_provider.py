@@ -1,6 +1,10 @@
 from abc import ABC, abstractmethod
 
 
+class ProviderUnavailableError(RuntimeError):
+    pass
+
+
 class BaseProvider(ABC):
     @abstractmethod
     def ask(self, question, context="", system_prompt="", model=None):

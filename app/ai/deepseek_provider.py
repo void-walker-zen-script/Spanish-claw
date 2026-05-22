@@ -2,8 +2,7 @@ import json
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-from app.ai.base_provider import BaseProvider
-from app.ai.local_provider import LocalProvider
+from app.ai.base_provider import BaseProvider, ProviderUnavailableError
 from app.config import DEEPSEEK_API_KEY, DEEPSEEK_MODEL
 
 
@@ -24,7 +23,7 @@ class DeepSeekProvider(BaseProvider):
 
     def ask(self, question, context="", system_prompt="", model=None):
         if not DEEPSEEK_API_KEY:
-            return LocalProvider().ask(question, context, system_prompt, model)
+            raise ProviderUnavailableError("DeepSeek API key is not configured.")
 
         prompt = system_prompt or DEFAULT_SYSTEM_PROMPT
         payload = {
@@ -56,8 +55,8 @@ class DeepSeekProvider(BaseProvider):
         try:
             with urlopen(request, timeout=30) as response:
                 data = json.loads(response.read().decode("utf-8"))
-        except (HTTPError, URLError, TimeoutError):
-            return LocalProvider().ask(question, context, system_prompt)
+        except (HTTPError, URLError, TimeoutError) as error:
+            raise ProviderUnavailableError("DeepSeek API request failed.") from error
 
         choices = data.get("choices") or []
         if not choices:

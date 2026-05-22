@@ -1,5 +1,6 @@
 from flask import Blueprint, abort, jsonify, render_template, request
 
+from app.ai.base_provider import ProviderUnavailableError
 from app.ai.provider_manager import get_available_providers, resolve_ask_provider
 from app.data_loader import (
     get_default_lesson,
@@ -148,12 +149,21 @@ def api_ask_claw():
     provider = provider_info["provider"]
     requested_model = str(payload.get("model") or "").strip()
     model = requested_model or provider_info["model"]
-    answer = provider.ask(
-        question=str(payload.get("question") or "").strip(),
-        context=build_ask_claw_context(payload),
-        system_prompt=ASK_CLAW_SYSTEM_PROMPT,
-        model=None if model == "local" else model,
-    )
+    try:
+        answer = provider.ask(
+            question=str(payload.get("question") or "").strip(),
+            context=build_ask_claw_context(payload),
+            system_prompt=ASK_CLAW_SYSTEM_PROMPT,
+            model=None if model == "local" else model,
+        )
+    except ProviderUnavailableError:
+        return jsonify(
+            {
+                "error": "Provider unavailable",
+                "provider": provider_info["provider_name"],
+            }
+        )
+
     return jsonify(
         {
             "answer": answer,
