@@ -85,6 +85,31 @@ def get_provider(provider_name=None):
     return provider_class()
 
 
+def resolve_ask_provider(provider_name=None):
+    explicit_provider = provider_name is not None and str(provider_name).strip() != ""
+    requested_name = str(provider_name if explicit_provider else AI_PROVIDER or "local").strip().lower()
+
+    if explicit_provider and not is_provider_available(requested_name):
+        return {
+            "available": False,
+            "provider_name": requested_name,
+        }
+
+    if not explicit_provider and not is_provider_available(requested_name):
+        requested_name = "local"
+
+    provider_class = PROVIDERS.get(requested_name, LocalProvider)
+    provider = provider_class()
+    provider_name = requested_name if requested_name in PROVIDERS else "local"
+    return {
+        "available": True,
+        "provider": provider,
+        "provider_name": provider_name,
+        "model": getattr(provider, "default_model", "local"),
+        "source": "local_glossary" if provider_name == "local" else "ai",
+    }
+
+
 def resolve_provider(provider_name=None):
     requested_name = str(provider_name or AI_PROVIDER or "local").strip().lower()
     if requested_name in REQUIRED_KEYS and not REQUIRED_KEYS[requested_name]:
