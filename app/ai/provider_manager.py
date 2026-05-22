@@ -29,9 +29,40 @@ REQUIRED_KEYS = {
 
 
 def get_provider(provider_name=None):
-    name = (provider_name or AI_PROVIDER or "local").lower()
+    name = str(provider_name or AI_PROVIDER or "local").strip().lower()
     if name in REQUIRED_KEYS and not REQUIRED_KEYS[name]:
         return LocalProvider()
 
     provider_class = PROVIDERS.get(name, LocalProvider)
     return provider_class()
+
+
+def resolve_provider(provider_name=None):
+    requested_name = str(provider_name or AI_PROVIDER or "local").strip().lower()
+    if requested_name in REQUIRED_KEYS and not REQUIRED_KEYS[requested_name]:
+        provider = LocalProvider()
+        return {
+            "provider": provider,
+            "provider_name": "local",
+            "model": "local",
+            "source": "local_glossary",
+        }
+
+    provider_class = PROVIDERS.get(requested_name)
+    if provider_class is None:
+        provider = LocalProvider()
+        return {
+            "provider": provider,
+            "provider_name": "local",
+            "model": "local",
+            "source": "local_glossary",
+        }
+
+    provider = provider_class()
+    provider_name = requested_name if requested_name in PROVIDERS else "local"
+    return {
+        "provider": provider,
+        "provider_name": provider_name,
+        "model": getattr(provider, "default_model", "local"),
+        "source": "local_glossary" if provider_name == "local" else "ai",
+    }

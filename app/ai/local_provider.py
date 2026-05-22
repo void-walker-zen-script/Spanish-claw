@@ -31,7 +31,7 @@ class LocalProvider(BaseProvider):
                 return term
         return None
 
-    def ask(self, question, context="", system_prompt=""):
+    def ask(self, question, context="", system_prompt="", model=None):
         term = self._find_term(question, context)
         if not term:
             return UNKNOWN_ANSWER

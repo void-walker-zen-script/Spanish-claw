@@ -14,9 +14,12 @@ DEFAULT_SYSTEM_PROMPT = """
 
 
 class OpenAIProvider(BaseProvider):
-    def ask(self, question, context="", system_prompt=""):
+    provider_name = "openai"
+    default_model = OPENAI_MODEL
+
+    def ask(self, question, context="", system_prompt="", model=None):
         if not OPENAI_API_KEY:
-            return LocalProvider().ask(question, context, system_prompt)
+            return LocalProvider().ask(question, context, system_prompt, model)
 
         from openai import OpenAI
 
@@ -30,7 +33,7 @@ class OpenAIProvider(BaseProvider):
 
         client = OpenAI(api_key=OPENAI_API_KEY)
         response = client.responses.create(
-            model=OPENAI_MODEL,
+            model=model or self.default_model,
             instructions=prompt,
             input=user_input,
         )

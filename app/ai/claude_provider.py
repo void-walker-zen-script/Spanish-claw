@@ -18,15 +18,17 @@ DEFAULT_SYSTEM_PROMPT = """
 
 
 class ClaudeProvider(BaseProvider):
+    provider_name = "claude"
+    default_model = CLAUDE_MODEL
     api_url = "https://api.anthropic.com/v1/messages"
 
-    def ask(self, question, context="", system_prompt=""):
+    def ask(self, question, context="", system_prompt="", model=None):
         if not ANTHROPIC_API_KEY:
-            return LocalProvider().ask(question, context, system_prompt)
+            return LocalProvider().ask(question, context, system_prompt, model)
 
         prompt = system_prompt or DEFAULT_SYSTEM_PROMPT
         payload = {
-            "model": CLAUDE_MODEL,
+            "model": model or self.default_model,
             "max_tokens": 700,
             "system": prompt,
             "messages": [

@@ -714,7 +714,111 @@ function setupSavedPage() {
   renderSavedList();
 }
 
+function getAskClawSelectedText(panel) {
+  const selectedText = window.getSelection?.().toString().trim();
+  if (selectedText) return selectedText;
+
+  const selectedCardTitle = document.querySelector("#insight-card .card-heading h2")?.textContent?.trim();
+  if (selectedCardTitle) return selectedCardTitle;
+
+  const selectedSentence = document.querySelector(".sentence.selected")?.textContent?.trim();
+  return selectedSentence || "";
+}
+
+function getAskClawContext(panel) {
+  if (panel.dataset.pageType === "grammar") {
+    const grammar = window.SPANISH_CLAW_GRAMMAR || {};
+    return [
+      grammar.title,
+      grammar.title_zh,
+      grammar.summary_zh,
+      (grammar.focus || []).join(" / ")
+    ].filter(Boolean).join("\n");
+  }
+
+  const lesson = window.SPANISH_CLAW_DATA?.lesson || {};
+  return [
+    lesson.title,
+    lesson.scene,
+    lesson.summary_zh || lesson.summary,
+    (lesson.grammar_points_zh || lesson.grammar_points || []).join(" / ")
+  ].filter(Boolean).join("\n");
+}
+
+function renderAskClawResponse(container, data) {
+  const fallbackNote = data.source === "local_glossary"
+    ? `<p class="ask-claw-fallback">当前使用 Local Glossary fallback。</p>`
+    : "";
+
+  container.hidden = false;
+  container.innerHTML = `
+    <div class="ask-claw-meta">
+      <span>Provider: ${escapeHtml(data.provider || "-")}</span>
+      <span>Model: ${escapeHtml(data.model || "-")}</span>
+      <span>Source: ${escapeHtml(data.source || "-")}</span>
+    </div>
+    ${fallbackNote}
+    <p>${escapeHtml(data.answer || "Ask Claw 没有返回内容。")}</p>
+  `;
+}
+
+function setupAskClawPanels() {
+  document.querySelectorAll("[data-ask-claw]").forEach((panel) => {
+    const sendButton = panel.querySelector(".ask-claw-send");
+    const responseBox = panel.querySelector(".ask-claw-response");
+    if (!sendButton || !responseBox) return;
+
+    sendButton.addEventListener("click", async () => {
+      const question = panel.querySelector(".ask-claw-question")?.value.trim() || "";
+      if (!question) {
+        renderAskClawResponse(responseBox, {
+          answer: "请先输入一个问题。",
+          provider: "-",
+          model: "-",
+          source: "-"
+        });
+        return;
+      }
+
+      const payload = {
+        question,
+        provider: panel.querySelector(".ask-claw-provider")?.value || "",
+        model: panel.querySelector(".ask-claw-model")?.value.trim() || "",
+        page_type: panel.dataset.pageType || "",
+        lesson_slug: panel.dataset.lessonSlug || "",
+        grammar_slug: panel.dataset.grammarSlug || "",
+        selected_text: getAskClawSelectedText(panel),
+        context: getAskClawContext(panel)
+      };
+
+      sendButton.disabled = true;
+      responseBox.hidden = false;
+      responseBox.innerHTML = `<p>Ask Claw is thinking...</p>`;
+
+      try {
+        const response = await fetch("/api/ask-claw", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        renderAskClawResponse(responseBox, data);
+      } catch (error) {
+        renderAskClawResponse(responseBox, {
+          answer: "Ask Claw 暂时无法连接，请稍后再试。",
+          provider: payload.provider || "-",
+          model: payload.model || "-",
+          source: "-"
+        });
+      } finally {
+        sendButton.disabled = false;
+      }
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setupLessonPage();
   setupSavedPage();
+  setupAskClawPanels();
 });

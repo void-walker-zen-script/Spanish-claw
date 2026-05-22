@@ -18,15 +18,17 @@ DEFAULT_SYSTEM_PROMPT = """
 
 
 class DeepSeekProvider(BaseProvider):
+    provider_name = "deepseek"
+    default_model = DEEPSEEK_MODEL
     api_url = "https://api.deepseek.com/chat/completions"
 
-    def ask(self, question, context="", system_prompt=""):
+    def ask(self, question, context="", system_prompt="", model=None):
         if not DEEPSEEK_API_KEY:
-            return LocalProvider().ask(question, context, system_prompt)
+            return LocalProvider().ask(question, context, system_prompt, model)
 
         prompt = system_prompt or DEFAULT_SYSTEM_PROMPT
         payload = {
-            "model": DEEPSEEK_MODEL,
+            "model": model or self.default_model,
             "messages": [
                 {"role": "system", "content": prompt},
                 {

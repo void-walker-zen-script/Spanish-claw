@@ -19,11 +19,13 @@ DEFAULT_SYSTEM_PROMPT = """
 
 
 class GeminiProvider(BaseProvider):
+    provider_name = "gemini"
+    default_model = GEMINI_MODEL
     api_base_url = "https://generativelanguage.googleapis.com/v1beta/models"
 
-    def ask(self, question, context="", system_prompt=""):
+    def ask(self, question, context="", system_prompt="", model=None):
         if not GEMINI_API_KEY:
-            return LocalProvider().ask(question, context, system_prompt)
+            return LocalProvider().ask(question, context, system_prompt, model)
 
         prompt = system_prompt or DEFAULT_SYSTEM_PROMPT
         user_text = "\n".join(
@@ -42,7 +44,7 @@ class GeminiProvider(BaseProvider):
                 }
             ]
         }
-        model = quote(GEMINI_MODEL, safe="")
+        model = quote(model or self.default_model, safe="")
         request = Request(
             f"{self.api_base_url}/{model}:generateContent",
             data=json.dumps(payload).encode("utf-8"),

@@ -246,6 +246,26 @@
             {% endif %}
           </div>
         </div>
+
+        <section class="ask-claw-panel" data-ask-claw data-page-type="lesson" data-lesson-slug="{{ lesson.slug }}">
+          <p class="section-kicker">Ask Claw</p>
+          <h2>Ask about this scene</h2>
+          <div class="ask-claw-controls">
+            <label class="select-label" for="ask-claw-provider-lesson">Provider</label>
+            <select id="ask-claw-provider-lesson" class="ask-claw-provider">
+              <option value="local">Local Glossary</option>
+              <option value="openai">OpenAI</option>
+              <option value="gemini">Gemini</option>
+              <option value="claude">Claude</option>
+              <option value="deepseek">DeepSeek</option>
+            </select>
+            <label class="select-label" for="ask-claw-model-lesson">Model</label>
+            <input id="ask-claw-model-lesson" class="ask-claw-model" type="text" placeholder="Use provider default">
+          </div>
+          <textarea class="ask-claw-question" rows="4" placeholder="Ask about a word, sentence, or structure."></textarea>
+          <button class="primary-button ask-claw-send" type="button">Send</button>
+          <div class="ask-claw-response" aria-live="polite" hidden></div>
+        </section>
       </aside>
     </main>
 

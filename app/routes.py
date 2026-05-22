@@ -1,6 +1,6 @@
 from flask import Blueprint, abort, jsonify, render_template, request
 
-from app.ai_helper import ask_claw
+from app.ai.provider_manager import resolve_provider
 from app.data_loader import (
     get_default_lesson,
     get_grammar_essentials,
@@ -13,6 +13,35 @@ from app.data_loader import (
 
 
 main = Blueprint("main", __name__)
+
+
+ASK_CLAW_SYSTEM_PROMPT = """
+你是 Spanish Claw 的学习助手 Ask Claw。
+用户是有英语基础的中文西语学习者。
+请用简体中文解释，并用英语作为桥梁解释西语结构。
+西语例句保留西语，必要时提供 English counterpart。
+不要编造不存在的 lesson 内容；如果上下文没有提供，就说明需要更多上下文。
+不要直接复制外部来源内容。
+回答要简洁、像学习助手。
+""".strip()
+
+
+def build_ask_claw_context(payload):
+    def clean(value, default="-"):
+        if value is None:
+            return default
+        value = str(value).strip()
+        return value or default
+
+    return "\n".join(
+        [
+            f"page_type: {clean(payload.get('page_type'))}",
+            f"lesson_slug: {clean(payload.get('lesson_slug'))}",
+            f"grammar_slug: {clean(payload.get('grammar_slug'))}",
+            f"selected_text: {clean(payload.get('selected_text'))}",
+            f"context: {clean(payload.get('context'))}",
+        ]
+    )
 
 
 @main.route("/")
@@ -102,4 +131,21 @@ def api_pronunciation_targets():
 @main.route("/api/ask-claw", methods=["POST"])
 def api_ask_claw():
     payload = request.get_json(silent=True) or {}
-    return jsonify(ask_claw(payload))
+    provider_info = resolve_provider(payload.get("provider"))
+    provider = provider_info["provider"]
+    requested_model = str(payload.get("model") or "").strip()
+    model = requested_model or provider_info["model"]
+    answer = provider.ask(
+        question=str(payload.get("question") or "").strip(),
+        context=build_ask_claw_context(payload),
+        system_prompt=ASK_CLAW_SYSTEM_PROMPT,
+        model=None if model == "local" else model,
+    )
+    return jsonify(
+        {
+            "answer": answer,
+            "provider": provider_info["provider_name"],
+            "model": model,
+            "source": provider_info["source"],
+        }
+    )
