@@ -9,3 +9,9 @@ __pycache__/
 __pycache__/
 *.pyc
 .env
+
+.env
+.env.txt
+.venv/
+__pycache__/
+*.pyc

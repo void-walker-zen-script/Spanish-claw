@@ -22,6 +22,62 @@ class GeminiProvider(BaseProvider):
     default_model = GEMINI_MODEL
     api_base_url = "https://generativelanguage.googleapis.com/v1beta/models"
 
+    @classmethod
+    def health_check(cls, model=None):
+        if not GEMINI_API_KEY:
+            return False
+
+        health_model = quote(model or cls.default_model, safe="")
+        payload = {
+            "contents": [
+                {
+                    "role": "user",
+                    "parts": [{"text": "Reply with OK."}],
+                }
+            ],
+            "generationConfig": {
+                "maxOutputTokens": 4,
+                "temperature": 0,
+            },
+        }
+        request = Request(
+            f"{cls.api_base_url}/{health_model}:generateContent",
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Content-Type": "application/json",
+                "x-goog-api-key": GEMINI_API_KEY,
+            },
+            method="POST",
+        )
+
+        try:
+            with urlopen(request, timeout=10):
+                return True
+        except (HTTPError, URLError, TimeoutError):
+            return False
+
+    def _read_error_message(self, error):
+        try:
+            data = json.loads(error.read().decode("utf-8"))
+        except (AttributeError, json.JSONDecodeError, UnicodeDecodeError):
+            return "Gemini API request failed."
+        return data.get("error", {}).get("message") or "Gemini API request failed."
+
+    def _extract_answer(self, data):
+        text = data.get("text")
+        if text:
+            return text.strip()
+
+        chunks = []
+        for candidate in data.get("candidates") or []:
+            content = candidate.get("content") or {}
+            for part in content.get("parts") or []:
+                part_text = part.get("text")
+                if part_text:
+                    chunks.append(part_text)
+
+        return "".join(chunks).strip()
+
     def ask(self, question, context="", system_prompt="", model=None):
         if not GEMINI_API_KEY:
             raise ProviderUnavailableError("Gemini API key is not configured.")
@@ -57,12 +113,12 @@ class GeminiProvider(BaseProvider):
         try:
             with urlopen(request, timeout=30) as response:
                 data = json.loads(response.read().decode("utf-8"))
-        except (HTTPError, URLError, TimeoutError) as error:
+        except HTTPError as error:
+            raise ProviderUnavailableError(self._read_error_message(error)) from error
+        except (URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError) as error:
             raise ProviderUnavailableError("Gemini API request failed.") from error
 
-        candidates = data.get("candidates") or []
-        if not candidates:
-            return ""
-
-        parts = candidates[0].get("content", {}).get("parts") or []
-        return "".join(part.get("text", "") for part in parts).strip()
+        answer = self._extract_answer(data)
+        if not answer:
+            raise ProviderUnavailableError("Provider returned empty answer")
+        return answer

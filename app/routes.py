@@ -137,6 +137,7 @@ def api_ai_providers():
 @main.route("/api/ask-claw", methods=["POST"])
 def api_ask_claw():
     payload = request.get_json(silent=True) or {}
+    requested_model = str(payload.get("model") or "").strip()
     provider_info = resolve_ask_provider(payload.get("provider"))
     if not provider_info.get("available"):
         return jsonify(
@@ -147,7 +148,6 @@ def api_ask_claw():
         )
 
     provider = provider_info["provider"]
-    requested_model = str(payload.get("model") or "").strip()
     model = requested_model or provider_info["model"]
     try:
         answer = provider.ask(
@@ -156,17 +156,27 @@ def api_ask_claw():
             system_prompt=ASK_CLAW_SYSTEM_PROMPT,
             model=None if model == "local" else model,
         )
-    except ProviderUnavailableError:
+    except ProviderUnavailableError as error:
         return jsonify(
             {
-                "error": "Provider unavailable",
+                "error": str(error) or "Provider unavailable",
                 "provider": provider_info["provider_name"],
+                "model": model,
+            }
+        )
+
+    if not str(answer or "").strip():
+        return jsonify(
+            {
+                "error": "Provider returned empty answer",
+                "provider": provider_info["provider_name"],
+                "model": model,
             }
         )
 
     return jsonify(
         {
-            "answer": answer,
+            "answer": str(answer).strip(),
             "provider": provider_info["provider_name"],
             "model": model,
             "source": provider_info["source"],

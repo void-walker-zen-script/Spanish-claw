@@ -21,6 +21,49 @@ class DeepSeekProvider(BaseProvider):
     default_model = DEEPSEEK_MODEL
     api_url = "https://api.deepseek.com/chat/completions"
 
+    @classmethod
+    def health_check(cls, model=None):
+        if not DEEPSEEK_API_KEY:
+            return False
+
+        payload = {
+            "model": model or cls.default_model,
+            "messages": [
+                {"role": "user", "content": "Reply with OK."},
+            ],
+            "max_tokens": 4,
+            "stream": False,
+        }
+        request = Request(
+            cls.api_url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+                "Content-Type": "application/json",
+            },
+            method="POST",
+        )
+
+        try:
+            with urlopen(request, timeout=10):
+                return True
+        except (HTTPError, URLError, TimeoutError):
+            return False
+
+    def _read_error_message(self, error):
+        try:
+            data = json.loads(error.read().decode("utf-8"))
+        except (AttributeError, json.JSONDecodeError, UnicodeDecodeError):
+            return "DeepSeek API request failed."
+        return data.get("error", {}).get("message") or "DeepSeek API request failed."
+
+    def _extract_answer(self, data):
+        choices = data.get("choices") or []
+        if not choices:
+            return ""
+        message = choices[0].get("message") or {}
+        return (message.get("content") or "").strip()
+
     def ask(self, question, context="", system_prompt="", model=None):
         if not DEEPSEEK_API_KEY:
             raise ProviderUnavailableError("DeepSeek API key is not configured.")
@@ -55,10 +98,12 @@ class DeepSeekProvider(BaseProvider):
         try:
             with urlopen(request, timeout=30) as response:
                 data = json.loads(response.read().decode("utf-8"))
-        except (HTTPError, URLError, TimeoutError) as error:
+        except HTTPError as error:
+            raise ProviderUnavailableError(self._read_error_message(error)) from error
+        except (URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError) as error:
             raise ProviderUnavailableError("DeepSeek API request failed.") from error
 
-        choices = data.get("choices") or []
-        if not choices:
-            return ""
-        return choices[0].get("message", {}).get("content", "")
+        answer = self._extract_answer(data)
+        if not answer:
+            raise ProviderUnavailableError("Provider returned empty answer")
+        return answer
