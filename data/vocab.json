@@ -12,8 +12,14 @@
       "common_usage": "Esta manana = 今天早上。",
       "native_usage": "manana 需要靠上下文判断是“早上”还是“明天”。",
       "example": "Esta manana tengo una clase.",
-      "synonyms": ["la madrugada", "el dia siguiente"],
-      "antonyms": ["la noche", "ayer"]
+      "synonyms": [
+        "la madrugada",
+        "el dia siguiente"
+      ],
+      "antonyms": [
+        "la noche",
+        "ayer"
+      ]
     },
     {
       "key": "word-quedar",
@@ -27,8 +33,13 @@
       "common_usage": "quedar con alguien = 和某人约见。",
       "native_usage": "口语里比直译“保留”更常见，常用于约咖啡、约活动。",
       "example": "He quedado con Ana a las ocho.",
-      "synonyms": ["citarse", "acordar verse"],
-      "antonyms": ["cancelar"]
+      "synonyms": [
+        "citarse",
+        "acordar verse"
+      ],
+      "antonyms": [
+        "cancelar"
+      ]
     },
     {
       "key": "word-cafeteria",
@@ -42,8 +53,13 @@
       "common_usage": "una cafeteria cerca de la plaza",
       "native_usage": "在西班牙可指喝咖啡、吃早餐或简单用餐的地方。",
       "example": "Trabajo en una cafeteria pequena.",
-      "synonyms": ["cafe", "bar"],
-      "antonyms": ["restaurante formal"]
+      "synonyms": [
+        "cafe",
+        "bar"
+      ],
+      "antonyms": [
+        "restaurante formal"
+      ]
     },
     {
       "key": "word-cerca",
@@ -57,8 +73,13 @@
       "common_usage": "cerca de la plaza = 在广场附近。",
       "native_usage": "cerca de 是固定搭配，de 通常不能省。",
       "example": "Vivo cerca de la universidad.",
-      "synonyms": ["proximo", "al lado"],
-      "antonyms": ["lejos"]
+      "synonyms": [
+        "proximo",
+        "al lado"
+      ],
+      "antonyms": [
+        "lejos"
+      ]
     },
     {
       "key": "word-plaza",
@@ -72,8 +93,13 @@
       "common_usage": "la plaza del pueblo",
       "native_usage": "常是约见、休息或活动的城市地点。",
       "example": "Nos vemos en la plaza.",
-      "synonyms": ["espacio publico", "centro"],
-      "antonyms": ["calle estrecha"]
+      "synonyms": [
+        "espacio publico",
+        "centro"
+      ],
+      "antonyms": [
+        "calle estrecha"
+      ]
     },
     {
       "key": "word-tomar",
@@ -87,8 +113,13 @@
       "common_usage": "Que van a tomar? = 你们要点什么？",
       "native_usage": "在餐饮场景中 tomar 常表示点饮品或食物。",
       "example": "Voy a tomar un cafe.",
-      "synonyms": ["beber", "pedir"],
-      "antonyms": ["dejar"]
+      "synonyms": [
+        "beber",
+        "pedir"
+      ],
+      "antonyms": [
+        "dejar"
+      ]
     },
     {
       "key": "word-perdon",
@@ -102,7 +133,10 @@
       "common_usage": "Perdon por llegar tarde.",
       "native_usage": "比 lo siento 更轻，可用于小失误或打扰别人。",
       "example": "Perdon, no entiendo.",
-      "synonyms": ["disculpa", "lo siento"],
+      "synonyms": [
+        "disculpa",
+        "lo siento"
+      ],
       "antonyms": []
     },
     {
@@ -117,8 +151,12 @@
       "common_usage": "llegar tarde = 迟到。",
       "native_usage": "常和 llegar 搭配表示迟到。",
       "example": "Llegue tarde a clase.",
-      "synonyms": ["con retraso"],
-      "antonyms": ["temprano"]
+      "synonyms": [
+        "con retraso"
+      ],
+      "antonyms": [
+        "temprano"
+      ]
     },
     {
       "key": "word-perder",
@@ -132,8 +170,14 @@
       "common_usage": "perder el autobus = 错过公交车。",
       "native_usage": "可表示丢东西，也可表示错过交通工具或机会。",
       "example": "Perdi el tren.",
-      "synonyms": ["extraviar", "dejar pasar"],
-      "antonyms": ["encontrar", "tomar"]
+      "synonyms": [
+        "extraviar",
+        "dejar pasar"
+      ],
+      "antonyms": [
+        "encontrar",
+        "tomar"
+      ]
     },
     {
       "key": "word-autobus",
@@ -147,8 +191,13 @@
       "common_usage": "perder el autobus",
       "native_usage": "西班牙常说 autobus 或 bus。",
       "example": "Tomo el autobus al centro.",
-      "synonyms": ["bus", "colectivo"],
-      "antonyms": ["coche privado"]
+      "synonyms": [
+        "bus",
+        "colectivo"
+      ],
+      "antonyms": [
+        "coche privado"
+      ]
     },
     {
       "key": "word-no-pasa-nada",
@@ -162,7 +211,10 @@
       "common_usage": "No pasa nada.",
       "native_usage": "很自然的安慰表达，比直译更像中文“没事”。",
       "example": "No pasa nada, podemos esperar.",
-      "synonyms": ["no importa", "tranquilo"],
+      "synonyms": [
+        "no importa",
+        "tranquilo"
+      ],
       "antonyms": []
     },
     {
@@ -177,8 +229,12 @@
       "common_usage": "Al final podemos hablar.",
       "native_usage": "口语叙事里常用于收束前文。",
       "example": "Al final nos quedamos en casa.",
-      "synonyms": ["finalmente"],
-      "antonyms": ["al principio"]
+      "synonyms": [
+        "finalmente"
+      ],
+      "antonyms": [
+        "al principio"
+      ]
     },
     {
       "key": "word-hablar",
@@ -192,8 +248,13 @@
       "common_usage": "hablar de algo = 谈论某事。",
       "native_usage": "谈论话题时通常需要 de。",
       "example": "Hablamos de nuestros planes.",
-      "synonyms": ["conversar", "charlar"],
-      "antonyms": ["callar"]
+      "synonyms": [
+        "conversar",
+        "charlar"
+      ],
+      "antonyms": [
+        "callar"
+      ]
     },
     {
       "key": "word-plan",
@@ -207,8 +268,13 @@
       "common_usage": "planes para el fin de semana",
       "native_usage": "tener planes 表示已经有安排。",
       "example": "No tengo planes para hoy.",
-      "synonyms": ["proyectos", "ideas"],
-      "antonyms": ["improvisacion"]
+      "synonyms": [
+        "proyectos",
+        "ideas"
+      ],
+      "antonyms": [
+        "improvisacion"
+      ]
     },
     {
       "key": "word-reserva",
@@ -222,7 +288,9 @@
       "common_usage": "tener una reserva",
       "native_usage": "餐厅、酒店都常用 reserva。",
       "example": "Tengo una reserva a las ocho.",
-      "synonyms": ["reservacion"],
+      "synonyms": [
+        "reservacion"
+      ],
       "antonyms": []
     },
     {
@@ -230,15 +298,34 @@
       "type": "word",
       "text": "mesa",
       "audio_text": "mesa",
-      "translation": "桌子；餐位",
+      "translation": "table / 桌子；餐桌",
       "pos": "名词",
       "lemma": "mesa",
-      "conjugation": "阴性名词：la mesa。",
-      "common_usage": "su mesa esta lista",
-      "native_usage": "在餐厅语境里常指餐位。",
-      "example": "La mesa esta cerca de la ventana.",
-      "synonyms": ["puesto"],
-      "antonyms": []
+      "conjugation": "阴性单数名词，常搭配 la/una。",
+      "common_usage": "阴性单数名词，常搭配 la/una。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "example": "La mesa está limpia.",
+      "synonyms": [],
+      "antonyms": [],
+      "spanish": "mesa",
+      "english": "table",
+      "chinese": "桌子；餐桌",
+      "part_of_speech": "名词",
+      "base_form": "mesa",
+      "form_note_zh": "阴性单数名词，常搭配 la/una。",
+      "grammar_tags": [
+        "noun",
+        "feminine",
+        "singular",
+        "article"
+      ],
+      "examples": [
+        {
+          "spanish": "La mesa está limpia.",
+          "english": "",
+          "chinese": ""
+        }
+      ]
     },
     {
       "key": "word-carta",
@@ -252,7 +339,9 @@
       "common_usage": "traer la carta = 拿菜单。",
       "native_usage": "餐厅里的 carta 通常是菜单。",
       "example": "Nos trae la carta, por favor?",
-      "synonyms": ["menu"],
+      "synonyms": [
+        "menu"
+      ],
       "antonyms": []
     },
     {
@@ -267,7 +356,9 @@
       "common_usage": "La carta, por favor.",
       "native_usage": "放句尾很自然，用于降低命令感。",
       "example": "Un cafe, por favor.",
-      "synonyms": ["si puede"],
+      "synonyms": [
+        "si puede"
+      ],
       "antonyms": []
     },
     {
@@ -282,7 +373,9 @@
       "common_usage": "Yo quisiera probar...",
       "native_usage": "比 quiero 更礼貌、柔和。",
       "example": "Quisiera una mesa para dos.",
-      "synonyms": ["me gustaria"],
+      "synonyms": [
+        "me gustaria"
+      ],
       "antonyms": []
     },
     {
@@ -297,8 +390,13 @@
       "common_usage": "probar la sopa",
       "native_usage": "点餐时可表示想尝某道菜。",
       "example": "Quiero probar este plato.",
-      "synonyms": ["intentar", "degustar"],
-      "antonyms": ["rechazar"]
+      "synonyms": [
+        "intentar",
+        "degustar"
+      ],
+      "antonyms": [
+        "rechazar"
+      ]
     },
     {
       "key": "word-recomendar",
@@ -312,8 +410,13 @@
       "common_usage": "les recomiendo el pescado",
       "native_usage": "服务员推荐菜品时很常见。",
       "example": "Te recomiendo este libro.",
-      "synonyms": ["sugerir", "aconsejar"],
-      "antonyms": ["desaconsejar"]
+      "synonyms": [
+        "sugerir",
+        "aconsejar"
+      ],
+      "antonyms": [
+        "desaconsejar"
+      ]
     },
     {
       "key": "word-disculpe",
@@ -327,7 +430,9 @@
       "common_usage": "Disculpe, estoy buscando...",
       "native_usage": "向陌生人提问时很自然。",
       "example": "Disculpe, donde esta la biblioteca?",
-      "synonyms": ["perdone"],
+      "synonyms": [
+        "perdone"
+      ],
       "antonyms": []
     },
     {
@@ -342,23 +447,46 @@
       "common_usage": "estoy buscando un libro",
       "native_usage": "用于描述正在进行的寻找动作。",
       "example": "Estoy buscando mis llaves.",
-      "synonyms": ["intentar encontrar"],
-      "antonyms": ["encontrar"]
+      "synonyms": [
+        "intentar encontrar"
+      ],
+      "antonyms": [
+        "encontrar"
+      ]
     },
     {
       "key": "word-libro",
       "type": "word",
       "text": "libro",
       "audio_text": "libro",
-      "translation": "书",
+      "translation": "book / 书",
       "pos": "名词",
       "lemma": "libro",
-      "conjugation": "阳性名词：el libro。",
-      "common_usage": "un libro de gramatica",
-      "native_usage": "de 后接主题，表示“关于……的书”。",
-      "example": "Necesito un libro de espanol.",
-      "synonyms": ["volumen"],
-      "antonyms": []
+      "conjugation": "阳性单数名词，常搭配 el/un。",
+      "common_usage": "阳性单数名词，常搭配 el/un。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "example": "El libro está en la mesa.",
+      "synonyms": [],
+      "antonyms": [],
+      "spanish": "libro",
+      "english": "book",
+      "chinese": "书",
+      "part_of_speech": "名词",
+      "base_form": "libro",
+      "form_note_zh": "阳性单数名词，常搭配 el/un。",
+      "grammar_tags": [
+        "noun",
+        "masculine",
+        "singular",
+        "article"
+      ],
+      "examples": [
+        {
+          "spanish": "El libro está en la mesa.",
+          "english": "",
+          "chinese": ""
+        }
+      ]
     },
     {
       "key": "word-gramatica",
@@ -372,7 +500,9 @@
       "common_usage": "libro de gramatica",
       "native_usage": "学习语言时常见学科名词。",
       "example": "La gramatica espanola es importante.",
-      "synonyms": ["estructura"],
+      "synonyms": [
+        "estructura"
+      ],
       "antonyms": []
     },
     {
@@ -387,7 +517,10 @@
       "common_usage": "la seccion de idiomas",
       "native_usage": "图书馆、超市、网站都可用。",
       "example": "La seccion de historia esta aqui.",
-      "synonyms": ["area", "zona"],
+      "synonyms": [
+        "area",
+        "zona"
+      ],
       "antonyms": []
     },
     {
@@ -402,8 +535,12 @@
       "common_usage": "esta al fondo",
       "native_usage": "用于指示空间深处的位置。",
       "example": "El bano esta al fondo.",
-      "synonyms": ["al final"],
-      "antonyms": ["a la entrada"]
+      "synonyms": [
+        "al final"
+      ],
+      "antonyms": [
+        "a la entrada"
+      ]
     },
     {
       "key": "word-llevarme",
@@ -417,8 +554,12 @@
       "common_usage": "puedo llevarme el libro?",
       "native_usage": "在图书馆语境中可理解为借走。",
       "example": "Puedo llevarme este libro?",
-      "synonyms": ["tomar prestado"],
-      "antonyms": ["devolver"]
+      "synonyms": [
+        "tomar prestado"
+      ],
+      "antonyms": [
+        "devolver"
+      ]
     },
     {
       "key": "word-durante",
@@ -432,7 +573,9 @@
       "common_usage": "durante dos semanas",
       "native_usage": "表示一个时间长度。",
       "example": "Estudio durante una hora.",
-      "synonyms": ["por"],
+      "synonyms": [
+        "por"
+      ],
       "antonyms": []
     },
     {
@@ -443,7 +586,10 @@
       "usage_scene": "朋友约见，交代背景地点。",
       "structure_note": "时间 + he quedado con + 人 + 地点。",
       "natural_expression": "He quedado con Lucia en una cafeteria cerca de la plaza.",
-      "alternatives": ["Voy a ver a Lucia en una cafeteria.", "Tengo una cita con Lucia cerca de la plaza."],
+      "alternatives": [
+        "Voy a ver a Lucia en una cafeteria.",
+        "Tengo una cita con Lucia cerca de la plaza."
+      ],
       "pronunciation_prompt": "注意 quedado 和 cafeteria 的重音位置。"
     },
     {
@@ -454,7 +600,10 @@
       "usage_scene": "服务员询问点单。",
       "structure_note": "问候 + que van a + infinitivo。",
       "natural_expression": "Que van a tomar?",
-      "alternatives": ["Que desean tomar?", "Que les pongo?"],
+      "alternatives": [
+        "Que desean tomar?",
+        "Que les pongo?"
+      ],
       "pronunciation_prompt": "tomar 的 r 不要读成英语 r。"
     },
     {
@@ -465,7 +614,10 @@
       "usage_scene": "点饮品。",
       "structure_note": "Para mi + 名词，是简洁自然的点单结构。",
       "natural_expression": "Para mi, un cafe con leche.",
-      "alternatives": ["Quiero un cafe con leche.", "Me pone un cafe con leche?"],
+      "alternatives": [
+        "Quiero un cafe con leche.",
+        "Me pone un cafe con leche?"
+      ],
       "pronunciation_prompt": "cafe 的重音在最后一个音节。"
     },
     {
@@ -476,7 +628,10 @@
       "usage_scene": "解释迟到原因。",
       "structure_note": "Perdon por + infinitivo；habia perdido 表示更早发生的动作。",
       "natural_expression": "Perdon por llegar tarde, habia perdido el autobus.",
-      "alternatives": ["Lo siento por llegar tarde.", "Perdi el autobus."],
+      "alternatives": [
+        "Lo siento por llegar tarde.",
+        "Perdi el autobus."
+      ],
       "pronunciation_prompt": "perdon 的重音在 don。"
     },
     {
@@ -487,7 +642,10 @@
       "usage_scene": "安慰对方并转入话题。",
       "structure_note": "No pasa nada 是固定安慰表达；hablar de 后接话题。",
       "natural_expression": "No pasa nada. Podemos hablar de nuestros planes.",
-      "alternatives": ["No te preocupes.", "Esta bien."],
+      "alternatives": [
+        "No te preocupes.",
+        "Esta bien."
+      ],
       "pronunciation_prompt": "注意 nada 和 final 的开口元音。"
     },
     {
@@ -498,7 +656,9 @@
       "usage_scene": "到餐厅确认预订。",
       "structure_note": "tener una reserva a nombre de + 人名。",
       "natural_expression": "Tenemos una reserva a nombre de Ana.",
-      "alternatives": ["La reserva esta a nombre de Ana."],
+      "alternatives": [
+        "La reserva esta a nombre de Ana."
+      ],
       "pronunciation_prompt": "reserva 中 r 为轻弹音。"
     },
     {
@@ -509,7 +669,9 @@
       "usage_scene": "服务员确认安排。",
       "structure_note": "su mesa + estar + 形容词。",
       "natural_expression": "Su mesa esta lista.",
-      "alternatives": ["La mesa ya esta preparada."],
+      "alternatives": [
+        "La mesa ya esta preparada."
+      ],
       "pronunciation_prompt": "mesa 的 s 保持清晰。"
     },
     {
@@ -520,7 +682,10 @@
       "usage_scene": "礼貌请求菜单。",
       "structure_note": "Nos puede + infinitivo 是礼貌请求结构。",
       "natural_expression": "Nos puede traer la carta, por favor?",
-      "alternatives": ["La carta, por favor.", "Puede traernos el menu?"],
+      "alternatives": [
+        "La carta, por favor.",
+        "Puede traernos el menu?"
+      ],
       "pronunciation_prompt": "por favor 连读时保持轻柔。"
     },
     {
@@ -531,7 +696,10 @@
       "usage_scene": "礼貌点餐。",
       "structure_note": "quisiera + infinitivo，比 quiero 更委婉。",
       "natural_expression": "Quisiera probar la sopa del dia.",
-      "alternatives": ["Me gustaria probar la sopa.", "Voy a tomar la sopa."],
+      "alternatives": [
+        "Me gustaria probar la sopa.",
+        "Voy a tomar la sopa."
+      ],
       "pronunciation_prompt": "quisiera 中 qui 读 ki。"
     },
     {
@@ -542,7 +710,10 @@
       "usage_scene": "服务员推荐菜品。",
       "structure_note": "les recomiendo + 名词，表示向你们推荐。",
       "natural_expression": "Tambien les recomiendo el pescado.",
-      "alternatives": ["El pescado esta muy bueno.", "Les sugiero el pescado."],
+      "alternatives": [
+        "El pescado esta muy bueno.",
+        "Les sugiero el pescado."
+      ],
       "pronunciation_prompt": "recomiendo 的 ie 是双元音。"
     },
     {
@@ -553,7 +724,10 @@
       "usage_scene": "向工作人员礼貌求助。",
       "structure_note": "estoy + gerundio 表示正在进行。",
       "natural_expression": "Estoy buscando un libro de gramatica.",
-      "alternatives": ["Busco un libro de gramatica.", "Necesito un libro de gramatica."],
+      "alternatives": [
+        "Busco un libro de gramatica.",
+        "Necesito un libro de gramatica."
+      ],
       "pronunciation_prompt": "buscando 的 ca 读 ka。"
     },
     {
@@ -564,7 +738,10 @@
       "usage_scene": "说明位置。",
       "structure_note": "地点 + estar + 位置短语。",
       "natural_expression": "La seccion de idiomas esta al fondo.",
-      "alternatives": ["Esta al final del pasillo.", "La puede encontrar al fondo."],
+      "alternatives": [
+        "Esta al final del pasillo.",
+        "La puede encontrar al fondo."
+      ],
       "pronunciation_prompt": "seccion 的重音在 cion。"
     },
     {
@@ -575,7 +752,10 @@
       "usage_scene": "询问借阅时长。",
       "structure_note": "Cuanto tiempo + puedo + infinitivo。",
       "natural_expression": "Cuanto tiempo puedo llevarme el libro?",
-      "alternatives": ["Por cuanto tiempo puedo tenerlo?", "Cuantos dias puedo llevarmelo?"],
+      "alternatives": [
+        "Por cuanto tiempo puedo tenerlo?",
+        "Cuantos dias puedo llevarmelo?"
+      ],
       "pronunciation_prompt": "tiempo 的 ie 是双元音。"
     },
     {
@@ -586,8 +766,1055 @@
       "usage_scene": "说明规则或期限。",
       "structure_note": "poder + infinitivo；durante + 时间长度。",
       "natural_expression": "Puede tenerlo durante dos semanas.",
-      "alternatives": ["Puede llevarselo por dos semanas.", "El prestamo dura dos semanas."],
+      "alternatives": [
+        "Puede llevarselo por dos semanas.",
+        "El prestamo dura dos semanas."
+      ],
       "pronunciation_prompt": "durante 的 r 为轻弹音。"
+    },
+    {
+      "key": "word-libros",
+      "type": "word",
+      "text": "libros",
+      "spanish": "libros",
+      "audio_text": "libros",
+      "english": "books",
+      "chinese": "书（复数）",
+      "translation": "books / 书（复数）",
+      "pos": "名词",
+      "part_of_speech": "名词",
+      "lemma": "libro",
+      "base_form": "libro",
+      "conjugation": "libros 是 libro 的复数，常搭配 los/unos。",
+      "form_note_zh": "libros 是 libro 的复数，常搭配 los/unos。",
+      "grammar_tags": [
+        "noun",
+        "masculine",
+        "plural",
+        "article"
+      ],
+      "examples": [
+        {
+          "spanish": "Los libros están en la mesa.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Los libros están en la mesa.",
+      "common_usage": "libros 是 libro 的复数，常搭配 los/unos。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-mesas",
+      "type": "word",
+      "text": "mesas",
+      "spanish": "mesas",
+      "audio_text": "mesas",
+      "english": "tables",
+      "chinese": "桌子（复数）",
+      "translation": "tables / 桌子（复数）",
+      "pos": "名词",
+      "part_of_speech": "名词",
+      "lemma": "mesa",
+      "base_form": "mesa",
+      "conjugation": "mesas 是 mesa 的复数，常搭配 las/unas。",
+      "form_note_zh": "mesas 是 mesa 的复数，常搭配 las/unas。",
+      "grammar_tags": [
+        "noun",
+        "feminine",
+        "plural",
+        "article"
+      ],
+      "examples": [
+        {
+          "spanish": "Las mesas están limpias.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Las mesas están limpias.",
+      "common_usage": "mesas 是 mesa 的复数，常搭配 las/unas。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-servilleta",
+      "type": "word",
+      "text": "servilleta",
+      "spanish": "servilleta",
+      "audio_text": "servilleta",
+      "english": "napkin",
+      "chinese": "餐巾纸",
+      "translation": "napkin / 餐巾纸",
+      "pos": "名词",
+      "part_of_speech": "名词",
+      "lemma": "servilleta",
+      "base_form": "servilleta",
+      "conjugation": "阴性单数名词，常搭配 la/una。",
+      "form_note_zh": "阴性单数名词，常搭配 la/una。",
+      "grammar_tags": [
+        "noun",
+        "feminine",
+        "singular",
+        "restaurant"
+      ],
+      "examples": [
+        {
+          "spanish": "Necesito una servilleta.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Necesito una servilleta.",
+      "common_usage": "阴性单数名词，常搭配 la/una。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-servilletas",
+      "type": "word",
+      "text": "servilletas",
+      "spanish": "servilletas",
+      "audio_text": "servilletas",
+      "english": "napkins",
+      "chinese": "餐巾纸（复数）",
+      "translation": "napkins / 餐巾纸（复数）",
+      "pos": "名词",
+      "part_of_speech": "名词",
+      "lemma": "servilleta",
+      "base_form": "servilleta",
+      "conjugation": "servilletas 是 servilleta 的复数。",
+      "form_note_zh": "servilletas 是 servilleta 的复数。",
+      "grammar_tags": [
+        "noun",
+        "feminine",
+        "plural",
+        "restaurant"
+      ],
+      "examples": [
+        {
+          "spanish": "Necesito unas servilletas.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Necesito unas servilletas.",
+      "common_usage": "servilletas 是 servilleta 的复数。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-limpio",
+      "type": "word",
+      "text": "limpio",
+      "spanish": "limpio",
+      "audio_text": "limpio",
+      "english": "clean",
+      "chinese": "干净的",
+      "translation": "clean / 干净的",
+      "pos": "形容词",
+      "part_of_speech": "形容词",
+      "lemma": "limpio",
+      "base_form": "limpio",
+      "conjugation": "阳性单数形式，用来修饰阳性单数名词。",
+      "form_note_zh": "阳性单数形式，用来修饰阳性单数名词。",
+      "grammar_tags": [
+        "adjective",
+        "masculine",
+        "singular",
+        "agreement"
+      ],
+      "examples": [
+        {
+          "spanish": "El libro está limpio.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "El libro está limpio.",
+      "common_usage": "阳性单数形式，用来修饰阳性单数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-limpia",
+      "type": "word",
+      "text": "limpia",
+      "spanish": "limpia",
+      "audio_text": "limpia",
+      "english": "clean",
+      "chinese": "干净的",
+      "translation": "clean / 干净的",
+      "pos": "形容词",
+      "part_of_speech": "形容词",
+      "lemma": "limpio",
+      "base_form": "limpio",
+      "conjugation": "阴性单数形式，用来修饰阴性单数名词。",
+      "form_note_zh": "阴性单数形式，用来修饰阴性单数名词。",
+      "grammar_tags": [
+        "adjective",
+        "feminine",
+        "singular",
+        "agreement"
+      ],
+      "examples": [
+        {
+          "spanish": "La mesa está limpia.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "La mesa está limpia.",
+      "common_usage": "阴性单数形式，用来修饰阴性单数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-limpios",
+      "type": "word",
+      "text": "limpios",
+      "spanish": "limpios",
+      "audio_text": "limpios",
+      "english": "clean",
+      "chinese": "干净的（阳性复数）",
+      "translation": "clean / 干净的（阳性复数）",
+      "pos": "形容词",
+      "part_of_speech": "形容词",
+      "lemma": "limpio",
+      "base_form": "limpio",
+      "conjugation": "阳性复数形式，用来修饰阳性复数名词。",
+      "form_note_zh": "阳性复数形式，用来修饰阳性复数名词。",
+      "grammar_tags": [
+        "adjective",
+        "masculine",
+        "plural",
+        "agreement"
+      ],
+      "examples": [
+        {
+          "spanish": "Los libros están limpios.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Los libros están limpios.",
+      "common_usage": "阳性复数形式，用来修饰阳性复数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-limpias",
+      "type": "word",
+      "text": "limpias",
+      "spanish": "limpias",
+      "audio_text": "limpias",
+      "english": "clean",
+      "chinese": "干净的（阴性复数）",
+      "translation": "clean / 干净的（阴性复数）",
+      "pos": "形容词",
+      "part_of_speech": "形容词",
+      "lemma": "limpio",
+      "base_form": "limpio",
+      "conjugation": "阴性复数形式，用来修饰阴性复数名词。",
+      "form_note_zh": "阴性复数形式，用来修饰阴性复数名词。",
+      "grammar_tags": [
+        "adjective",
+        "feminine",
+        "plural",
+        "agreement"
+      ],
+      "examples": [
+        {
+          "spanish": "Las mesas están limpias.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Las mesas están limpias.",
+      "common_usage": "阴性复数形式，用来修饰阴性复数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-pedir",
+      "type": "word",
+      "text": "pedir",
+      "spanish": "pedir",
+      "audio_text": "pedir",
+      "english": "to ask for / to order",
+      "chinese": "请求；点餐",
+      "translation": "to ask for / to order / 请求；点餐",
+      "pos": "动词",
+      "part_of_speech": "动词",
+      "lemma": "pedir",
+      "base_form": "pedir",
+      "conjugation": "-ir 动词；现在时部分人称发生 e -> i 词干变化。",
+      "form_note_zh": "-ir 动词；现在时部分人称发生 e -> i 词干变化。",
+      "grammar_tags": [
+        "verb",
+        "stem-changing",
+        "present tense",
+        "restaurant"
+      ],
+      "examples": [
+        {
+          "spanish": "Quiero pedir agua.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Quiero pedir agua.",
+      "common_usage": "-ir 动词；现在时部分人称发生 e -> i 词干变化。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-pido",
+      "type": "word",
+      "text": "pido",
+      "spanish": "pido",
+      "audio_text": "pido",
+      "english": "I ask for / I order",
+      "chinese": "我请求；我点",
+      "translation": "I ask for / I order / 我请求；我点",
+      "pos": "动词",
+      "part_of_speech": "动词",
+      "lemma": "pedir",
+      "base_form": "pedir",
+      "conjugation": "pedir 的 yo 现在时，e -> i：yo pido。",
+      "form_note_zh": "pedir 的 yo 现在时，e -> i：yo pido。",
+      "grammar_tags": [
+        "verb",
+        "conjugation",
+        "stem-changing",
+        "present tense"
+      ],
+      "examples": [
+        {
+          "spanish": "Yo pido un café.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Yo pido un café.",
+      "common_usage": "pedir 的 yo 现在时，e -> i：yo pido。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-pide",
+      "type": "word",
+      "text": "pide",
+      "spanish": "pide",
+      "audio_text": "pide",
+      "english": "he/she asks for / orders",
+      "chinese": "他/她请求；点",
+      "translation": "he/she asks for / orders / 他/她请求；点",
+      "pos": "动词",
+      "part_of_speech": "动词",
+      "lemma": "pedir",
+      "base_form": "pedir",
+      "conjugation": "pedir 的 él/ella/usted 现在时，e -> i：pide。",
+      "form_note_zh": "pedir 的 él/ella/usted 现在时，e -> i：pide。",
+      "grammar_tags": [
+        "verb",
+        "conjugation",
+        "stem-changing",
+        "present tense"
+      ],
+      "examples": [
+        {
+          "spanish": "Ella pide un café.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Ella pide un café.",
+      "common_usage": "pedir 的 él/ella/usted 现在时，e -> i：pide。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-pedimos",
+      "type": "word",
+      "text": "pedimos",
+      "spanish": "pedimos",
+      "audio_text": "pedimos",
+      "english": "we ask for / we order",
+      "chinese": "我们请求；我们点",
+      "translation": "we ask for / we order / 我们请求；我们点",
+      "pos": "动词",
+      "part_of_speech": "动词",
+      "lemma": "pedir",
+      "base_form": "pedir",
+      "conjugation": "pedir 的 nosotros 现在时；nosotros 形式通常不变词干。",
+      "form_note_zh": "pedir 的 nosotros 现在时；nosotros 形式通常不变词干。",
+      "grammar_tags": [
+        "verb",
+        "conjugation",
+        "present tense"
+      ],
+      "examples": [
+        {
+          "spanish": "Nosotros pedimos agua.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Nosotros pedimos agua.",
+      "common_usage": "pedir 的 nosotros 现在时；nosotros 形式通常不变词干。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-estar",
+      "type": "word",
+      "text": "estar",
+      "spanish": "estar",
+      "audio_text": "estar",
+      "english": "to be",
+      "chinese": "是；处于；位于",
+      "translation": "to be / 是；处于；位于",
+      "pos": "动词",
+      "part_of_speech": "动词",
+      "lemma": "estar",
+      "base_form": "estar",
+      "conjugation": "常用于位置、临时状态、结果状态。",
+      "form_note_zh": "常用于位置、临时状态、结果状态。",
+      "grammar_tags": [
+        "verb",
+        "ser vs estar",
+        "location",
+        "state"
+      ],
+      "examples": [
+        {
+          "spanish": "La biblioteca está al fondo.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "La biblioteca está al fondo.",
+      "common_usage": "常用于位置、临时状态、结果状态。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-esta",
+      "type": "word",
+      "text": "está",
+      "spanish": "está",
+      "audio_text": "está",
+      "english": "is",
+      "chinese": "是；在（第三人称单数）",
+      "translation": "is / 是；在（第三人称单数）",
+      "pos": "动词",
+      "part_of_speech": "动词",
+      "lemma": "estar",
+      "base_form": "estar",
+      "conjugation": "estar 的 él/ella/usted 现在时。",
+      "form_note_zh": "estar 的 él/ella/usted 现在时。",
+      "grammar_tags": [
+        "verb",
+        "conjugation",
+        "ser vs estar",
+        "present tense"
+      ],
+      "examples": [
+        {
+          "spanish": "La mesa está limpia.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "La mesa está limpia.",
+      "common_usage": "estar 的 él/ella/usted 现在时。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-estan",
+      "type": "word",
+      "text": "están",
+      "spanish": "están",
+      "audio_text": "están",
+      "english": "are",
+      "chinese": "是；在（第三人称复数）",
+      "translation": "are / 是；在（第三人称复数）",
+      "pos": "动词",
+      "part_of_speech": "动词",
+      "lemma": "estar",
+      "base_form": "estar",
+      "conjugation": "estar 的 ellos/ellas/ustedes 现在时。",
+      "form_note_zh": "estar 的 ellos/ellas/ustedes 现在时。",
+      "grammar_tags": [
+        "verb",
+        "conjugation",
+        "ser vs estar",
+        "present tense"
+      ],
+      "examples": [
+        {
+          "spanish": "Los libros están aquí.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Los libros están aquí.",
+      "common_usage": "estar 的 ellos/ellas/ustedes 现在时。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-ser",
+      "type": "word",
+      "text": "ser",
+      "spanish": "ser",
+      "audio_text": "ser",
+      "english": "to be",
+      "chinese": "是",
+      "translation": "to be / 是",
+      "pos": "动词",
+      "part_of_speech": "动词",
+      "lemma": "ser",
+      "base_form": "ser",
+      "conjugation": "常用于身份、职业、来源、性质等较稳定信息。",
+      "form_note_zh": "常用于身份、职业、来源、性质等较稳定信息。",
+      "grammar_tags": [
+        "verb",
+        "ser vs estar",
+        "identity"
+      ],
+      "examples": [
+        {
+          "spanish": "Ella es profesora.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Ella es profesora.",
+      "common_usage": "常用于身份、职业、来源、性质等较稳定信息。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-es",
+      "type": "word",
+      "text": "es",
+      "spanish": "es",
+      "audio_text": "es",
+      "english": "is",
+      "chinese": "是（第三人称单数）",
+      "translation": "is / 是（第三人称单数）",
+      "pos": "动词",
+      "part_of_speech": "动词",
+      "lemma": "ser",
+      "base_form": "ser",
+      "conjugation": "ser 的 él/ella/usted 现在时。",
+      "form_note_zh": "ser 的 él/ella/usted 现在时。",
+      "grammar_tags": [
+        "verb",
+        "conjugation",
+        "ser vs estar",
+        "present tense"
+      ],
+      "examples": [
+        {
+          "spanish": "El libro es interesante.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "El libro es interesante.",
+      "common_usage": "ser 的 él/ella/usted 现在时。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-son",
+      "type": "word",
+      "text": "son",
+      "spanish": "son",
+      "audio_text": "son",
+      "english": "are",
+      "chinese": "是（第三人称复数）",
+      "translation": "are / 是（第三人称复数）",
+      "pos": "动词",
+      "part_of_speech": "动词",
+      "lemma": "ser",
+      "base_form": "ser",
+      "conjugation": "ser 的 ellos/ellas/ustedes 现在时。",
+      "form_note_zh": "ser 的 ellos/ellas/ustedes 现在时。",
+      "grammar_tags": [
+        "verb",
+        "conjugation",
+        "ser vs estar",
+        "present tense"
+      ],
+      "examples": [
+        {
+          "spanish": "Los libros son interesantes.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Los libros son interesantes.",
+      "common_usage": "ser 的 ellos/ellas/ustedes 现在时。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-la",
+      "type": "word",
+      "text": "la",
+      "spanish": "la",
+      "audio_text": "la",
+      "english": "the",
+      "chinese": "这个/那个（阴性单数定冠词）",
+      "translation": "the / 这个/那个（阴性单数定冠词）",
+      "pos": "冠词",
+      "part_of_speech": "冠词",
+      "lemma": "la",
+      "base_form": "la",
+      "conjugation": "阴性单数定冠词，搭配阴性单数名词。",
+      "form_note_zh": "阴性单数定冠词，搭配阴性单数名词。",
+      "grammar_tags": [
+        "article",
+        "definite",
+        "feminine",
+        "singular"
+      ],
+      "examples": [
+        {
+          "spanish": "La mesa está limpia.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "La mesa está limpia.",
+      "common_usage": "阴性单数定冠词，搭配阴性单数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-el",
+      "type": "word",
+      "text": "el",
+      "spanish": "el",
+      "audio_text": "el",
+      "english": "the",
+      "chinese": "这个/那个（阳性单数定冠词）",
+      "translation": "the / 这个/那个（阳性单数定冠词）",
+      "pos": "冠词",
+      "part_of_speech": "冠词",
+      "lemma": "el",
+      "base_form": "el",
+      "conjugation": "阳性单数定冠词，搭配阳性单数名词。",
+      "form_note_zh": "阳性单数定冠词，搭配阳性单数名词。",
+      "grammar_tags": [
+        "article",
+        "definite",
+        "masculine",
+        "singular"
+      ],
+      "examples": [
+        {
+          "spanish": "El libro está aquí.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "El libro está aquí.",
+      "common_usage": "阳性单数定冠词，搭配阳性单数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-los",
+      "type": "word",
+      "text": "los",
+      "spanish": "los",
+      "audio_text": "los",
+      "english": "the",
+      "chinese": "这些/那些（阳性复数定冠词）",
+      "translation": "the / 这些/那些（阳性复数定冠词）",
+      "pos": "冠词",
+      "part_of_speech": "冠词",
+      "lemma": "los",
+      "base_form": "los",
+      "conjugation": "阳性复数定冠词，搭配阳性复数名词。",
+      "form_note_zh": "阳性复数定冠词，搭配阳性复数名词。",
+      "grammar_tags": [
+        "article",
+        "definite",
+        "masculine",
+        "plural"
+      ],
+      "examples": [
+        {
+          "spanish": "Los libros están aquí.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Los libros están aquí.",
+      "common_usage": "阳性复数定冠词，搭配阳性复数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-las",
+      "type": "word",
+      "text": "las",
+      "spanish": "las",
+      "audio_text": "las",
+      "english": "the",
+      "chinese": "这些/那些（阴性复数定冠词）",
+      "translation": "the / 这些/那些（阴性复数定冠词）",
+      "pos": "冠词",
+      "part_of_speech": "冠词",
+      "lemma": "las",
+      "base_form": "las",
+      "conjugation": "阴性复数定冠词，搭配阴性复数名词。",
+      "form_note_zh": "阴性复数定冠词，搭配阴性复数名词。",
+      "grammar_tags": [
+        "article",
+        "definite",
+        "feminine",
+        "plural"
+      ],
+      "examples": [
+        {
+          "spanish": "Las mesas están limpias.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Las mesas están limpias.",
+      "common_usage": "阴性复数定冠词，搭配阴性复数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-un",
+      "type": "word",
+      "text": "un",
+      "spanish": "un",
+      "audio_text": "un",
+      "english": "a / one",
+      "chinese": "一个（阳性单数不定冠词）",
+      "translation": "a / one / 一个（阳性单数不定冠词）",
+      "pos": "冠词",
+      "part_of_speech": "冠词",
+      "lemma": "un",
+      "base_form": "un",
+      "conjugation": "阳性单数不定冠词，搭配阳性单数名词。",
+      "form_note_zh": "阳性单数不定冠词，搭配阳性单数名词。",
+      "grammar_tags": [
+        "article",
+        "indefinite",
+        "masculine",
+        "singular"
+      ],
+      "examples": [
+        {
+          "spanish": "Quiero un libro.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Quiero un libro.",
+      "common_usage": "阳性单数不定冠词，搭配阳性单数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-una",
+      "type": "word",
+      "text": "una",
+      "spanish": "una",
+      "audio_text": "una",
+      "english": "a / one",
+      "chinese": "一个（阴性单数不定冠词）",
+      "translation": "a / one / 一个（阴性单数不定冠词）",
+      "pos": "冠词",
+      "part_of_speech": "冠词",
+      "lemma": "una",
+      "base_form": "una",
+      "conjugation": "阴性单数不定冠词，搭配阴性单数名词。",
+      "form_note_zh": "阴性单数不定冠词，搭配阴性单数名词。",
+      "grammar_tags": [
+        "article",
+        "indefinite",
+        "feminine",
+        "singular"
+      ],
+      "examples": [
+        {
+          "spanish": "Necesito una servilleta.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Necesito una servilleta.",
+      "common_usage": "阴性单数不定冠词，搭配阴性单数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-unos",
+      "type": "word",
+      "text": "unos",
+      "spanish": "unos",
+      "audio_text": "unos",
+      "english": "some",
+      "chinese": "一些（阳性复数不定冠词）",
+      "translation": "some / 一些（阳性复数不定冠词）",
+      "pos": "冠词",
+      "part_of_speech": "冠词",
+      "lemma": "unos",
+      "base_form": "unos",
+      "conjugation": "阳性复数不定冠词，搭配阳性复数名词。",
+      "form_note_zh": "阳性复数不定冠词，搭配阳性复数名词。",
+      "grammar_tags": [
+        "article",
+        "indefinite",
+        "masculine",
+        "plural"
+      ],
+      "examples": [
+        {
+          "spanish": "Quiero unos libros.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Quiero unos libros.",
+      "common_usage": "阳性复数不定冠词，搭配阳性复数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-unas",
+      "type": "word",
+      "text": "unas",
+      "spanish": "unas",
+      "audio_text": "unas",
+      "english": "some",
+      "chinese": "一些（阴性复数不定冠词）",
+      "translation": "some / 一些（阴性复数不定冠词）",
+      "pos": "冠词",
+      "part_of_speech": "冠词",
+      "lemma": "unas",
+      "base_form": "unas",
+      "conjugation": "阴性复数不定冠词，搭配阴性复数名词。",
+      "form_note_zh": "阴性复数不定冠词，搭配阴性复数名词。",
+      "grammar_tags": [
+        "article",
+        "indefinite",
+        "feminine",
+        "plural"
+      ],
+      "examples": [
+        {
+          "spanish": "Necesito unas servilletas.",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "Necesito unas servilletas.",
+      "common_usage": "阴性复数不定冠词，搭配阴性复数名词。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-que",
+      "type": "word",
+      "text": "qué",
+      "spanish": "qué",
+      "audio_text": "qué",
+      "english": "what",
+      "chinese": "什么",
+      "translation": "what / 什么",
+      "pos": "疑问词",
+      "part_of_speech": "疑问词",
+      "lemma": "qué",
+      "base_form": "qué",
+      "conjugation": "询问事物、内容或选择；疑问句中带重音。",
+      "form_note_zh": "询问事物、内容或选择；疑问句中带重音。",
+      "grammar_tags": [
+        "question word",
+        "what"
+      ],
+      "examples": [
+        {
+          "spanish": "¿Qué quieres?",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "¿Qué quieres?",
+      "common_usage": "询问事物、内容或选择；疑问句中带重音。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-donde",
+      "type": "word",
+      "text": "dónde",
+      "spanish": "dónde",
+      "audio_text": "dónde",
+      "english": "where",
+      "chinese": "哪里",
+      "translation": "where / 哪里",
+      "pos": "疑问词",
+      "part_of_speech": "疑问词",
+      "lemma": "dónde",
+      "base_form": "dónde",
+      "conjugation": "询问地点；常和 estar 搭配问位置。",
+      "form_note_zh": "询问地点；常和 estar 搭配问位置。",
+      "grammar_tags": [
+        "question word",
+        "where",
+        "location"
+      ],
+      "examples": [
+        {
+          "spanish": "¿Dónde está la biblioteca?",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "¿Dónde está la biblioteca?",
+      "common_usage": "询问地点；常和 estar 搭配问位置。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-cuando",
+      "type": "word",
+      "text": "cuándo",
+      "spanish": "cuándo",
+      "audio_text": "cuándo",
+      "english": "when",
+      "chinese": "什么时候",
+      "translation": "when / 什么时候",
+      "pos": "疑问词",
+      "part_of_speech": "疑问词",
+      "lemma": "cuándo",
+      "base_form": "cuándo",
+      "conjugation": "询问时间；疑问句中带重音。",
+      "form_note_zh": "询问时间；疑问句中带重音。",
+      "grammar_tags": [
+        "question word",
+        "when",
+        "time"
+      ],
+      "examples": [
+        {
+          "spanish": "¿Cuándo es la clase?",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "¿Cuándo es la clase?",
+      "common_usage": "询问时间；疑问句中带重音。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-como",
+      "type": "word",
+      "text": "cómo",
+      "spanish": "cómo",
+      "audio_text": "cómo",
+      "english": "how",
+      "chinese": "怎么；如何",
+      "translation": "how / 怎么；如何",
+      "pos": "疑问词",
+      "part_of_speech": "疑问词",
+      "lemma": "cómo",
+      "base_form": "cómo",
+      "conjugation": "询问方式、状态或感受；疑问句中带重音。",
+      "form_note_zh": "询问方式、状态或感受；疑问句中带重音。",
+      "grammar_tags": [
+        "question word",
+        "how"
+      ],
+      "examples": [
+        {
+          "spanish": "¿Cómo estás?",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "¿Cómo estás?",
+      "common_usage": "询问方式、状态或感受；疑问句中带重音。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "key": "word-quien",
+      "type": "word",
+      "text": "quién",
+      "spanish": "quién",
+      "audio_text": "quién",
+      "english": "who",
+      "chinese": "谁",
+      "translation": "who / 谁",
+      "pos": "疑问词",
+      "part_of_speech": "疑问词",
+      "lemma": "quién",
+      "base_form": "quién",
+      "conjugation": "询问人；疑问句中带重音。",
+      "form_note_zh": "询问人；疑问句中带重音。",
+      "grammar_tags": [
+        "question word",
+        "who"
+      ],
+      "examples": [
+        {
+          "spanish": "¿Quién es Ana?",
+          "english": "",
+          "chinese": ""
+        }
+      ],
+      "example": "¿Quién es Ana?",
+      "common_usage": "询问人；疑问句中带重音。",
+      "native_usage": "Ask Claw 本地词库：用于 A1-A2 高频词汇和基础语法解释。",
+      "synonyms": [],
+      "antonyms": []
     }
   ]
 }

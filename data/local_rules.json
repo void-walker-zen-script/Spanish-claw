@@ -1,0 +1,255 @@
+{
+  "rules": [
+    {
+      "id": "noun_plural",
+      "title_zh": "名词复数",
+      "title_en": "noun plural",
+      "short_explanation_zh": "西语名词变复数时，常见方式是在词尾加 -s 或 -es。",
+      "detailed_explanation_zh": "如果名词以元音结尾，通常加 -s：libro -> libros。冠词和形容词也要跟着变复数：el libro limpio -> los libros limpios。",
+      "trigger_keywords": [
+        "复数",
+        "plural",
+        "libros",
+        "mesas",
+        "servilletas"
+      ],
+      "examples": [
+        {
+          "spanish": "Los libros están aquí.",
+          "english": "The books are here.",
+          "note_zh": "los 和 libros 都是阳性复数。"
+        }
+      ],
+      "related_terms": [
+        "复数",
+        "名词单复数",
+        "冠词"
+      ]
+    },
+    {
+      "id": "gender_agreement",
+      "title_zh": "名词阴阳性一致",
+      "title_en": "gender agreement",
+      "short_explanation_zh": "冠词和形容词要根据名词的阴阳性变化。",
+      "detailed_explanation_zh": "libro 是阳性，所以说 el libro；mesa 是阴性，所以说 la mesa。不要只按中文意思判断，要记住西语名词本身的性。",
+      "trigger_keywords": [
+        "阴性",
+        "阳性",
+        "gender",
+        "masculine",
+        "feminine",
+        "el libro",
+        "la mesa"
+      ],
+      "examples": [
+        {
+          "spanish": "El libro está limpio. La mesa está limpia.",
+          "english": "The book is clean. The table is clean.",
+          "note_zh": "limpio/limpia 跟名词性别一致。"
+        }
+      ],
+      "related_terms": [
+        "阴性",
+        "阳性",
+        "名词阴阳性"
+      ]
+    },
+    {
+      "id": "adjective_agreement",
+      "title_zh": "形容词一致",
+      "title_en": "adjective agreement",
+      "short_explanation_zh": "形容词通常要和名词保持阴阳性、单复数一致。",
+      "detailed_explanation_zh": "limpio 有四种常见形式：limpio、limpia、limpios、limpias。先判断名词，再选形容词形式。",
+      "trigger_keywords": [
+        "形容词",
+        "adjective",
+        "limpio",
+        "limpia",
+        "limpios",
+        "limpias"
+      ],
+      "examples": [
+        {
+          "spanish": "Las mesas están limpias.",
+          "english": "The tables are clean.",
+          "note_zh": "mesas 是阴性复数，所以用 limpias。"
+        }
+      ],
+      "related_terms": [
+        "形容词一致",
+        "名词单复数",
+        "名词阴阳性"
+      ]
+    },
+    {
+      "id": "article_agreement",
+      "title_zh": "冠词一致",
+      "title_en": "article agreement",
+      "short_explanation_zh": "冠词要和后面的名词保持阴阳性、单复数一致。",
+      "detailed_explanation_zh": "定冠词：el/la/los/las；不定冠词：un/una/unos/unas。比如 libro 是阳性单数，所以是 el libro 或 un libro。",
+      "trigger_keywords": [
+        "冠词",
+        "article",
+        "el",
+        "la",
+        "los",
+        "las",
+        "un",
+        "una",
+        "unos",
+        "unas"
+      ],
+      "examples": [
+        {
+          "spanish": "Un libro y unas servilletas.",
+          "english": "A book and some napkins.",
+          "note_zh": "un 对应阳性单数，unas 对应阴性复数。"
+        }
+      ],
+      "related_terms": [
+        "冠词",
+        "定冠词",
+        "不定冠词"
+      ]
+    },
+    {
+      "id": "ser_vs_estar",
+      "title_zh": "ser vs estar",
+      "title_en": "ser vs estar",
+      "short_explanation_zh": "ser 和 estar 都可能翻成 English 的 be，但西语用法不同。",
+      "detailed_explanation_zh": "ser 偏身份、性质、来源等较稳定信息；estar 偏位置、临时状态、结果状态。A1-A2 阶段先记：位置多用 estar，身份多用 ser。",
+      "trigger_keywords": [
+        "ser",
+        "estar",
+        "es",
+        "son",
+        "está",
+        "están",
+        "是"
+      ],
+      "examples": [
+        {
+          "spanish": "Ella es profesora. La mesa está limpia.",
+          "english": "She is a teacher. The table is clean.",
+          "note_zh": "身份用 ser，状态用 estar。"
+        }
+      ],
+      "related_terms": [
+        "ser vs estar",
+        "动词",
+        "形容词一致"
+      ]
+    },
+    {
+      "id": "stem_changing_verbs",
+      "title_zh": "变词干动词",
+      "title_en": "stem-changing verbs",
+      "short_explanation_zh": "某些动词现在时变位时，词干元音会变化。",
+      "detailed_explanation_zh": "常见类型有 e -> i：pedir -> pide；e -> ie：pensar -> piensa；o -> ue：dormir -> duerme。注意 nosotros 形式通常不变词干，如 pedimos。",
+      "trigger_keywords": [
+        "变词干",
+        "stem-changing",
+        "pedir",
+        "pido",
+        "pide",
+        "pedimos"
+      ],
+      "examples": [
+        {
+          "spanish": "Ella pide un café.",
+          "english": "She orders a coffee.",
+          "note_zh": "pide 来自 pedir，e -> i。"
+        }
+      ],
+      "related_terms": [
+        "变词干动词",
+        "动词变位",
+        "现在时"
+      ]
+    },
+    {
+      "id": "verb_conjugation_present",
+      "title_zh": "现在时动词变位",
+      "title_en": "present tense conjugation",
+      "short_explanation_zh": "现在时动词要根据主语改变形式。",
+      "detailed_explanation_zh": "比如 pedir：yo pido，ella pide，nosotros pedimos。English 可以用 subject + verb 理解，但 Spanish 的 verb ending 信息更多。",
+      "trigger_keywords": [
+        "动词变位",
+        "conjugation",
+        "现在时",
+        "pido",
+        "pide",
+        "pedimos"
+      ],
+      "examples": [
+        {
+          "spanish": "Yo pido agua. Ella pide café.",
+          "english": "I order water. She orders coffee.",
+          "note_zh": "主语不同，动词形式不同。"
+        }
+      ],
+      "related_terms": [
+        "动词变位",
+        "主语",
+        "动词"
+      ]
+    },
+    {
+      "id": "question_words",
+      "title_zh": "疑问词",
+      "title_en": "question words",
+      "short_explanation_zh": "疑问词帮助你问“什么、哪里、什么时候、怎么、谁”。",
+      "detailed_explanation_zh": "qué = what，dónde = where，cuándo = when，cómo = how，quién = who。西语疑问词在直接问句中通常带重音符号。",
+      "trigger_keywords": [
+        "疑问词",
+        "question word",
+        "qué",
+        "dónde",
+        "cuándo",
+        "cómo",
+        "quién"
+      ],
+      "examples": [
+        {
+          "spanish": "¿Dónde está la biblioteca?",
+          "english": "Where is the library?",
+          "note_zh": "dónde 问地点，常和 estar 搭配。"
+        }
+      ],
+      "related_terms": [
+        "疑问词",
+        "主语",
+        "动词"
+      ]
+    },
+    {
+      "id": "sentence_structure_basic",
+      "title_zh": "基础句子结构",
+      "title_en": "basic sentence structure",
+      "short_explanation_zh": "A1-A2 阶段先抓住主语、动词、宾语/补语。",
+      "detailed_explanation_zh": "很多句子可以先用 English as bridge 理解为 Subject + Verb + Object/Complement，再对应到中文：主语 + 动词 + 宾语/补语。",
+      "trigger_keywords": [
+        "结构",
+        "句子结构",
+        "subject",
+        "verb",
+        "object",
+        "主语",
+        "动词",
+        "宾语"
+      ],
+      "examples": [
+        {
+          "spanish": "Yo quiero un libro.",
+          "english": "I want a book.",
+          "note_zh": "Yo = 主语，quiero = 动词，un libro = 宾语。"
+        }
+      ],
+      "related_terms": [
+        "主语",
+        "动词",
+        "宾语"
+      ]
+    }
+  ]
+}

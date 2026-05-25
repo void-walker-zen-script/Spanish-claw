@@ -1,11 +1,251 @@
 {
   "terms": [
     {
+      "id": "noun",
+      "term_zh": "名词",
+      "term_en": "noun",
+      "short_explanation_zh": "名词用来表示人、地点、物品或概念。",
+      "detailed_explanation_zh": "西语名词通常有阴阳性和单复数变化。学习名词时，最好连冠词一起记，例如 el libro、la mesa。",
+      "spanish_examples": [
+        "El libro está en la mesa.",
+        "La servilleta está limpia."
+      ],
+      "english_examples": [
+        "The book is on the table.",
+        "The napkin is clean."
+      ],
+      "related_terms": [
+        "冠词",
+        "名词阴阳性",
+        "名词单复数"
+      ]
+    },
+    {
+      "id": "singular",
+      "term_zh": "单数",
+      "term_en": "singular",
+      "short_explanation_zh": "单数表示一个人或一个事物。",
+      "detailed_explanation_zh": "西语名词、冠词和形容词都要注意单数形式。例如 el libro 是“这本书/一本书”这一类单数表达。",
+      "spanish_examples": [
+        "Tengo un libro.",
+        "La mesa está limpia."
+      ],
+      "english_examples": [
+        "I have a book.",
+        "The table is clean."
+      ],
+      "related_terms": [
+        "复数",
+        "冠词",
+        "形容词一致"
+      ]
+    },
+    {
+      "id": "plural",
+      "term_zh": "复数",
+      "term_en": "plural",
+      "short_explanation_zh": "复数表示两个或两个以上的人或事物。",
+      "detailed_explanation_zh": "西语名词常通过加 -s 或 -es 变复数，冠词和形容词也要跟着变化，例如 libro -> libros，el libro -> los libros。",
+      "spanish_examples": [
+        "Los libros están en la mesa.",
+        "Necesito unas servilletas."
+      ],
+      "english_examples": [
+        "The books are on the table.",
+        "I need some napkins."
+      ],
+      "related_terms": [
+        "单数",
+        "名词单复数",
+        "冠词"
+      ]
+    },
+    {
+      "id": "feminine",
+      "term_zh": "阴性",
+      "term_en": "feminine",
+      "short_explanation_zh": "阴性是西语名词的一种语法性别。",
+      "detailed_explanation_zh": "很多以 -a 结尾的名词是阴性，但不是绝对规则。阴性名词通常搭配 la、una、las、unas，例如 la mesa。",
+      "spanish_examples": [
+        "La mesa está limpia.",
+        "Una servilleta, por favor."
+      ],
+      "english_examples": [
+        "The table is clean.",
+        "A napkin, please."
+      ],
+      "related_terms": [
+        "阳性",
+        "名词阴阳性",
+        "冠词"
+      ]
+    },
+    {
+      "id": "masculine",
+      "term_zh": "阳性",
+      "term_en": "masculine",
+      "short_explanation_zh": "阳性是西语名词的一种语法性别。",
+      "detailed_explanation_zh": "很多以 -o 结尾的名词是阳性，但不是绝对规则。阳性名词通常搭配 el、un、los、unos，例如 el libro。",
+      "spanish_examples": [
+        "El libro es interesante.",
+        "Un café, por favor."
+      ],
+      "english_examples": [
+        "The book is interesting.",
+        "A coffee, please."
+      ],
+      "related_terms": [
+        "阴性",
+        "名词阴阳性",
+        "冠词"
+      ]
+    },
+    {
+      "id": "article",
+      "term_zh": "冠词",
+      "term_en": "article",
+      "short_explanation_zh": "冠词放在名词前，帮助说明“特指/泛指”，并和名词保持性数一致。",
+      "detailed_explanation_zh": "西语冠词包括定冠词 el、la、los、las 和不定冠词 un、una、unos、unas。冠词要根据后面名词的阴阳性和单复数变化。",
+      "spanish_examples": [
+        "El libro está aquí.",
+        "Una mesa para dos, por favor."
+      ],
+      "english_examples": [
+        "The book is here.",
+        "A table for two, please."
+      ],
+      "related_terms": [
+        "定冠词",
+        "不定冠词",
+        "冠词一致"
+      ]
+    },
+    {
+      "id": "definite-article",
+      "term_zh": "定冠词",
+      "term_en": "definite article",
+      "short_explanation_zh": "定冠词类似 English 里的 the，用来指已知或特定的人/物。",
+      "detailed_explanation_zh": "西语定冠词有 el、la、los、las。选择哪一个取决于名词的性和数，例如 el libro、la mesa、los libros、las mesas。",
+      "spanish_examples": [
+        "La cuenta, por favor.",
+        "Los libros están aquí."
+      ],
+      "english_examples": [
+        "The bill, please.",
+        "The books are here."
+      ],
+      "related_terms": [
+        "冠词",
+        "不定冠词",
+        "名词阴阳性"
+      ]
+    },
+    {
+      "id": "indefinite-article",
+      "term_zh": "不定冠词",
+      "term_en": "indefinite article",
+      "short_explanation_zh": "不定冠词类似 English 里的 a/an 或 some，用来泛指。",
+      "detailed_explanation_zh": "西语不定冠词有 un、una、unos、unas。un/una 常表示“一个/一件”，unos/unas 常表示“一些”。",
+      "spanish_examples": [
+        "Quiero un libro.",
+        "Necesito unas servilletas."
+      ],
+      "english_examples": [
+        "I want a book.",
+        "I need some napkins."
+      ],
+      "related_terms": [
+        "冠词",
+        "定冠词",
+        "名词单复数"
+      ]
+    },
+    {
+      "id": "adjective-agreement",
+      "term_zh": "形容词一致",
+      "term_en": "adjective agreement",
+      "short_explanation_zh": "形容词通常要和它修饰的名词在阴阳性、单复数上保持一致。",
+      "detailed_explanation_zh": "例如 limpio 要根据名词变化为 limpio、limpia、limpios、limpias。可以把它理解为 English adjective 不变，但 Spanish adjective 会跟着 noun 变。",
+      "spanish_examples": [
+        "El libro está limpio.",
+        "Las mesas están limpias."
+      ],
+      "english_examples": [
+        "The book is clean.",
+        "The tables are clean."
+      ],
+      "related_terms": [
+        "阴性",
+        "阳性",
+        "名词单复数"
+      ]
+    },
+    {
+      "id": "noun-gender",
+      "term_zh": "名词阴阳性",
+      "term_en": "noun gender",
+      "short_explanation_zh": "名词阴阳性是西语名词自带的语法属性。",
+      "detailed_explanation_zh": "名词的阴阳性会影响冠词和形容词。比如 libro 是阳性，所以说 el libro；mesa 是阴性，所以说 la mesa。",
+      "spanish_examples": [
+        "El libro es nuevo.",
+        "La mesa es grande."
+      ],
+      "english_examples": [
+        "The book is new.",
+        "The table is big."
+      ],
+      "related_terms": [
+        "阳性",
+        "阴性",
+        "冠词"
+      ]
+    },
+    {
+      "id": "noun-number",
+      "term_zh": "名词单复数",
+      "term_en": "noun number",
+      "short_explanation_zh": "名词单复数说明名词表示一个还是多个。",
+      "detailed_explanation_zh": "西语中名词变复数后，冠词和形容词通常也要变复数。例如 la mesa limpia -> las mesas limpias。",
+      "spanish_examples": [
+        "El libro está aquí.",
+        "Los libros están aquí."
+      ],
+      "english_examples": [
+        "The book is here.",
+        "The books are here."
+      ],
+      "related_terms": [
+        "单数",
+        "复数",
+        "形容词一致"
+      ]
+    },
+    {
+      "id": "verb-conjugation",
+      "term_zh": "动词变位",
+      "term_en": "verb conjugation",
+      "short_explanation_zh": "动词变位是指动词根据主语、时态等改变形式。",
+      "detailed_explanation_zh": "西语动词不像 English 那样变化较少，它会根据 yo、tú、él/ella、nosotros 等主语改变词尾。例如 pedir 可以变成 pido、pide、pedimos。",
+      "spanish_examples": [
+        "Yo pido agua.",
+        "Ella pide un café."
+      ],
+      "english_examples": [
+        "I ask for water.",
+        "She orders a coffee."
+      ],
+      "related_terms": [
+        "动词",
+        "主语",
+        "变词干动词"
+      ]
+    },
+    {
       "id": "stem-changing-verb",
       "term_zh": "变词干动词",
       "term_en": "stem-changing verb",
-      "short_explanation_zh": "变词干动词也叫 stem-changing verb，指某些西语动词变位时词干元音会发生变化。",
-      "detailed_explanation_zh": "变词干动词也叫 stem-changing verb。它指某些西语动词在变位时，词干中的元音会发生变化，但词尾仍然按对应主语和时态变化。pedir 是 e → i 类型，所以 ella pide 中的 pide 来自动词 pedir。其他常见类型包括 pensar: e → ie，以及 dormir: o → ue。",
+      "short_explanation_zh": "变词干动词也叫 stem-changing verb，指某些西语动词变位时词干元音发生变化。",
+      "detailed_explanation_zh": "变词干动词也叫 stem-changing verb。它指某些西语动词变位时，词干元音会变化，例如 pedir 是 e -> i 类型，ella pide 中的 pide 来自动词 pedir；pensar 是 e -> ie 类型；dormir 是 o -> ue 类型。",
       "spanish_examples": [
         "Ella pide un café.",
         "Yo pienso en la respuesta.",
@@ -23,38 +263,57 @@
       ]
     },
     {
-      "id": "verb-conjugation",
-      "term_zh": "动词变位",
-      "term_en": "verb conjugation",
-      "short_explanation_zh": "动词变位是指动词根据主语、时态、语气等因素改变形式。",
-      "detailed_explanation_zh": "西语动词通常不会一直保持原形，而是会根据主语和时态改变词尾，有些动词还会发生词干变化。学习动词变位可以帮助你判断谁在做动作，以及动作发生在什么时候。",
+      "id": "ser-vs-estar",
+      "term_zh": "ser vs estar",
+      "term_en": "ser vs estar",
+      "short_explanation_zh": "ser 和 estar 都可以表示“是”，但用法不同。",
+      "detailed_explanation_zh": "ser 常用于身份、来源、职业、性质等较稳定信息；estar 常用于位置、临时状态、情绪或结果状态。English 都可能翻成 be，但 Spanish 要区分。",
       "spanish_examples": [
-        "Yo estudio español.",
-        "Nosotros comemos juntos."
+        "Ella es profesora.",
+        "La mesa está limpia."
       ],
       "english_examples": [
-        "I study Spanish.",
-        "We eat together."
+        "She is a teacher.",
+        "The table is clean."
       ],
       "related_terms": [
         "动词",
+        "形容词一致",
+        "状语"
+      ]
+    },
+    {
+      "id": "question-word",
+      "term_zh": "疑问词",
+      "term_en": "question word",
+      "short_explanation_zh": "疑问词用于提出信息类问题，例如问人、地点、时间、方式或事物。",
+      "detailed_explanation_zh": "常见西语疑问词包括 qué、dónde、cuándo、cómo、quién。它们通常放在问题开头，并带重音符号。",
+      "spanish_examples": [
+        "¿Dónde está la biblioteca?",
+        "¿Qué quieres beber?"
+      ],
+      "english_examples": [
+        "Where is the library?",
+        "What do you want to drink?"
+      ],
+      "related_terms": [
         "主语",
-        "现在时",
-        "变词干动词"
+        "动词",
+        "句子结构"
       ]
     },
     {
       "id": "subject",
       "term_zh": "主语",
       "term_en": "subject",
-      "short_explanation_zh": "主语表示句子中执行动作或被描述的人、事物或概念。",
-      "detailed_explanation_zh": "主语通常回答“谁”或“什么”在做动作。在西语中，主语可以明确写出，也可以通过动词变位体现出来。",
+      "short_explanation_zh": "主语表示句子里执行动作或被描述的人、物或概念。",
+      "detailed_explanation_zh": "主语通常回答“谁/什么在做这件事”。西语中主语可以写出来，也可以通过动词变位体现出来。",
       "spanish_examples": [
-        "María estudia en la biblioteca.",
+        "María estudia español.",
         "Nosotros vivimos en Madrid."
       ],
       "english_examples": [
-        "María studies in the library.",
+        "María studies Spanish.",
         "We live in Madrid."
       ],
       "related_terms": [
@@ -67,14 +326,14 @@
       "term_zh": "动词",
       "term_en": "verb",
       "short_explanation_zh": "动词表示动作、状态或存在。",
-      "detailed_explanation_zh": "动词是句子的核心成分之一。西语动词通常需要变位，例如 comer 可以变成 como、comes、come、comemos 等形式。",
+      "detailed_explanation_zh": "动词是句子的核心之一。西语动词通常需要变位，例如 ser -> es/son，estar -> está/están，pedir -> pido/pide。",
       "spanish_examples": [
-        "Ella come una manzana.",
-        "La mesa está libre."
+        "Ella pide agua.",
+        "La mesa está limpia."
       ],
       "english_examples": [
-        "She eats an apple.",
-        "The table is free."
+        "She asks for water.",
+        "The table is clean."
       ],
       "related_terms": [
         "动词变位",
@@ -87,14 +346,14 @@
       "term_zh": "宾语",
       "term_en": "object",
       "short_explanation_zh": "宾语表示动作影响到的人或事物。",
-      "detailed_explanation_zh": "宾语通常回答“做什么”或“对谁做”。例如在 Quiero un café 中，un café 是 quiero 这个动作的对象。",
+      "detailed_explanation_zh": "宾语通常回答“做什么/对谁做”。例如 Quiero un libro 里，un libro 是 quiero 这个动作的对象。",
       "spanish_examples": [
-        "Quiero un café.",
-        "Leo un libro."
+        "Quiero un libro.",
+        "Ella pide agua."
       ],
       "english_examples": [
-        "I want a coffee.",
-        "I read a book."
+        "I want a book.",
+        "She asks for water."
       ],
       "related_terms": [
         "动词",
@@ -107,19 +366,19 @@
       "term_zh": "状语",
       "term_en": "adverbial",
       "short_explanation_zh": "状语补充说明动作发生的时间、地点、方式、原因或条件。",
-      "detailed_explanation_zh": "状语不是句子的核心动作，但它能让句子信息更完整。它可以说明什么时候、在哪里、怎样、为什么或在什么条件下发生。",
+      "detailed_explanation_zh": "状语不是句子的核心动作，但它让句子信息更完整。比如 en la biblioteca 表示地点，por la tarde 表示时间。",
       "spanish_examples": [
-        "Estudio por la tarde.",
-        "Comemos en el restaurante."
+        "Estudio en la biblioteca.",
+        "Comemos por la tarde."
       ],
       "english_examples": [
-        "I study in the afternoon.",
-        "We eat at the restaurant."
+        "I study in the library.",
+        "We eat in the afternoon."
       ],
       "related_terms": [
         "动词",
         "从句",
-        "现在时"
+        "句子结构"
       ]
     },
     {
@@ -139,104 +398,6 @@
       "related_terms": [
         "主语",
         "动词",
-        "状语"
-      ]
-    },
-    {
-      "id": "article",
-      "term_zh": "冠词",
-      "term_en": "article",
-      "short_explanation_zh": "冠词放在名词前，用来表示特指、泛指，并和名词保持阴阳性与单复数一致。",
-      "detailed_explanation_zh": "西语冠词包括定冠词 el、la、los、las 和不定冠词 un、una、unos、unas。冠词要配合名词的性和数。",
-      "spanish_examples": [
-        "La cuenta, por favor.",
-        "Quiero un café."
-      ],
-      "english_examples": [
-        "The bill, please.",
-        "I want a coffee."
-      ],
-      "related_terms": [
-        "阴阳性",
-        "宾语"
-      ]
-    },
-    {
-      "id": "gender",
-      "term_zh": "阴阳性",
-      "term_en": "gender",
-      "short_explanation_zh": "阴阳性是西语名词的重要特征，会影响冠词和形容词形式。",
-      "detailed_explanation_zh": "西语名词通常分为阳性和阴性。冠词和形容词需要与名词保持一致，例如 el libro 和 la mesa。",
-      "spanish_examples": [
-        "El libro es interesante.",
-        "La mesa está limpia."
-      ],
-      "english_examples": [
-        "The book is interesting.",
-        "The table is clean."
-      ],
-      "related_terms": [
-        "冠词",
-        "宾语"
-      ]
-    },
-    {
-      "id": "question-word",
-      "term_zh": "疑问词",
-      "term_en": "question word",
-      "short_explanation_zh": "疑问词用于提出信息类问题，例如问地点、人物、时间、原因或方式。",
-      "detailed_explanation_zh": "常见西语疑问词包括 qué、quién、dónde、cuándo、por qué、cómo、cuánto 等。它们帮助学习者获得具体信息。",
-      "spanish_examples": [
-        "¿Dónde está la biblioteca?",
-        "¿Qué quieres beber?"
-      ],
-      "english_examples": [
-        "Where is the library?",
-        "What do you want to drink?"
-      ],
-      "related_terms": [
-        "主语",
-        "动词",
-        "现在时"
-      ]
-    },
-    {
-      "id": "present-tense",
-      "term_zh": "现在时",
-      "term_en": "present tense",
-      "short_explanation_zh": "现在时用于表达现在发生的动作、习惯、事实或一般情况。",
-      "detailed_explanation_zh": "西语现在时常用于日常对话。它可以表达正在发生的事情、经常做的事情，也可以表达事实或稳定状态。",
-      "spanish_examples": [
-        "Vivo en Madrid.",
-        "Ella estudia español."
-      ],
-      "english_examples": [
-        "I live in Madrid.",
-        "She studies Spanish."
-      ],
-      "related_terms": [
-        "动词变位",
-        "动词",
-        "主语"
-      ]
-    },
-    {
-      "id": "ser-vs-estar",
-      "term_zh": "ser vs estar",
-      "term_en": "ser vs estar",
-      "short_explanation_zh": "ser 和 estar 都可以表示“是”，但 ser 常用于身份和特质，estar 常用于位置和状态。",
-      "detailed_explanation_zh": "ser 通常描述身份、来源、职业、性质等较稳定的信息；estar 常用于地点、临时状态、情绪或结果状态。区分两者是西语初学者的重要语法点。",
-      "spanish_examples": [
-        "Ella es profesora.",
-        "La mesa está ocupada."
-      ],
-      "english_examples": [
-        "She is a teacher.",
-        "The table is occupied."
-      ],
-      "related_terms": [
-        "动词",
-        "现在时",
         "状语"
       ]
     }
