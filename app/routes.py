@@ -11,6 +11,7 @@ from app.data_loader import (
     get_pronunciation_targets,
     get_vocab_entries,
 )
+from app.news_service import NEWS_CATEGORIES, get_news_headlines
 
 
 main = Blueprint("main", __name__)
@@ -101,6 +102,21 @@ def grammar_detail(slug):
     return render_template("grammar_detail.html", module=module)
 
 
+@main.route("/vocabulary")
+def vocabulary():
+    return render_template("vocabulary.html", entries=get_vocab_entries().values())
+
+
+@main.route("/news")
+def news():
+    return render_template("news.html", categories=NEWS_CATEGORIES)
+
+
+@main.route("/buddy")
+def buddy():
+    return render_template("buddy.html")
+
+
 @main.route("/about")
 def about():
     return render_template("about.html")
@@ -122,6 +138,14 @@ def api_lesson(lesson_id):
 @main.route("/api/vocab")
 def api_vocab():
     return jsonify({"entries": get_vocab_entries()})
+
+
+@main.route("/api/news")
+def api_news():
+    category = request.args.get("category", "technology")
+    if category not in NEWS_CATEGORIES:
+        return jsonify({"error": "Unknown news category"}), 400
+    return jsonify({"category": category, "headlines": get_news_headlines(category)})
 
 
 @main.route("/api/pronunciation-targets")

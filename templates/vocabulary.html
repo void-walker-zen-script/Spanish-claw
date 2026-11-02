@@ -1,0 +1,5 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>单词 · Spanish Claw</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body class="module-page"><header class="site-header discovery-header"><a class="brand" href="{{ url_for('main.index') }}"><span class="brand-mark">SC</span><span>Spanish Claw</span></a><nav class="site-nav discovery-nav"><a href="{{ url_for('main.index') }}">返回首页</a><a href="{{ url_for('main.saved') }}">学习记录</a></nav></header>
+<main class="module-shell"><section class="module-page-hero"><p class="home-kicker">VOCABULARY LIBRARY</p><h1>单词，不是孤立地背。</h1><p>先从场景中遇见表达，再在这里回看释义、用法和例句。</p></section><section class="vocab-grid" aria-label="单词卡片">{% for entry in entries %}<article class="vocab-card"><span>{{ entry.type }}</span><h2>{{ entry.text }}</h2><p class="vocab-translation">{{ entry.translation }}</p><p>{{ entry.common_usage }}</p><small>{{ entry.example }}</small></article>{% endfor %}</section></main>
+</body></html>
