@@ -9,3 +9,38 @@
     if (event.key === "ArrowRight") { event.preventDefault(); move(1); }
   });
 })();
+
+/* ===== Animated "C" tile on the homepage (mirrors WorkBuddy's animated "o") =====
+   用户选定：1→ñ徽章书写 · 2→咖啡杯滑入 · 3→猫爪盖章 · 4→闪电突发 */
+(() => {
+  const clawC = document.getElementById('clawC');
+  const popupWbn = document.getElementById('popupWbn');
+  if (!clawC) return;
+  const clawIcon = clawC.querySelector('.claw-c-icon');
+
+  const ICONS = {
+    word:  '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#fff" stroke-width="2.2"/><text x="12" y="17" font-size="15" font-weight="900" font-family="Georgia, serif" text-anchor="middle" fill="#fff">ñ</text></svg>',
+    scene: '<svg viewBox="0 0 24 24" fill="#fff"><path d="M5 9h12v6a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3z"/><path d="M17 10h2a2 2 0 0 1 0 4h-2" fill="none" stroke="#fff" stroke-width="2"/><path class="steam" d="M8 3c0 1.5-1.5 2-1.5 3.5" stroke="#fff" stroke-width="1.4" fill="none"/><path class="steam s2" d="M12 3c0 1.5-1.5 2-1.5 3.5" stroke="#fff" stroke-width="1.4" fill="none"/></svg>',
+    cat:   '<svg viewBox="0 0 24 24" fill="#fff"><ellipse cx="12" cy="15.5" rx="5" ry="4.2"/><circle cx="6.6" cy="9.2" r="2"/><circle cx="11" cy="6.4" r="2.2"/><circle cx="16.1" cy="7" r="2"/><circle cx="19.4" cy="10.2" r="1.7"/></svg>',
+    news:  '<svg viewBox="0 0 24 24" fill="#fff"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>'
+  };
+  const CLAW_STATES = [
+    { icon: ICONS.word,  color: '#6f8a5e', motion: 'm-write', label: '西语单词' },
+    { icon: ICONS.scene, color: '#a86a52', motion: 'm-slide', label: '情景' },
+    { icon: ICONS.cat,   color: '#c0895f', motion: 'm-stamp', label: '猫咪' },
+    { icon: ICONS.news,  color: '#5f6b69', motion: 'm-flash', label: '时事新闻' }
+  ];
+  const MOTIONS = ['m-write', 'm-slide', 'm-stamp', 'm-flash'];
+  let clawIdx = 0;
+  function setClaw(i) {
+    const s = CLAW_STATES[i];
+    clawC.style.setProperty('--c-color', s.color);
+    clawIcon.innerHTML = s.icon;
+    clawC.classList.remove('swap'); void clawC.offsetWidth; clawC.classList.add('swap');
+    clawIcon.classList.remove(...MOTIONS); void clawIcon.offsetWidth; clawIcon.classList.add(s.motion);
+  }
+  setClaw(0);
+  setInterval(() => { clawIdx = (clawIdx + 1) % CLAW_STATES.length; setClaw(clawIdx); }, 1900);
+  /* "我帮你" 只在 C 完成第一次变换之后，逐字浮现 */
+  setTimeout(() => popupWbn && popupWbn.classList.add('show'), 1150);
+})();
