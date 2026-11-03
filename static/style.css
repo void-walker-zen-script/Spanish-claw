@@ -1802,3 +1802,110 @@ a:focus-visible,
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Homepage hero: centered title + animated "C" + mascot (Claw Buddy 零灵灵) ===== */
+.discovery-hero.center {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  gap: 6px;
+  min-height: auto;
+  padding: 60px 0 36px;
+}
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.hero-center h1, #home-title {
+  margin: 0;
+  max-width: 600px;
+  font-size: clamp(43px, 5vw, 76px);
+  line-height: .99;
+  letter-spacing: -.07em;
+  font-weight: 800;
+}
+.hero-sub {
+  margin: 0;
+  max-width: 600px;
+  color: #706c65;
+  font-size: 16px;
+}
+
+/* Animated "C" tile (mirrors WorkBuddy's animated "o") */
+.claw-seg { position: relative; display: inline-flex; align-items: center; }
+.claw-c {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1em; height: 1em; margin: 0 .04em;
+  border-radius: 33%;
+  background: var(--c-color, #7d8874);
+  box-shadow: 0 7px 18px rgba(53,47,39,.18), inset 0 2px 4px rgba(255,255,255,.4), inset 0 -3px 6px rgba(0,0,0,.12);
+  overflow: hidden; transform: translateZ(0);
+}
+.claw-c svg { width: 66%; height: 66%; display: block; }
+.claw-c.swap { animation: clawSwap .52s cubic-bezier(.22,.9,.3,1.2); }
+@keyframes clawSwap {
+  0% { transform: scale(.76) rotate(-9deg); opacity: .55; }
+  55% { transform: scale(1.08) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+.claw-rest { display: inline-block; }
+
+/* Per-state icon entrance motions for the "C" tile */
+.claw-c-icon { display: grid; place-items: center; width: 100%; height: 100%; }
+.claw-c-icon.m-write { animation: cWrite .62s cubic-bezier(.22,.9,.3,1.2) both; }
+.claw-c-icon.m-slide { animation: cSlide .56s cubic-bezier(.3,.9,.3,1) both; }
+.claw-c-icon.m-stamp { animation: cStamp .58s cubic-bezier(.3,1.5,.5,1) both; }
+.claw-c-icon.m-flash { animation: cFlash .9s ease-out both; }
+@keyframes cWrite { 0%{opacity:0;transform:scale(.5) rotate(-14deg);} 55%{opacity:1;transform:scale(1.1) rotate(5deg);} 100%{opacity:1;transform:scale(1) rotate(0);} }
+@keyframes cSlide { 0%{opacity:0;transform:translateY(48px);} 100%{opacity:1;transform:translateY(0);} }
+@keyframes cStamp { 0%{opacity:0;transform:scale(1.7);} 60%{opacity:1;transform:scale(.9);} 100%{opacity:1;transform:scale(1);} }
+@keyframes cFlash { 0%{opacity:0;transform:scale(.4);} 18%{opacity:1;transform:scale(1.25);} 30%{transform:scale(.92);} 45%{opacity:1;transform:scale(1);} 62%{opacity:.3;} 72%{opacity:1;} 100%{opacity:1;transform:scale(1);} }
+.steam { transform-box: fill-box; transform-origin: center; animation: steamRise 1.6s ease-in-out infinite; }
+.steam.s2 { animation-delay: .5s; }
+@keyframes steamRise { 0%{opacity:0;transform:translateY(2px);} 40%{opacity:.9;} 100%{opacity:0;transform:translateY(-4px);} }
+
+/* "我帮你" — same line & size as the title, plain dark, reveals after the C transforms */
+.wbn {
+  display: inline-flex; align-items: baseline;
+  margin-left: .26em;
+  color: var(--warm-ink);
+  font-weight: 800;
+  font-size: .84em;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.wbn span { display: inline-block; opacity: 0; transform: translateY(10px); }
+.wbn.show span { animation: wbnIn .5s cubic-bezier(.2,.9,.3,1) forwards; }
+.wbn.show span:nth-child(1) { animation-delay: 0s; }
+.wbn.show span:nth-child(2) { animation-delay: .16s; }
+.wbn.show span:nth-child(3) { animation-delay: .32s; }
+@keyframes wbnIn { to { opacity: 1; transform: translateY(0); } }
+
+/* Mascot stage: enlarged, centered under the title */
+.mascot-stage { gap: 4px; min-height: 430px; margin-top: 28px; padding-bottom: 8px; }
+.mascot-halo { top: 24px; left: 50%; transform: translateX(-50%) rotate(-17deg); width: 330px; height: 330px; opacity: .9; z-index: 0; }
+.mascot-figure { position: relative; z-index: 1; width: 420px; height: 372px; }
+.mascot-img {
+  position: absolute; z-index: 2; left: 50%; bottom: 26px; transform: translateX(-50%);
+  width: 332px; height: auto;
+  filter: drop-shadow(0 26px 30px rgba(94,68,44,.34)) drop-shadow(0 7px 12px rgba(94,68,44,.20)) saturate(1.03) brightness(1.02);
+  transition: transform .4s ease;
+}
+.mascot-figure:hover .mascot-img { transform: translateX(-50%) translateY(-6px) scale(1.02); }
+.mascot-ground { position: absolute; z-index: 1; left: 50%; bottom: 18px; transform: translateX(-50%); width: 250px; height: 38px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(88,62,38,.34), rgba(88,62,38,0) 70%); filter: blur(3px); }
+
+/* keep the progress card centered under the mascot in the new layout */
+.discovery-hero.center .learning-pulse { align-self: center; margin: 22px auto 0; width: min(360px, 90%); }
+
+@media (max-width: 560px) {
+  .discovery-hero.center { padding-top: 44px; }
+  .mascot-stage { min-height: 300px; }
+  .mascot-halo { width: 250px; height: 250px; }
+  .mascot-figure { width: 320px; height: 300px; }
+  .mascot-img { width: 250px; }
+}

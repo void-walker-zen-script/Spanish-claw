@@ -11,10 +11,29 @@
       <nav class="site-nav discovery-nav" aria-label="主导航"><a href="{{ url_for('main.saved') }}">学习记录</a><a href="{{ url_for('main.buddy') }}">我的旅伴</a><a class="profile-dot" href="{{ url_for('main.buddy') }}" aria-label="打开我的旅伴">M</a></nav>
     </header>
     <main class="discovery-shell">
-      <section class="discovery-hero" aria-labelledby="home-title">
-        <div class="hero-copy-block"><p class="home-kicker">SPANISH CLAW · DAILY DISCOVERY</p><h1 id="home-title">把西语放进<br>真实生活里。</h1><p>从一段对话开始，理解表达、完成练习，再和旅伴一起解锁下一座城市。</p></div>
-        <div class="mascot-stage" aria-label="Claw Buddy 吉祥物展示位"><div class="mascot-halo"></div><div class="mascot-placeholder" role="img" aria-label="Claw Buddy 吉祥物占位图，等待正式 3D 形象"><span class="mascot-ear ear-left"></span><span class="mascot-ear ear-right"></span><span class="mascot-face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i></span><span class="mascot-badge">SC</span></div><p>Claw Buddy 正在等你出发</p></div>
-        <aside class="learning-pulse" aria-label="学习进度示例"><p>今日进度</p><strong>03 <span>个表达</span></strong><div class="pulse-track"><span></span></div><small>再学 2 个，领取今日旅伴能量</small></aside>
+      <section class="discovery-hero center" aria-labelledby="home-title">
+        <div class="hero-center">
+          <h1 id="home-title">
+            <span class="word-seg">Spanish</span>
+            <span class="claw-seg"><span class="claw-c" id="clawC"><span class="claw-c-icon"></span></span><span class="claw-rest">law</span></span>
+            <span class="wbn" id="popupWbn" aria-label="我帮你"><span>我</span><span>帮</span><span>你</span></span>
+          </h1>
+          <p class="hero-sub">Spanish Claw 是一个面向西班牙语学习者的智能学习搭子，主打“边听边点边查边收藏”的核心学习闭环——听材料、点词句、查释义、收藏复习，一步步把西语变成用得上的能力。</p>
+        </div>
+        <div class="mascot-stage" aria-label="Claw Buddy 吉祥物展示位">
+          <div class="mascot-figure">
+            <div class="mascot-halo"></div>
+            <img class="mascot-img" src="{{ url_for('static', filename='mascot-lingling.png') }}" alt="Spanish Claw 吉祥物 零灵灵" />
+            <div class="mascot-ground"></div>
+          </div>
+          <p>零灵灵 正在等你出发</p>
+          <aside class="learning-pulse" aria-label="学习进度示例">
+            <p>今日进度</p>
+            <strong>03 <span>个表达</span></strong>
+            <div class="pulse-track"><span></span></div>
+            <small>再学 2 个，领取今日旅伴能量</small>
+          </aside>
+        </div>
       </section>
       <section class="module-rail-section" aria-labelledby="module-title">
         <div class="module-heading"><div><p class="home-kicker">CHOOSE YOUR NEXT STOP</p><h2 id="module-title">今天想怎么学？</h2></div><div class="rail-controls" aria-label="切换功能卡片"><button class="rail-button" type="button" data-rail="previous" aria-label="上一张卡片">←</button><button class="rail-button" type="button" data-rail="next" aria-label="下一张卡片">→</button></div></div>
