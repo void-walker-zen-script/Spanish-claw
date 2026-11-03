@@ -35,15 +35,45 @@
               </svg>
               <span>咕噜？</span>
             </div>
-            <div class="story-cat story-cat--walk" aria-hidden="true">
-              <img src="{{ url_for('static', filename='mascot-lingling-walk.png') }}" alt="" />
-              <i class="walk-spark walk-spark--one"></i><i class="walk-spark walk-spark--two"></i>
-            </div>
-            <div class="story-cat story-cat--react" aria-hidden="true">
-              <img src="{{ url_for('static', filename='mascot-lingling-react.png') }}" alt="" />
-            </div>
-            <div class="story-cat story-cat--final" aria-hidden="true">
-              <img src="{{ url_for('static', filename='mascot-lingling-fish.png') }}" alt="" />
+            <div class="story-cat" aria-hidden="true">
+              <svg class="cat-svg" viewBox="0 0 260 205" xmlns="http://www.w3.org/2000/svg">
+                <g class="cat-all">
+                  <path class="cat-tail" d="M74,120 C50,124 30,104 44,76 C50,64 66,66 66,82" fill="none" stroke="#f1dfc0" stroke-width="15" stroke-linecap="round"/>
+                  <path class="cat-tail-stripe" d="M52,96 C46,90 48,82 54,82" fill="none" stroke="#e7cda3" stroke-width="6" stroke-linecap="round"/>
+                  <rect class="cat-leg leg-bf" x="98" y="146" width="16" height="36" rx="8" fill="#ecd9b6" stroke="#d9c19a" stroke-width="2"/>
+                  <rect class="cat-leg leg-bn" x="116" y="146" width="16" height="36" rx="8" fill="#f1dfc0" stroke="#d9c19a" stroke-width="2"/>
+                  <ellipse cx="130" cy="112" rx="74" ry="48" fill="#f1dfc0" stroke="#d9c19a" stroke-width="2.5"/>
+                  <ellipse cx="142" cy="124" rx="50" ry="30" fill="#f8ecd6"/>
+                  <rect class="cat-leg leg-ff" x="156" y="146" width="16" height="36" rx="8" fill="#ecd9b6" stroke="#d9c19a" stroke-width="2"/>
+                  <rect class="cat-leg leg-fn" x="174" y="146" width="16" height="36" rx="8" fill="#f1dfc0" stroke="#d9c19a" stroke-width="2"/>
+                  <g class="cat-head">
+                    <path d="M170,58 L158,28 L196,50 Z" fill="#f1dfc0" stroke="#d9c19a" stroke-width="2.5"/>
+                    <path d="M208,50 L234,28 L234,62 Z" fill="#f1dfc0" stroke="#d9c19a" stroke-width="2.5"/>
+                    <path d="M174,52 L168,36 L188,48 Z" fill="#f3c9c0"/>
+                    <path d="M212,50 L228,36 L230,58 Z" fill="#f3c9c0"/>
+                    <circle cx="198" cy="92" r="46" fill="#f1dfc0" stroke="#d9c19a" stroke-width="2.5"/>
+                    <path d="M168,112 Q150,130 130,124" fill="none" stroke="#c9915c" stroke-width="9" stroke-linecap="round"/>
+                    <circle cx="150" cy="124" r="8" fill="#f4c542" stroke="#c89a2e" stroke-width="2"/>
+                    <line x1="150" y1="118" x2="150" y2="130" stroke="#c89a2e" stroke-width="1.5"/>
+                    <g class="cat-face-calm">
+                      <g class="cat-eye-calm">
+                        <circle cx="212" cy="86" r="9" fill="#2f6fb0"/>
+                        <circle cx="215" cy="83" r="3" fill="#fff"/>
+                      </g>
+                      <path d="M232,98 l-6,3 l6,3 z" fill="#e58b9a"/>
+                      <path d="M224,104 q7,7 15,1" fill="none" stroke="#b06a55" stroke-width="2.5" stroke-linecap="round"/>
+                    </g>
+                    <g class="cat-face-sly">
+                      <circle cx="212" cy="82" r="14" fill="#2f6fb0"/>
+                      <circle cx="217" cy="77" r="5" fill="#fff"/>
+                      <circle cx="206" cy="86" r="2.4" fill="#cde7ff"/>
+                      <path d="M222,100 q11,18 24,2 q-1,14 -12,14 q-11,0 -12,-16 z" fill="#7a2f2f"/>
+                      <path d="M226,104 l3,9 l4,-9 z" fill="#fff"/>
+                      <path d="M236,103 l3,9 l4,-9 z" fill="#fff"/>
+                    </g>
+                  </g>
+                </g>
+              </svg>
             </div>
             <div class="mascot-ground" aria-hidden="true"></div>
             <button class="mascot-replay" type="button" aria-label="重新播放零灵灵开场动画">↻ 再看一次</button>

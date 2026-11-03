@@ -1957,30 +1957,20 @@ a:focus-visible,
 .story-cat {
   position: absolute;
   z-index: 3;
+  bottom: 24px;
+  left: -45%;
+  width: clamp(240px, 30vw, 360px);
   pointer-events: none;
+  filter: drop-shadow(0 16px 12px rgba(83,57,34,.2));
 }
-.story-cat img { display: block; width: 100%; height: auto; user-select: none; }
-.story-cat--walk {
-  bottom: 27px;
-  left: -430px;
-  width: clamp(280px, 36vw, 445px);
-  filter: drop-shadow(0 22px 18px rgba(83,57,34,.25));
-}
-.story-cat--walk img { transform-origin: 48% 91%; }
-.story-cat--final {
-  bottom: 10px;
-  left: 50%;
-  width: clamp(235px, 28vw, 335px);
-  opacity: 0;
-  filter: drop-shadow(0 24px 20px rgba(83,57,34,.28));
-}
-.story-cat--react {
-  bottom: 10px;
-  left: calc(100% - clamp(235px, 28vw, 335px) + 38px);
-  width: clamp(235px, 28vw, 335px);
-  opacity: 0;
-  filter: drop-shadow(0 24px 20px rgba(83,57,34,.28));
-}
+.story-cat .cat-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.cat-all { transform-box: fill-box; transform-origin: 50% 100%; }
+.cat-leg { transform-box: fill-box; transform-origin: 50% 0%; }
+.cat-tail { transform-box: fill-box; transform-origin: 95% 92%; }
+.cat-head { transform-box: fill-box; transform-origin: 28% 88%; }
+.cat-eye-calm { transform-box: fill-box; transform-origin: 50% 50%; }
+.cat-face-sly { opacity: 0; }
+.cat-face-calm { opacity: 1; }
 .mascot-stage[data-mascot-story] .mascot-ground {
   z-index: 1;
   bottom: 34px;
@@ -2013,19 +2003,7 @@ a:focus-visible,
   font: 800 12px/1 var(--font-display, "Nunito Sans", sans-serif);
   transform: rotate(-8deg);
 }
-.walk-spark {
-  position: absolute;
-  z-index: -1;
-  bottom: 20px;
-  width: 12px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(204,166,121,.34);
-  opacity: 0;
-}
-.walk-spark--one { left: 34%; }
-.walk-spark--two { left: 48%; animation-delay: .44s; }
-/* eye-glint removed: the reaction image already shows the bright, widened sly eyes */
+/* 2D 动画猫：脚掌尘由 SVG 腿部行走动画取代，原 walk-spark / eye-glint 已移除 */
 .mascot-replay {
   position: absolute;
   z-index: 8;
@@ -2045,65 +2023,90 @@ a:focus-visible,
 .mascot-replay:hover { background: #fff; color: #4c3e2d; }
 .mascot-caption { min-height: 21px; }
 
-.mascot-story.is-playing .story-cat--walk { animation: linglingWalkAcross 12s cubic-bezier(.35,.01,.3,1) both; }
-.mascot-story.is-playing .story-cat--walk img { animation: linglingCatGait .82s ease-in-out 5; }
-.mascot-story.is-playing .walk-spark { animation: pawPuff .82s ease-in-out 5; }
+.mascot-story.is-playing .story-cat { animation: catJourney 12s cubic-bezier(.4,0,.2,1) both; }
+.mascot-story.is-playing .cat-all { animation: catBob 12s ease-in-out both; }
+.mascot-story.is-playing .leg-fn,
+.mascot-story.is-playing .leg-bf { animation: catLegA 12s ease-in-out both; }
+.mascot-story.is-playing .leg-ff,
+.mascot-story.is-playing .leg-bn { animation: catLegB 12s ease-in-out both; }
+.mascot-story.is-playing .cat-tail { animation: catTail 12s ease-in-out both; }
+.mascot-story.is-playing .cat-head { animation: catLook 12s ease-in-out both; }
+.mascot-story.is-playing .cat-eye-calm { animation: catBlink 12s ease-in-out both; }
+.mascot-story.is-playing .cat-face-calm { animation: faceCalmHide 12s ease-in-out both; }
+.mascot-story.is-playing .cat-face-sly { animation: faceSlyShow 12s ease-in-out both; }
 .mascot-story.is-playing .story-fish { animation: clownfishDiscovery 12s ease-in-out both; }
-.mascot-story.is-playing .story-fish svg { animation: clownfishWriggle .46s ease-in-out 7; animation-delay: 5s; }
-.mascot-story.is-playing .story-cat--react { animation: linglingReact 12s ease-in-out both; }
-.mascot-story.is-playing .story-cat--final { animation: linglingFinale 12s cubic-bezier(.2,.85,.25,1) both; }
-.mascot-story.is-playing .story-cat--final img { animation: linglingLookAround 1.9s ease-in-out 9.4s 2 both; }
+.mascot-story.is-playing .story-fish svg { animation: clownfishWriggle .42s ease-in-out 6; animation-delay: 4.6s; }
 .mascot-story.is-playing .mascot-replay { animation: replayReveal .4s ease 11.6s forwards; }
 
-@keyframes linglingWalkAcross {
-  0%, 3% { left: -430px; opacity: 0; }
-  8% { opacity: 1; }
-  40% { left: calc(100% - clamp(280px, 36vw, 445px) + 38px); opacity: 1; }
-  46% { left: calc(100% - clamp(280px, 36vw, 445px) + 38px); opacity: 1; transform: translateY(0) rotate(0); }
-  50% { transform: translateY(-9px) rotate(-3deg); }
-  54% { transform: translateY(0) rotate(0); opacity: 1; }
-  58%, 100% { opacity: 0; transform: translateY(5px) scale(.92); }
+@keyframes catJourney {
+  0% { left: -45%; opacity: 0; transform: translateX(-50%) scaleX(1); }
+  6% { opacity: 1; }
+  40% { left: 62%; opacity: 1; transform: translateX(-50%) scaleX(1); }
+  46% { left: 62%; transform: translateX(-50%) scaleX(-1); }
+  62% { left: 50%; transform: translateX(-50%) scaleX(-1); }
+  70% { left: 50%; transform: translateX(-50%) scaleX(-1); }
+  78% { left: 50%; transform: translateX(-50%) scaleX(1); }
+  100% { left: 50%; transform: translateX(-50%) scaleX(1); }
 }
-@keyframes linglingCatGait {
-  0%,100% { transform: translateY(0) rotate(0); }
-  35% { transform: translateY(-8px) rotate(1.2deg); }
-  65% { transform: translateY(1px) rotate(-1.2deg); }
+@keyframes catBob {
+  0%, 5% { transform: translateY(0); }
+  8% { transform: translateY(-5px); } 12% { transform: translateY(0); }
+  16% { transform: translateY(-5px); } 20% { transform: translateY(0); }
+  24% { transform: translateY(-5px); } 28% { transform: translateY(0); }
+  32% { transform: translateY(-5px); } 36% { transform: translateY(0); }
+  40%, 100% { transform: translateY(0); }
 }
-@keyframes pawPuff {
-  0%,68% { opacity: 0; transform: scale(.6); }
-  70% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: translateX(-11px) translateY(-4px) scale(1.2); }
+@keyframes catLegA {
+  0%, 5% { transform: rotate(0); }
+  8% { transform: rotate(22deg); } 12% { transform: rotate(-22deg); }
+  16% { transform: rotate(22deg); } 20% { transform: rotate(-22deg); }
+  24% { transform: rotate(22deg); } 28% { transform: rotate(-22deg); }
+  32% { transform: rotate(22deg); } 36% { transform: rotate(-22deg); }
+  40%, 100% { transform: rotate(0); }
+}
+@keyframes catLegB {
+  0%, 5% { transform: rotate(0); }
+  8% { transform: rotate(-22deg); } 12% { transform: rotate(22deg); }
+  16% { transform: rotate(-22deg); } 20% { transform: rotate(22deg); }
+  24% { transform: rotate(-22deg); } 28% { transform: rotate(22deg); }
+  32% { transform: rotate(-22deg); } 36% { transform: rotate(22deg); }
+  40%, 100% { transform: rotate(0); }
+}
+@keyframes catTail {
+  0%, 40% { transform: rotate(-6deg); }
+  46% { transform: rotate(-6deg); }
+  50% { transform: rotate(20deg); } 54% { transform: rotate(-16deg); }
+  58% { transform: rotate(20deg); } 62% { transform: rotate(-6deg); }
+  100% { transform: rotate(-6deg); }
+}
+@keyframes catLook {
+  0%, 60% { transform: rotate(0); }
+  66% { transform: rotate(-9deg); } 72% { transform: rotate(9deg); }
+  78% { transform: rotate(0); }
+  100% { transform: rotate(0); }
+}
+@keyframes catBlink {
+  0%, 9%, 13%, 44%, 48%, 72%, 76%, 100% { transform: scaleY(1); }
+  11% { transform: scaleY(.08); } 46% { transform: scaleY(.08); } 74% { transform: scaleY(.08); }
+}
+@keyframes faceSlyShow {
+  0%, 46% { opacity: 0; }
+  50%, 63% { opacity: 1; }
+  67%, 100% { opacity: 0; }
+}
+@keyframes faceCalmHide {
+  0%, 46% { opacity: 1; }
+  50%, 63% { opacity: 0; }
+  67%, 100% { opacity: 1; }
 }
 @keyframes clownfishDiscovery {
   0%, 41% { opacity: 0; transform: translateX(-50%) scale(.34) rotate(-12deg); }
   46% { opacity: 1; transform: translateX(-50%) scale(1.08) rotate(7deg); }
-  52%, 62% { opacity: 1; transform: translateX(-50%) scale(1) rotate(-4deg); }
-  68%, 100% { opacity: 0; transform: translateX(-50%) scale(.5) rotate(10deg); }
+  52%, 100% { opacity: 1; transform: translateX(-50%) scale(1) rotate(-4deg); }
 }
 @keyframes clownfishWriggle {
-  0%,100% { transform: rotate(-6deg) translateY(0); }
+  0%, 100% { transform: rotate(-6deg) translateY(0); }
   50% { transform: rotate(8deg) translateY(-7px); }
-}
-@keyframes linglingFinale {
-  0%, 68% { opacity: 0; transform: translate(-50%, 26px) scale(.5); }
-  76% { opacity: 1; transform: translate(-50%, -6px) scale(1.05); }
-  82% { opacity: 1; transform: translate(-50%, 0) scale(1); }
-  100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
-}
-@keyframes linglingReact {
-  0%, 45% { opacity: 0; transform: translateY(12px) scale(.9); }
-  51% { opacity: 1; transform: translateY(0) scale(1); }
-  57% { opacity: 1; transform: translateY(0) scale(1.06); filter: brightness(1.16); }
-  63% { opacity: 1; transform: translateY(0) scale(1); filter: brightness(1); }
-  69% { opacity: 1; transform: translateX(-26%) scale(.96); }
-  75%, 100% { opacity: 0; transform: translateX(-52%) scale(.86); }
-}
-@keyframes linglingLookAround {
-  0% { transform: rotate(0) translateX(0); }
-  25% { transform: rotate(-3deg) translateX(-6px); }
-  50% { transform: rotate(3deg) translateX(7px); }
-  75% { transform: rotate(-2deg) translateX(-3px); }
-  100% { transform: rotate(0) translateX(0); }
 }
 @keyframes replayReveal { to { opacity: 1; transform: translateY(0); } }
 
@@ -2112,19 +2115,21 @@ a:focus-visible,
   .mascot-story { height: 312px; }
   .mascot-stage[data-mascot-story] .mascot-halo { top: 20px; width: 212px; height: 212px; }
   .story-path { bottom: 44px; }
-  .story-cat--walk { bottom: 13px; width: 285px; }
-  .story-cat--react { bottom: 2px; width: 245px; }
-  .story-cat--final { bottom: 2px; width: 245px; }
+  .story-cat { bottom: 16px; width: 250px; }
   .mascot-stage[data-mascot-story] .mascot-ground { bottom: 22px; width: 240px; }
   .story-fish { bottom: 82px; width: 80px; }
   .mascot-replay { right: 4px; bottom: 5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mascot-story.is-playing .story-cat--walk,
-  .mascot-story.is-playing .story-fish,
-  .mascot-story.is-playing .story-cat--react { display: none; }
-  .mascot-story.is-playing .story-cat--final { opacity: 1; transform: translate(-50%, 0); animation: none; }
-  .mascot-story.is-playing .story-cat--final img { animation: none; }
+  .mascot-story.is-playing .story-cat { animation: none; left: 50%; opacity: 1; transform: translateX(-50%) scaleX(1); }
+  .mascot-story.is-playing .cat-all,
+  .mascot-story.is-playing .cat-leg,
+  .mascot-story.is-playing .cat-tail,
+  .mascot-story.is-playing .cat-head,
+  .mascot-story.is-playing .cat-eye-calm { animation: none; transform: none; }
+  .mascot-story.is-playing .cat-face-sly { opacity: 0; }
+  .mascot-story.is-playing .cat-face-calm { opacity: 1; }
+  .mascot-story.is-playing .story-fish { animation: none; opacity: 1; transform: translateX(-50%) scale(1) rotate(-4deg); }
   .mascot-story.is-playing .mascot-replay { opacity: 1; transform: translateY(0); animation: none; }
 }
