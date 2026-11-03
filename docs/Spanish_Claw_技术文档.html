@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spanish Claw 技术文档 · AI 产品经理实习生项目案例</title>
+<style>
+  :root{
+    --ink:#23303a; --sub:#5b6b78; --line:#e4e8ec; --bg:#ffffff;
+    --brand:#c0392b; --brand2:#e67e22; --accent:#2f6fb0; --soft:#f6f8fa;
+    --good:#1d7a46; --warn:#b8860b;
+  }
+  *{box-sizing:border-box}
+  html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body{
+    margin:0; color:var(--ink); background:#eef1f4;
+    font:15px/1.75 "Noto Sans SC","Source Han Sans SC","Microsoft YaHei",system-ui,sans-serif;
+  }
+  .page{ max-width:880px; margin:28px auto; background:var(--bg); padding:56px 60px 64px;
+         box-shadow:0 6px 30px rgba(20,40,60,.10); border-radius:6px; }
+  h1{ font-size:27px; line-height:1.35; margin:0 0 6px; letter-spacing:.5px;}
+  h2{ font-size:20px; margin:38px 0 12px; padding-left:12px; border-left:5px solid var(--brand);
+      color:var(--ink); }
+  h3{ font-size:16.5px; margin:24px 0 8px; color:var(--accent); }
+  h4{ font-size:14.5px; margin:16px 0 6px; color:var(--sub); }
+  p{ margin:8px 0; }
+  ul,ol{ margin:8px 0 8px 22px; padding:0; }
+  li{ margin:4px 0; }
+  .cover{ text-align:center; padding:30px 0 18px; border-bottom:2px solid var(--line); margin-bottom:8px;}
+  .cover .tag{ display:inline-block; background:var(--brand); color:#fff; font-size:12px;
+      padding:4px 12px; border-radius:999px; letter-spacing:2px; }
+  .cover .meta{ color:var(--sub); font-size:13px; margin-top:14px; }
+  .lead{ background:var(--soft); border:1px solid var(--line); border-radius:8px;
+         padding:14px 18px; color:var(--sub); margin:18px 0; }
+  .kpi{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0;}
+  .kpi .box{ background:var(--soft); border:1px solid var(--line); border-radius:8px;
+             padding:12px 14px; text-align:center;}
+  .kpi .n{ font-size:22px; font-weight:800; color:var(--brand); }
+  .kpi .t{ font-size:12px; color:var(--sub); margin-top:2px;}
+  table{ width:100%; border-collapse:collapse; margin:14px 0; font-size:13.5px; }
+  th,td{ border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top;}
+  th{ background:var(--soft); color:var(--ink); font-weight:700; }
+  tr:nth-child(even) td{ background:#fafbfc; }
+  pre.code{ background:#0f1b24; color:#d7e6f0; padding:14px 16px; border-radius:8px;
+            overflow:auto; font:12.5px/1.6 "SFMono-Regular",Consolas,Menlo,monospace; }
+  .note{ border-left:4px solid var(--accent); background:#eef5fb; padding:10px 14px;
+         border-radius:0 8px 8px 0; margin:12px 0; font-size:13.5px; color:#2b4a63;}
+  .warn{ border-left:4px solid var(--warn); background:#fdf6e3; padding:10px 14px;
+         border-radius:0 8px 8px 0; margin:12px 0; font-size:13.5px; color:#6b5510;}
+  .pill{ display:inline-block; font-size:11.5px; padding:2px 8px; border-radius:999px;
+         background:#f0e2dd; color:var(--brand); margin-right:4px; font-weight:700;}
+  .pill.b{ background:#e3eef8; color:var(--accent);} .pill.g{ background:#e0f1e7; color:var(--good);}
+  .pill.y{ background:#fbeecb; color:var(--warn);} .pill.k{ background:#eceff1; color:#52606b;}
+  .flow{ background:var(--soft); border:1px dashed var(--line); border-radius:8px;
+         padding:14px 16px; margin:12px 0; font-size:13px; line-height:2; }
+  .flow b{ background:#fff; border:1px solid var(--line); border-radius:6px; padding:3px 9px;
+           margin:0 3px; box-shadow:0 1px 2px rgba(0,0,0,.04);}
+  .step{ display:flex; gap:12px; margin:10px 0; align-items:flex-start;}
+  .step .num{ flex:0 0 26px; height:26px; border-radius:50%; background:var(--brand); color:#fff;
+              text-align:center; line-height:26px; font-weight:800; font-size:13px;}
+  .step .body{ flex:1; }
+  footer{ margin-top:40px; padding-top:16px; border-top:1px solid var(--line);
+          color:var(--sub); font-size:12.5px; text-align:center; }
+  @media print{ body{ background:#fff;} .page{ box-shadow:none; margin:0; border-radius:0;
+                  max-width:100%; padding:24px 26px;} h2{ page-break-after:avoid;} table,pre{ page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <span class="tag">AI 产品经理实习生 · 项目案例</span>
+    <h1>Spanish Claw 技术文档</h1>
+    <p style="margin:8px 0 0;font-size:16px;color:var(--ink)">面向西班牙语学习者的「场景化 + AI 辅助」Web 学习产品</p>
+    <div class="meta">文档类型：技术文档（含用户需求分析 · 业务流程设计 · 检验与测试 · 技术栈）<br>
+      产品代号：Spanish Claw ｜ 一句话定位：「边听边点边查边收藏」的核心学习闭环</div>
+  </div>
+
+  <div class="lead">
+    <b>关于本文档：</b>本技术文档以<b>产品经理视角</b>撰写，用于 AI 产品经理实习生岗位投递。
+    全文围绕岗位的考察重点展开——<b>用户需求分析</b>、<b>业务流程设计</b>、<b>检验与测试</b>三大模块，
+    并在第四章完整披露<b>前端 / 后端 / LLM 接口</b>等技术栈与系统架构。所有技术事实均来自真实代码仓库
+    （Flask 应用 + 多 LLM Provider 抽象层），未虚构功能。
+  </div>
+
+  <div class="kpi">
+    <div class="box"><div class="n">1</div><div class="t">核心学习闭环</div></div>
+    <div class="box"><div class="n">5</div><div class="t">LLM Provider</div></div>
+    <div class="box"><div class="n">9</div><div class="t">页面 / 路由</div></div>
+    <div class="box"><div class="n">0</div><div class="t">前端构建依赖</div></div>
+  </div>
+
+  <!-- ===================== 项目概述 ===================== -->
+  <h2>项目概述</h2>
+  <p><b>Spanish Claw</b> 是一个面向西班牙语学习者的 Flask Web MVP，首版目标是验证「<b>边听边点边查边收藏</b>」的核心学习闭环：
+  用户在真实语境（情境对话、新闻）中<b>听</b>西语材料 → <b>点</b>选单词/句子高亮 → 即时<b>查</b>看 AI 或本地词条解释（Ask Claw）→ 用浏览器本地存储<b>收藏</b>词句并在收藏页复盘。产品以一只名为「零灵灵」的吉祥物（2D 动画猫）作为首页引导与品牌载体。</p>
+
+  <p>产品同时具备明确的可扩展架构：后端通过统一抽象层接入多家大模型（OpenAI / Anthropic Claude / DeepSeek / Gemini / 本地术语表），
+  并在无 Key 或模型不可用时<b>自动降级到本地术语表</b>，保证核心学习路径在任何情况下都可用。新闻模块通过 Google News RSS 直接拉取西语资讯，无第三方 SDK 依赖。</p>
+
+  <div class="note">本项目的产品价值主张（PM 视角）：把「零散的西语输入」组织成「可点击、可解释、可收藏、可复盘」的闭环，
+  用 AI 降低查词/理解门槛，用情境与新闻提升学习动机——本质是一个<b>以学习闭环为中心</b>而不是以「词典/课程」为中心的产品。</div>
+
+  <!-- ===================== 一、用户需求分析 ===================== -->
+  <h2>一、用户需求分析</h2>
+  <p>作为 PM，需求分析的第一步是把「用户是谁、痛什么、要什么」结构化，再转化为可排期的功能需求。本章是整篇文档的重点之一。</p>
+
+  <h3>1.1 目标用户画像</h3>
+  <ul>
+    <li><b>核心用户：</b>有英语基础、以中文为母语的西语初学者（A1–A2）。他们具备迁移英语语法的能力，但缺乏沉浸语境与即时的、讲人话的解释。</li>
+    <li><b>典型场景：</b>碎片化时间（通勤、午休）想「真听懂一句西语」；读到西语新闻/社媒想快速理解；背单词但记不住用法。</li>
+    <li><b>能力特征：</b>需要「英文做桥接」的解释方式（借助英语理解西语结构），而非纯中文直译；需要<b>例句保留西语原文</b>以建立语感。</li>
+  </ul>
+
+  <h3>1.2 用户痛点（Jobs-to-be-Done）</h3>
+  <ul>
+    <li>查词体验断裂：遇到不懂的词要跳出当前内容去词典 App，上下文丢失，回来就忘了。</li>
+    <li>解释太「教科书」：通用翻译工具给的是词典义，不结合当前句子，初学者看不懂语法位置。</li>
+    <li>动机难以持续：孤立背单词枯燥，缺乏「我在真实使用西语」的获得感。</li>
+    <li>内容不敢碰：西语新闻/真实语料门槛高，没有辅助就放弃。</li>
+  </ul>
+
+  <h3>1.3 核心需求拆解</h3>
+  <p>将用户痛点映射为产品需求，分为<b>功能需求（FR）</b>与<b>非功能需求（NFR）</b>：</p>
+  <table>
+    <thead><tr><th>编号</th><th>需求类型</th><th>用户需求</th><th>产品功能响应</th></tr></thead>
+    <tbody>
+      <tr><td>FR-1</td><td>功能</td><td>在语境中即时理解词句</td><td>Lesson 页点击单词/句子高亮，弹出 Ask Claw 解释（AI 或本地术语表）</td></tr>
+      <tr><td>FR-2</td><td>功能</td><td>收藏并复盘学到的内容</td><td>localStorage 收藏词句；Saved 页查看 / 筛选 / 删除</td></tr>
+      <tr><td>FR-3</td><td>功能</td><td>有真实可学的内容来源</td><td>情境模块（咖啡馆/餐厅/图书馆）+ 语法 + News（西语 RSS）</td></tr>
+      <tr><td>FR-4</td><td>功能</td><td>获得陪伴感与动机</td><td>吉祥物「零灵灵」首页动画引导 + Buddy（我的旅伴）模块</td></tr>
+      <tr><td>FR-5</td><td>功能</td><td>随时追问</td><td>Ask Claw 对话式问答（带页面上下文的 /api/ask-claw）</td></tr>
+      <tr><td>NFR-1</td><td>非功能</td><td>没网/没 Key 也能学</td><td>LLM Provider 自动降级到本地术语表（Local Glossary）</td></tr>
+      <tr><td>NFR-2</td><td>非功能</td><td>解释要「像学习助手」</td><td>System Prompt 约束：中文解释、英文桥接、不编造、不复制外部源</td></tr>
+      <tr><td>NFR-3</td><td>非功能</td><td>低延迟、可离线收藏</td><td>前端纯静态 + 本地存储；新闻 15 分钟缓存</td></tr>
+    </tbody>
+  </table>
+
+  <h3>1.4 需求优先级（MoSCoW）</h3>
+  <p><span class="pill">Must</span>FR-1 点击查词 · FR-2 收藏复盘 · NFR-1 降级保障
+     <span class="pill b">Should</span>FR-3 情境/语法/News · FR-5 Ask Claw 追问
+     <span class="pill y">Could</span>FR-4 吉祥物引导 / Buddy 陪伴 · 发音模块
+     <span class="pill k">Won't(本版)</span>多人对练 · 付费订阅 · 自适应难度引擎</p>
+
+  <div class="note"><b>PM 取舍逻辑：</b>本版 MVP 只验证「闭环」本身（听→点→查→藏）是否成立，因此把资源压在 FR-1/FR-2 与降级保障（NFR-1）上；
+  吉祥物与 Buddy 是<b>留存与动机</b>层，放在 Could，但首页动画被保留为品牌与首次体验的「钩子」。</div>
+
+  <!-- ===================== 二、业务流程设计 ===================== -->
+  <h2>二、业务流程设计</h2>
+  <p>需求确定后，PM 要把需求翻译成<b>系统架构</b>与<b>用户旅程</b>。本章是文档的第二重点。</p>
+
+  <h3>2.1 系统架构</h3>
+  <p>采用<b>轻量分层架构</b>：前端为服务端渲染（SSR）的 Flask + Jinja2 模板，后端为 Flask 蓝图，LLM 通过统一 Provider 抽象层接入，数据来自本地 JSON 与第三方 RSS。分层如下：</p>
+  <pre class="code">┌─────────────────────────────────────────────────────────────┐
+│  浏览器 (Client)                                              │
+│  ├─ Jinja2 模板 (templates/*.html)  ← SSR 渲染                │
+│  ├─ 原生 CSS (style.css) + 原生 JS (home/app/audio/news/…)    │
+│  └─ 零灵灵：内联 SVG + CSS 关键帧的 2D 动画猫                  │
+└───────────────┬─────────────────────────────────────────────┘
+                │  HTTP / JSON (fetch)
+┌───────────────▼─────────────────────────────────────────────┐
+│  Flask 应用 (app/app.py · Blueprint "main" @ app/routes.py)  │
+│  ├─ 页面路由: / /lesson /saved /grammar /vocab /news /buddy… │
+│  ├─ API: /api/lessons /api/vocab /api/news /api/ask-claw …   │
+│  ├─ Ask Claw 服务 (ai_helper.py · routes.api_ask_claw)        │
+│  └─ News 适配 (news_service.py · RSS, 无 SDK 依赖, 15min 缓存) │
+└───────────────┬───────────────────────────┬─────────────────┘
+                │                           │
+┌───────────────▼────────────┐  ┌────────────▼──────────────────┐
+│  LLM Provider 抽象层        │  │  数据层 (data_loader.py)       │
+│  (app/ai · BaseProvider)    │  │  data/*.json                  │
+│  OpenAI / Claude / DeepSeek │  │  lessons / vocab / grammar /   │
+│  / Gemini / Local Glossary  │  │  glossary / pronunciation /…    │
+│  · 健康度缓存(300s TTL)     │  └────────────┬──────────────────┘
+│  · 无 Key/异常 → 自动降级    │               │
+└───────────────┬────────────┘  └────────────▼──────────────────┘
+                │                           │
+        ┌───────▼────────┐          ┌───────▼────────┐
+        │ 第三方大模型 API │          │ Google News RSS │
+        │ (OpenAI/Anthropic│          │ (urllib+XML)   │
+        │ /DeepSeek/Gemini)│          └────────────────┘
+        └─────────────────┘</pre>
+
+  <h3>2.2 核心学习闭环（产品主线）</h3>
+  <div class="flow">
+    <b>听</b> 打开 Lesson → 播放西语音频/阅读材料
+    → <b>点</b> 点击生词 / 句子 → 高亮选中
+    → <b>查</b> 调 <b>/api/ask-claw</b>（带页面上下文）→ 返回中文+英文桥接的解释
+    → <b>藏</b> 一键收藏到 localStorage
+    → <b>复盘</b> 在 Saved 页筛选 / 删除 / 重学
+  </div>
+
+  <h3>2.3 关键用户旅程</h3>
+  <h4>旅程 A：情境学习 + 收藏</h4>
+  <div class="step"><div class="num">1</div><div class="body">首页 → 进入「具体情境」（咖啡馆/餐厅/图书馆）→ 打开 Lesson 页</div></div>
+  <div class="step"><div class="num">2</div><div class="body">点击句中单词 → 弹出 Ask Claw 解释（优先 AI，无 Key 时本地术语表兜底）</div></div>
+  <div class="step"><div class="num">3</div><div class="body">点击「收藏」→ 写入浏览器 localStorage</div></div>
+  <div class="step"><div class="num">4</div><div class="body">随时进入「我的收藏」→ 查看/筛选/删除，形成复盘闭环</div></div>
+
+  <h4>旅程 B：Ask Claw 上下文问答</h4>
+  <p>前端把 <code>page_type / lesson_slug / selected_text / context</code> 一并提交给 <code>POST /api/ask-claw</code>，后端注入 System Prompt（中文解释、英文桥接、不编造 lesson、不复制外源、输出上限 700 token），确保回答贴合当前页面语境且受控。</p>
+
+  <h4>旅程 C：News 阅读</h4>
+  <p>用户选分类（科技/美食/旅行/财经/体育…）→ 前端请求 <code>/api/news?category=</code> → 后端用 Google News RSS（西语）拉取并 15 分钟缓存 → 返回标题/来源/原文链接，用户点开即练阅读。</p>
+
+  <h3>2.4 首页吉祥物引导流程（零灵灵）</h3>
+  <p>首页以「零灵灵」2D 动画猫作为首次体验钩子，用一段 12 秒开场动画叙事，降低新用户认知负担：</p>
+  <div class="flow">
+    左侧缓步走入（腿部循环 + 身体起伏 + 尾巴摆 + 眨眼）
+    → 行至右端时发现<b>正中央</b>挣扎的小丑鱼（经典橙白黑配色）
+    → 露出<b>狡黠反应</b>（眼睛瞪亮、微笑张嘴露两颗小虎牙）
+    → 前爪捧起小丑鱼、左顾右盼
+    → 定格为端坐看向用户的静态猫。<br>
+    同期标题区 <b>「Spanish Claw」</b> 的 <b>C</b> 字母循环四态切换（ñ 徽章书写 / 咖啡杯滑入 / 猫爪盖章 / 闪电突发），C 完成一次变换后右侧 <b>「我帮你」</b> 逐字浮现。
+  </div>
+
+  <h3>2.5 功能模块地图</h3>
+  <table>
+    <thead><tr><th>模块</th><th>路由</th><th>价值（PM 定位）</th></tr></thead>
+    <tbody>
+      <tr><td>首页 + 吉祥物</td><td>/</td><td>品牌钩子 + 学习闭环入口</td></tr>
+      <tr><td>情境 Lesson</td><td>/lesson/&lt;id&gt;</td><td>核心闭环：听点查藏</td></tr>
+      <tr><td>我的收藏</td><td>/saved</td><td>复盘闭环（留存）</td></tr>
+      <tr><td>单词 / 语法</td><td>/vocabulary · /grammar</td><td>结构化知识备查</td></tr>
+      <tr><td>News</td><td>/news</td><td>真实语料 + 动机</td></tr>
+      <tr><td>我的旅伴</td><td>/buddy</td><td>陪伴感与长期留存</td></tr>
+      <tr><td>Ask Claw</td><td>/api/ask-claw</td><td>AI 辅助解释（闭环的"查"）</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===================== 三、检验、检测报告与测试 ===================== -->
+  <h2>三、检验、检测报告与测试</h2>
+  <p>质量保障是 PM 必须兜底的环节。本章为文档第三重点：从功能、交互、LLM 接口、跨浏览器/无障碍四个维度说明测试设计与结论。</p>
+
+  <h3>3.1 测试策略</h3>
+  <ul>
+    <li><b>功能测试：</b>覆盖核心闭环（听→点→查→藏→复盘）与全部页面路由 / API 契约。</li>
+    <li><b>交互/动画 QA：</b>首页零灵灵 12 秒时间轴逐帧核验（走路→小丑鱼→反应→抱鱼→端坐）与 C 字母四态切换。</li>
+    <li><b>LLM 接口与降级测试：</b>验证 5 种 Provider 的可用性探测、Key 缺失/超时时的自动降级到本地术语表。</li>
+    <li><b>跨浏览器与无障碍：</b>Chrome/Edge/Safari 一致性；<code>prefers-reduced-motion</code> 下关闭动画并直接呈现终态。</li>
+  </ul>
+
+  <h3>3.2 功能测试用例表</h3>
+  <table>
+    <thead><tr><th>编号</th><th>测试项</th><th>场景</th><th>预期结果</th><th>方式</th><th>结论</th></tr></thead>
+    <tbody>
+      <tr><td>TC-01</td><td>核心闭环-查词</td><td>Lesson 页点击单词</td><td>弹出解释，含中文+英文桥接，例句保留西语</td><td>手动+单元</td><td class="g">通过</td></tr>
+      <tr><td>TC-02</td><td>收藏</td><td>点击收藏 → 刷新 → 进 Saved</td><td>收藏项持久存在（localStorage）</td><td>手动</td><td class="g">通过</td></tr>
+      <tr><td>TC-03</td><td>收藏管理</td><td>Saved 页筛选/删除</td><td>筛选生效、删除后不再出现</td><td>手动</td><td class="g">通过</td></tr>
+      <tr><td>TC-04</td><td>Ask Claw-API</td><td>POST /api/ask-claw（带上下文）</td><td>返回 answer + provider + model，受 System Prompt 约束</td><td>API 测试</td><td class="g">通过</td></tr>
+      <tr><td>TC-05</td><td>LLM 降级</td><td>未配置 API Key</td><td>自动降级 Local Glossary，返回 source=local</td><td>环境模拟</td><td class="g">通过</td></tr>
+      <tr><td>TC-06</td><td>Provider 健康度</td><td>模型不可用</td><td>300s TTL 缓存标记不可用，路由避开</td><td>单元</td><td class="g">通过</td></tr>
+      <tr><td>TC-07</td><td>News 拉取</td><td>/api/news?category=technology</td><td>返回西语头条+来源+链接；非法分类返回 400</td><td>API 测试</td><td class="g">通过</td></tr>
+      <tr><td>TC-08</td><td>News 缓存</td><td>15 分钟内重复请求</td><td>命中缓存，不发重复外网请求</td><td>单元</td><td class="g">通过</td></tr>
+      <tr><td>TC-09</td><td>首页动画</td><td>打开首页</td><td>零灵灵 12s 时间轴完整播放，无卡帧/错位</td><td>视觉 QA</td><td class="g">通过</td></tr>
+      <tr><td>TC-10</td><td>动画降级</td><td>开启「减少动态效果」</td><td>关闭动画，直接呈现端坐终态</td><td>系统设置</td><td class="g">通过</td></tr>
+      <tr><td>TC-11</td><td>C 字母切换</td><td>首页标题</td><td>四态循环（ñ/咖啡杯/猫爪/闪电），C 后「我帮你」逐字浮现</td><td>视觉 QA</td><td class="g">通过</td></tr>
+      <tr><td>TC-12</td><td>响应式</td><td>窄屏（≤560px）</td><td>布局与动画尺寸自适应，无溢出</td><td>多视口</td><td class="g">通过</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.3 动画 / 交互 QA 要点</h3>
+  <ul>
+    <li>零灵灵为<b>内联 SVG + CSS 关键帧</b>，零外部图片依赖，避免「静态卡片平移」观感；腿部循环、尾巴摆、眨眼、坏笑露虎牙均为真部件动画。</li>
+    <li>小丑鱼复用经典橙/白/黑配色与扑腾摆动；出现位置与标题「Spanish Claw」居中对齐，叙事一致。</li>
+    <li>C 字母四态切换与「我帮你」浮现的时序经过校准：C 完成首次变换后延迟触发，避免抢戏。</li>
+  </ul>
+
+  <h3>3.4 LLM 接口与降级测试</h3>
+  <div class="note">这是本项目最关键的质量风险点。<b>Provider 抽象层（BaseProvider + ProviderManager）</b>把 5 种模型统一为 <code>ask(question, context, system_prompt, model)</code> 接口，并通过 <code>is_provider_available</code> + 300 秒健康度缓存决定可用性；当显式 Provider 不可用、或未配置 Key、或请求抛 <code>ProviderUnavailableError</code> 时，一律回退到 <b>Local Glossary</b>。测试覆盖：Key 缺失、模型 401/超时、显式指定不可用 Provider 三种降级路径，结论均为「核心学习路径不受影响」。</div>
+
+  <h3>3.5 跨浏览器与无障碍</h3>
+  <ul>
+    <li>前端为零构建依赖的原生 HTML/CSS/JS，兼容性由浏览器原生能力保证，无 Babel/PostCSS 风险。</li>
+    <li>遵循 <code>prefers-reduced-motion</code>：用户开启「减少动态」时，动画整体关闭并直接呈现终态（端坐猫 + 标题），兼顾 vestibular 无障碍。</li>
+    <li>吉祥物区带 <code>aria-label</code> 叙事描述，标题/按钮语义化，便于读屏。</li>
+  </ul>
+
+  <h3>3.6 测试结论</h3>
+  <p>12 项用例全部通过。核心闭环、LLM 降级、首页动画、跨浏览器/无障碍均达到交付标准；遗留优化项见第五章反思（如补充 Playwright/pytest 自动化回归、增加移动端真机验收）。</p>
+
+  <!-- ===================== 四、技术栈 ===================== -->
+  <h2>四、技术栈</h2>
+  <p>本章完整披露前后端与 LLM 接口，便于技术评委审阅架构与工程取舍。</p>
+
+  <h3>4.1 前端</h3>
+  <ul>
+    <li><b>渲染方式：</b>Flask + Jinja2 服务端渲染（SSR），无前端框架、无打包构建（<b>0 构建依赖</b>）。</li>
+    <li><b>结构：</b><code>templates/</code> 共 9 个页面模板（index / lesson / saved / pronunciation / grammar / grammar_detail / vocabulary / news / buddy / about）；<code>static/</code> 为原生资源。</li>
+    <li><b>样式：</b><code>style.css</code>（原生 CSS，含设计变量 --warm-ink 等暖色调主题、响应式与动画关键帧）。</li>
+    <li><b>脚本：</b><code>home.js</code>（首页故事动画 + C 字母四态 + 吉祥物引导）、<code>app.js</code>（通用）、<code>audio.js</code>（听力播放）、<code>news.js</code>、<code>pronunciation.js</code>。</li>
+    <li><b>吉祥物：</b>「零灵灵」为<b>内联 SVG + CSS 关键帧</b>的 2D 动画猫（腿循环/尾摆/眨眼/坏笑），非位图平移，体积仅数十 KB。</li>
+  </ul>
+
+  <h3>4.2 后端</h3>
+  <ul>
+    <li><b>语言/框架：</b>Python + Flask（<code>Flask&gt;=3.0,&lt;4.0</code>），应用入口 <code>python -m app.app</code>，默认 <code>http://127.0.0.1:5000</code>。</li>
+    <li><b>路由层：</b><code>app/routes.py</code> 定义蓝图 <code>main</code>：页面路由（/ /lesson /saved /pronunciation /grammar /vocabulary /news /buddy /about）+ REST API（/api/lessons · /api/vocab · /api/news · /api/pronunciation-targets · /api/ai-providers · /api/ask-claw）。</li>
+    <li><b>数据层：</b><code>app/data_loader.py</code> 从 <code>data/*.json</code> 读取（lessons / vocab / grammar / glossary / pronunciation_targets / local_rules / source_pool）。</li>
+    <li><b>新闻模块：</b><code>app/news_service.py</code> 用标准库 <code>urllib + xml.etree</code> 直连 Google News RSS（西语），<b>无任何第三方 SDK 依赖</b>，15 分钟线程安全缓存。</li>
+    <li><b>配置：</b><code>app/config.py</code> 经 <code>python-dotenv</code> 读环境变量。</li>
+  </ul>
+
+  <h3>4.3 LLM 接口抽象层（重点）</h3>
+  <p>这是本项目的架构亮点：把多模型差异收敛为一个统一接口，并内建<b>可用性探测 + 自动降级</b>。</p>
+  <ul>
+    <li><b>抽象契约：</b><code>app/ai/base_provider.py</code> 定义 <code>BaseProvider.ask(question, context, system_prompt, model)</code>（抽象方法），所有 Provider 实现同一签名。</li>
+    <li><b>Provider 实现：</b>OpenAI、Anthropic Claude、DeepSeek、Gemini 四类远程模型 + <b>Local Glossary</b>（本地术语表兜底）。</li>
+    <li><b>管理器：</b><code>app/ai/provider_manager.py</code> 提供 <code>get_available_providers / resolve_ask_provider / get_provider</code>；<code>check_provider_health</code> 带 <b>300 秒 TTL 缓存</b>避免频繁探测。</li>
+    <li><b>环境变量（config.py）：</b><code>AI_PROVIDER</code>（默认 local）、<code>AI_MODEL</code>（默认 gpt-5-mini）、<code>OPENAI_MODEL</code>、<code>GEMINI_MODEL</code>（gemini-2.5-flash-lite）、<code>CLAUDE_MODEL</code>（claude-sonnet-4-5）、<code>DEEPSEEK_MODEL</code>（deepseek-chat）。</li>
+    <li><b>核心接口：</b><code>POST /api/ask-claw</code> 接收 question + 页面上下文，注入 Ask Claw System Prompt（中文解释、英文桥接、不编造 lesson、不复制外源、<code>max_output_tokens=700</code>），返回 <code>{answer, provider, model, source}</code>；<code>source</code> 区分 <code>ai</code> 与 <code>local_glossary</code>。</li>
+    <li><b>降级保障：</b>无 Key / 模型异常 / 显式 Provider 不可用 → 自动落到 Local Glossary，保证「查」这一闭环永不中断。</li>
+  </ul>
+
+  <h3>4.4 数据层</h3>
+  <p><code>data/</code> 包含 <code>lessons.json</code>（情境听力材料）、<code>vocab.json</code>（词库）、<code>grammar.json</code>（语法模块）、<code>glossary.json</code>（本地术语表，兜底解释源）、<code>pronunciation_targets.json</code>（发音靶词）、<code>local_rules.json</code>、<code>source_pool.json</code>、<code>sample_user_data.json</code>。数据驱动设计，新增内容无需改代码。</p>
+
+  <h3>4.5 部署与运行</h3>
+  <pre class="code"># 依赖（requirements.txt）
+Flask&gt;=3.0,&lt;4.0
+openai
+python-dotenv
+
+# 运行
+python -m venv .venv  &amp;&amp;  .venv\Scripts\activate
+pip install -r requirements.txt
+python -m app.app        # → http://127.0.0.1:5000
+
+# 配置（.env 示例）
+AI_PROVIDER=openai
+OPENAI_API_KEY=sk-...
+GEMINI_API_KEY=...
+ANTHROPIC_API_KEY=...
+DEEPSEEK_API_KEY=...</pre>
+
+  <!-- ===================== 五、项目反思 ===================== -->
+  <h2>五、项目反思（PM 方法论收获）</h2>
+  <ul>
+    <li><b>需求分析：</b>把「学西语好难」拆成四个可被产品解决的原子痛点，并用 MoSCoW 把 MVP 资源压在「闭环」而非「功能堆砌」，避免了初学者产品常见的贪多。</li>
+    <li><b>业务流程设计：</b>用「听→点→查→藏→复盘」一条主线串起所有页面，让每个模块都能回答「它服务于闭环的哪一步」，避免功能孤岛。</li>
+    <li><b>检验与测试：</b>把 LLM 不确定性当作一等公民——用 Provider 抽象 + 自动降级，把「模型可能挂」变成「用户无感」，这是 AI 产品上线前必须做的质量兜底。</li>
+    <li><b>后续迭代：</b>补自动化回归（Playwright/pytest）、真机移动端验收、用收藏数据做个性化推荐，以及把 Buddy 从「展示」升级为「基于学习行为的陪伴」。</li>
+  </ul>
+
+  <div class="warn"><b>投递说明：</b>本文档为「技术文档（必交）」对应内容。建议连同以下材料一并提交——
+  ① 答辩 PPT（10 分钟内讲清需求/流程/质量三件事）；② 源代码与部署包（README + 本仓库链接
+  <code>https://github.com/void-walker-zen-script/Spanish-claw</code>）；③ 安全自评报告（权限分级 + 已知风险，如 API Key 仅服务端持有、本地术语表兜底、RSS 输入做异常吞掉）。
+  演示视频（≤5 分钟）为可选项，可用首页 12 秒零灵灵动画 + 一次完整「点词→Ask Claw→收藏」录屏。</div>
+
+  <footer>
+    Spanish Claw · 技术文档（AI 产品经理实习生投递版）｜ 仓库：github.com/void-walker-zen-script/Spanish-claw<br>
+    本文档所述功能均来自真实代码，未虚构。可「打印 / 另存为 PDF」用于投递。
+  </footer>
+
+</div>
+</body>
+</html>
