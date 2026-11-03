@@ -79,11 +79,11 @@
     story.classList.remove('is-playing');
     void story.offsetWidth;
     story.classList.add('is-playing');
-    say('零灵灵正在慢悠悠地散步……');
-    after(3900, () => say('咦？正中央有一条活泼的小丑鱼。'));
-    after(5500, () => say('零灵灵的眼睛一下亮了起来。'));
-    after(6600, () => say('它小心捧起小丑鱼，左看看、右看看……'));
-    after(8500, () => say('零灵灵带着新朋友，看向了你。'));
+    say('零灵灵正慢悠悠地从左边散步过来……');
+    after(4800, () => say('咦？正中央有一条活泼的小丑鱼在扑腾。'));
+    after(5600, () => say('零灵灵眼睛一亮，露出了狡黠的笑……'));
+    after(8000, () => say('它小心捧起小丑鱼，左看看、右看看……'));
+    after(9800, () => say('零灵灵抱着新朋友，看向了你。'));
   }
 
   replay?.addEventListener('click', playStory);
