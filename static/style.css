@@ -1909,3 +1909,223 @@ a:focus-visible,
   .mascot-figure { width: 320px; height: 300px; }
   .mascot-img { width: 250px; }
 }
+
+/* ===== Lingling's homepage story: walk → discover fish → sit with it ===== */
+.mascot-stage[data-mascot-story] {
+  width: 100%;
+  min-height: 480px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+.mascot-story {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 1040px);
+  height: 410px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.mascot-stage[data-mascot-story] .mascot-halo {
+  top: 38px;
+  left: 50%;
+  width: 278px;
+  height: 278px;
+  opacity: .58;
+  background: radial-gradient(circle at 38% 30%, #fff9ed 0 6%, #ebd6b8 34%, #d9b58d 100%);
+  filter: blur(.2px);
+}
+.story-path {
+  position: absolute;
+  z-index: 0;
+  bottom: 61px;
+  left: 8%;
+  width: 84%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(120,87,54,.23) 17%, rgba(120,87,54,.23) 83%, transparent);
+}
+.story-path::before,
+.story-path::after {
+  position: absolute;
+  bottom: -9px;
+  color: rgba(120,87,54,.28);
+  font-size: 17px;
+  letter-spacing: 17px;
+  content: "· · · ·";
+}
+.story-path::before { left: 7%; }
+.story-path::after { right: 7%; transform: scaleX(-1); }
+.story-cat {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+.story-cat img { display: block; width: 100%; height: auto; user-select: none; }
+.story-cat--walk {
+  bottom: 27px;
+  left: -430px;
+  width: clamp(280px, 36vw, 445px);
+  filter: drop-shadow(0 22px 18px rgba(83,57,34,.25));
+}
+.story-cat--walk img { transform-origin: 48% 91%; }
+.story-cat--final {
+  bottom: 10px;
+  left: 50%;
+  width: clamp(235px, 28vw, 335px);
+  opacity: 0;
+  filter: drop-shadow(0 24px 20px rgba(83,57,34,.28));
+}
+.mascot-stage[data-mascot-story] .mascot-ground {
+  z-index: 1;
+  bottom: 34px;
+  width: 300px;
+  opacity: .72;
+}
+.story-fish {
+  position: absolute;
+  z-index: 4;
+  bottom: 107px;
+  left: 50%;
+  width: clamp(74px, 9vw, 112px);
+  opacity: 0;
+  transform: translateX(-50%) scale(.36) rotate(-12deg);
+  transform-origin: center;
+  filter: drop-shadow(0 10px 8px rgba(85,49,24,.2));
+}
+.story-fish svg { display: block; width: 100%; overflow: visible; }
+.fish-body { fill: #f4772d; stroke: #9a3d20; stroke-width: 3; }
+.fish-tail { fill: #f05e22; stroke: #9a3d20; stroke-width: 3; stroke-linejoin: round; }
+.fish-band { fill: none; stroke: #fff7df; stroke-width: 13; stroke-linecap: round; }
+.fish-band-outline { fill: none; stroke: #1c2628; stroke-width: 18; stroke-linecap: round; }
+.fish-eye { fill: #202a2a; stroke: #fff; stroke-width: 2; }
+.fish-smile { fill: none; stroke: #5c281c; stroke-width: 2.5; stroke-linecap: round; }
+.story-fish span {
+  position: absolute;
+  top: -22px;
+  right: -18px;
+  color: #b9684a;
+  font: 800 12px/1 var(--font-display, "Nunito Sans", sans-serif);
+  transform: rotate(-8deg);
+}
+.walk-spark {
+  position: absolute;
+  z-index: -1;
+  bottom: 20px;
+  width: 12px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(204,166,121,.34);
+  opacity: 0;
+}
+.walk-spark--one { left: 34%; }
+.walk-spark--two { left: 48%; animation-delay: .44s; }
+.eye-glint {
+  position: absolute;
+  z-index: 2;
+  top: 23%;
+  width: 11%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, rgba(255,255,255,.98) 0 16%, rgba(159,235,255,.76) 22%, transparent 58%);
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+.eye-glint--left { left: 31%; }
+.eye-glint--right { right: 25%; }
+.mascot-replay {
+  position: absolute;
+  z-index: 8;
+  right: 16px;
+  bottom: 14px;
+  padding: 8px 11px;
+  border: 1px solid rgba(102,78,52,.18);
+  border-radius: 999px;
+  background: rgba(255,252,246,.8);
+  color: #766856;
+  font: 700 12px/1 inherit;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: background .2s ease, color .2s ease;
+}
+.mascot-replay:hover { background: #fff; color: #4c3e2d; }
+.mascot-caption { min-height: 21px; }
+
+.mascot-story.is-playing .story-cat--walk { animation: linglingWalkAcross 9.4s cubic-bezier(.35,.01,.3,1) both; }
+.mascot-story.is-playing .story-cat--walk img { animation: linglingCatGait .82s ease-in-out 7; }
+.mascot-story.is-playing .walk-spark { animation: pawPuff .82s ease-in-out 7; }
+.mascot-story.is-playing .story-fish { animation: clownfishDiscovery 9.4s ease-in-out both; }
+.mascot-story.is-playing .story-fish svg { animation: clownfishWriggle .52s ease-in-out 8; animation-delay: 3.85s; }
+.mascot-story.is-playing .story-cat--final { animation: linglingFinale 9.4s cubic-bezier(.2,.85,.25,1) both; }
+.mascot-story.is-playing .story-cat--final img { animation: linglingLookAround 2.3s ease-in-out 6.55s both; }
+.mascot-story.is-playing .eye-glint { animation: eyeBrighten 2.1s ease-in-out 6.1s both; }
+.mascot-story.is-playing .mascot-replay { animation: replayReveal .4s ease 9s forwards; }
+
+@keyframes linglingWalkAcross {
+  0%, 4% { left: -430px; opacity: 0; }
+  8% { opacity: 1; }
+  44% { left: calc(100% - clamp(280px, 36vw, 445px) + 38px); opacity: 1; }
+  51% { left: calc(100% - clamp(280px, 36vw, 445px) + 38px); opacity: 1; transform: translateY(0) rotate(0); }
+  54% { transform: translateY(-10px) rotate(-3deg); }
+  58% { transform: translateY(0) rotate(0); opacity: 1; }
+  63%, 100% { opacity: 0; transform: translateY(6px) scale(.9); }
+}
+@keyframes linglingCatGait {
+  0%,100% { transform: translateY(0) rotate(0); }
+  35% { transform: translateY(-8px) rotate(1.2deg); }
+  65% { transform: translateY(1px) rotate(-1.2deg); }
+}
+@keyframes pawPuff {
+  0%,68% { opacity: 0; transform: scale(.6); }
+  70% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: translateX(-11px) translateY(-4px) scale(1.2); }
+}
+@keyframes clownfishDiscovery {
+  0%, 39% { opacity: 0; transform: translateX(-50%) scale(.36) rotate(-12deg); }
+  44% { opacity: 1; transform: translateX(-50%) scale(1.06) rotate(7deg); }
+  49%, 58% { opacity: 1; transform: translateX(-50%) scale(1) rotate(-5deg); }
+  64%, 100% { opacity: 0; transform: translateX(-50%) scale(.54) rotate(8deg); }
+}
+@keyframes clownfishWriggle {
+  0%,100% { transform: rotate(-6deg) translateY(0); }
+  50% { transform: rotate(8deg) translateY(-7px); }
+}
+@keyframes linglingFinale {
+  0%, 57% { opacity: 0; transform: translate(-50%, 28px) scale(.45); }
+  64% { opacity: 1; transform: translate(-50%, -7px) scale(1.05); }
+  69% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+@keyframes linglingLookAround {
+  0% { transform: rotate(0) translateX(0); }
+  24% { transform: rotate(-2deg) translateX(-5px); }
+  49% { transform: rotate(2.4deg) translateX(6px); }
+  73% { transform: rotate(-1deg) translateX(-2px); }
+  100% { transform: rotate(0) translateX(0); }
+}
+@keyframes eyeBrighten {
+  0%, 14% { opacity: 0; transform: scale(.45); }
+  28%, 74% { opacity: .9; transform: scale(1.1); }
+  100% { opacity: .42; transform: scale(1); }
+}
+@keyframes replayReveal { to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 560px) {
+  .mascot-stage[data-mascot-story] { min-height: 364px; }
+  .mascot-story { height: 312px; }
+  .mascot-stage[data-mascot-story] .mascot-halo { top: 20px; width: 212px; height: 212px; }
+  .story-path { bottom: 44px; }
+  .story-cat--walk { bottom: 13px; width: 285px; }
+  .story-cat--final { bottom: 2px; width: 245px; }
+  .mascot-stage[data-mascot-story] .mascot-ground { bottom: 22px; width: 240px; }
+  .story-fish { bottom: 82px; width: 80px; }
+  .mascot-replay { right: 4px; bottom: 5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot-story.is-playing .story-cat--walk,
+  .mascot-story.is-playing .story-fish { display: none; }
+  .mascot-story.is-playing .story-cat--final { opacity: 1; transform: translate(-50%, 0); animation: none; }
+  .mascot-story.is-playing .story-cat--final img,
+  .mascot-story.is-playing .eye-glint { animation: none; }
+  .mascot-story.is-playing .mascot-replay { opacity: 1; transform: translateY(0); animation: none; }
+}

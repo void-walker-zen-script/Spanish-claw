@@ -44,3 +44,49 @@
   /* "我帮你" 只在 C 完成第一次变换之后，逐字浮现 */
   setTimeout(() => popupWbn && popupWbn.classList.add('show'), 1150);
 })();
+
+/* ===== Homepage mascot story =====
+   节奏：猫咪散步到右端 → 正中央出现小丑鱼 → 猫咪抱鱼坐下并看向学习者。 */
+(() => {
+  const stage = document.querySelector('[data-mascot-story]');
+  if (!stage) return;
+
+  const story = stage.querySelector('.mascot-story');
+  const replay = stage.querySelector('.mascot-replay');
+  const status = stage.querySelector('[data-story-status]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let timers = [];
+
+  const clearTimeline = () => {
+    timers.forEach(window.clearTimeout);
+    timers = [];
+  };
+  const say = (message) => {
+    if (status) status.textContent = message;
+  };
+  const after = (milliseconds, callback) => {
+    timers.push(window.setTimeout(callback, milliseconds));
+  };
+
+  function playStory() {
+    clearTimeline();
+    if (reduceMotion.matches) {
+      story.classList.add('is-playing');
+      say('零灵灵抱着新朋友，正等你一起出发。');
+      return;
+    }
+
+    story.classList.remove('is-playing');
+    void story.offsetWidth;
+    story.classList.add('is-playing');
+    say('零灵灵正在慢悠悠地散步……');
+    after(3900, () => say('咦？正中央有一条活泼的小丑鱼。'));
+    after(5500, () => say('零灵灵的眼睛一下亮了起来。'));
+    after(6600, () => say('它小心捧起小丑鱼，左看看、右看看……'));
+    after(8500, () => say('零灵灵带着新朋友，看向了你。'));
+  }
+
+  replay?.addEventListener('click', playStory);
+  reduceMotion.addEventListener?.('change', playStory);
+  playStory();
+})();

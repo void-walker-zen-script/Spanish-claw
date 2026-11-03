@@ -20,13 +20,33 @@
           </h1>
           <p class="hero-sub">Spanish Claw 是一个面向西班牙语学习者的智能学习搭子，主打“边听边点边查边收藏”的核心学习闭环——听材料、点词句、查释义、收藏复习，一步步把西语变成用得上的能力。</p>
         </div>
-        <div class="mascot-stage" aria-label="Claw Buddy 吉祥物展示位">
-          <div class="mascot-figure">
-            <div class="mascot-halo"></div>
-            <img class="mascot-img" src="{{ url_for('static', filename='mascot-lingling.png') }}" alt="Spanish Claw 吉祥物 零灵灵" />
-            <div class="mascot-ground"></div>
+        <div class="mascot-stage" data-mascot-story aria-label="零灵灵与小丑鱼的开场动画">
+          <div class="mascot-story is-playing" role="group" aria-label="零灵灵从左侧散步而来，发现中央的小丑鱼后，抱着它坐下并看向你。">
+            <div class="mascot-halo" aria-hidden="true"></div>
+            <div class="story-path" aria-hidden="true"></div>
+            <div class="story-fish" aria-hidden="true">
+              <svg viewBox="0 0 160 98" focusable="false">
+                <path class="fish-tail" d="M130 49 158 19 151 49 158 79z" />
+                <path class="fish-body" d="M12 49C25 16 58 6 96 14c22 5 38 18 42 35-4 17-20 30-42 35-38 8-71-2-84-35Z" />
+                <path class="fish-band-outline" d="M49 18c-8 17-8 45 0 62" /><path class="fish-band band-one" d="M49 18c-8 17-8 45 0 62" />
+                <path class="fish-band-outline" d="M88 14c-9 20-9 50 0 70" /><path class="fish-band band-two" d="M88 14c-9 20-9 50 0 70" />
+                <circle class="fish-eye" cx="39" cy="38" r="5" />
+                <path class="fish-smile" d="M22 58c7 5 14 5 20 0" />
+              </svg>
+              <span>咕噜？</span>
+            </div>
+            <div class="story-cat story-cat--walk" aria-hidden="true">
+              <img src="{{ url_for('static', filename='mascot-lingling-walk.png') }}" alt="" />
+              <i class="walk-spark walk-spark--one"></i><i class="walk-spark walk-spark--two"></i>
+            </div>
+            <div class="story-cat story-cat--final" aria-hidden="true">
+              <img src="{{ url_for('static', filename='mascot-lingling-fish.png') }}" alt="" />
+              <i class="eye-glint eye-glint--left"></i><i class="eye-glint eye-glint--right"></i>
+            </div>
+            <div class="mascot-ground" aria-hidden="true"></div>
+            <button class="mascot-replay" type="button" aria-label="重新播放零灵灵开场动画">↻ 再看一次</button>
           </div>
-          <p>零灵灵 正在等你出发</p>
+          <p class="mascot-caption" data-story-status aria-live="polite">零灵灵正在慢悠悠地散步……</p>
           <aside class="learning-pulse" aria-label="学习进度示例">
             <p>今日进度</p>
             <strong>03 <span>个表达</span></strong>
