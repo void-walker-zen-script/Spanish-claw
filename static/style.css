@@ -1784,9 +1784,9 @@ a:focus-visible,
 /* Mascot stage: enlarged, centered under the title */
 .mascot-stage { gap: 4px; min-height: 430px; margin-top: 28px; padding-bottom: 8px; }
 .mascot-halo { top: 24px; left: 50%; transform: translateX(-50%) rotate(-17deg); width: 330px; height: 330px; opacity: .9; z-index: 0; }
-.mascot-figure { position: relative; z-index: 1; width: clamp(240px, 32vw, 380px); }
-.mascot-figure .cat-svg { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 22px 22px rgba(94,68,44,.28)); transition: transform .35s ease; }
-.mascot-figure:hover .cat-svg { transform: translateY(-6px) scale(1.02); }
+.mascot-figure { position: relative; z-index: 1; width: clamp(230px, 27vw, 340px); }
+.mascot-figure .mascot-photo { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 18px rgba(94,68,44,.18)); transition: transform .35s ease; }
+.mascot-figure:hover .mascot-photo { transform: translateY(-6px) scale(1.02); }
 
 /* keep the progress card centered under the mascot in the new layout */
 .discovery-hero.center .learning-pulse { align-self: center; margin: 22px auto 0; width: min(360px, 90%); }
@@ -1795,8 +1795,7 @@ a:focus-visible,
   .discovery-hero.center { padding-top: 44px; }
   .mascot-stage { min-height: 300px; }
   .mascot-halo { width: 250px; height: 250px; }
-  .mascot-figure { width: 320px; height: 300px; }
-  .mascot-img { width: 250px; }
+  .mascot-figure { width: min(260px, 76vw); }
 }
 
 /* ===== Scene catalog, role vocabulary, grammar map and news cards ===== */
