@@ -1,43 +1,13 @@
 <!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Grammar Essentials - Spanish Claw</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="{{ url_for('main.index') }}">Spanish Claw</a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="{{ url_for('main.default_lesson') }}">Lesson</a>
-        <a href="{{ url_for('main.pronunciation') }}">Pronunciation</a>
-        <a href="{{ url_for('main.saved') }}">Saved</a>
-        <a href="{{ url_for('main.about') }}">About</a>
-        <a aria-current="page" href="{{ url_for('main.grammar') }}">Grammar</a>
-      </nav>
-    </header>
-
-    <main class="home-shell">
-      <section class="content-section" aria-labelledby="grammar-title">
-        <div class="section-heading">
-          <p class="section-kicker">Grammar</p>
-          <h1 id="grammar-title">Grammar Essentials</h1>
-          <p>Use focused grammar modules to connect Spanish patterns with real scene dialogue.</p>
-        </div>
-
-        <div class="grammar-grid">
-          {% for module in grammar_essentials %}
-            <article class="grammar-card">
-              <p class="tag">{{ module.level }}</p>
-              <h2>{{ module.title }}</h2>
-              <h3>{{ module.title_zh }}</h3>
-              <p>{{ module.summary_zh }}</p>
-              <a class="text-link" href="{{ url_for('main.grammar_detail', slug=module.slug) }}">View Grammar</a>
-            </article>
-          {% endfor %}
-        </div>
-      </section>
-    </main>
-  </body>
-</html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>语法地图 · Spanish Claw</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body class="module-page grammar-map-page"><header class="site-header discovery-header"><a class="brand" href="{{ url_for('main.index') }}"><span class="brand-mark">SC</span><span>Spanish Claw</span></a><nav class="site-nav discovery-nav"><a href="{{ url_for('main.scenes') }}">具体情境</a><a href="{{ url_for('main.vocabulary') }}">情境词库</a></nav></header>
+<main class="module-shell"><section class="module-page-hero"><p class="home-kicker">GRAMMAR MAP</p><h1>从声音到句子，沿语法主干生长。</h1><p>学习顺序参照 RAE / ASALE《Nueva gramática de la lengua española》：先掌握形式，再理解词组、功能与句子。</p></section>
+<section class="grammar-tree" aria-label="西班牙语语法知识树"><article class="grammar-root"><p>ROOT</p><h2>西班牙语语法</h2><span>从可听见的声音，到可使用的句子</span></article><div class="grammar-trunk"></div><div class="grammar-branches">
+<article class="grammar-branch branch-sound"><p>01 · 基础</p><h2>语音与书写</h2><ul><li>字母、重音与音节</li><li>发音、节奏与语调</li><li>拼写与标点</li></ul><a href="{{ url_for('main.pronunciation') }}">进入发音练习 →</a></article>
+<article class="grammar-branch branch-morph"><p>02 · 词的形式</p><h2>形态学</h2><ul><li><a href="{{ url_for('main.grammar_detail', slug='gender-number') }}">名词：阴阳性与单复数</a></li><li><a href="{{ url_for('main.grammar_detail', slug='articles') }}">限定词：冠词与指示词</a></li><li><a href="{{ url_for('main.grammar_detail', slug='verb-conjugation') }}">动词：人称、时态、语气</a></li><li>代词、形容词与副词</li></ul></article>
+<article class="grammar-branch branch-syntax"><p>03 · 词如何成组</p><h2>句法</h2><ul><li>名词词组与一致关系</li><li>动词论元与补语</li><li>介词词组与位置表达</li><li><a href="{{ url_for('main.grammar_detail', slug='ser-vs-estar') }}">ser / estar 的功能对比</a></li></ul></article>
+<article class="grammar-branch branch-sentence"><p>04 · 如何说完整</p><h2>句子与语篇</h2><ul><li><a href="{{ url_for('main.grammar_detail', slug='common-sentence-patterns') }}">陈述、请求与服务对话</a></li><li><a href="{{ url_for('main.grammar_detail', slug='question-words') }}">疑问句与信息提问</a></li><li>否定、连接与从句</li><li>礼貌、语域与会话组织</li></ul></article>
+</div></section>
+<p class="grammar-source">结构参考：<a href="https://www.rae.es/sites/default/files/Indice_de_contenidos_Manual_Nueva_gramatica_de_la_lengua_espanola.pdf" target="_blank" rel="noopener noreferrer">RAE / ASALE《Nueva gramática de la lengua española》目录</a>。本页将其转化为 A1–B1 学习路线，不替代原书。</p>
+<section class="grammar-module-list"><div class="scene-track-heading"><div><p class="home-kicker">START HERE</p><h2>已可进入的重点分支</h2></div></div><div class="grammar-grid">{% for module in grammar_essentials %}<article class="grammar-card"><p class="tag">{{ module.level }}</p><h2>{{ module.title_zh }}</h2><p>{{ module.summary_zh }}</p><a class="text-link" href="{{ url_for('main.grammar_detail', slug=module.slug) }}">查看分支 →</a></article>{% endfor %}</div></section>
+</main></body></html>

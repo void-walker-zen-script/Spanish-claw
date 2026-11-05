@@ -31,6 +31,14 @@ def get_lesson(lesson_ref):
     )
 
 
+def get_scene_catalog():
+    return load_json("scenes.json").get("scenes", [])
+
+
+def get_scene(scene_slug):
+    return next((scene for scene in get_scene_catalog() if scene.get("slug") == scene_slug), None)
+
+
 def get_default_lesson():
     lessons = get_lessons()
     return lessons[0] if lessons else None

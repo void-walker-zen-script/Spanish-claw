@@ -23,7 +23,6 @@
         <a href="#lesson-overview">Lesson</a>
         <a href="#characters-goals">Characters &amp; Goals</a>
         <a href="#lesson-audio">Lesson Audio</a>
-        <a href="#lesson-video">Video</a>
         <a href="#lesson-transcript">Transcript</a>
       </nav>
 
@@ -83,28 +82,6 @@
               <button id="slow-lesson-button" class="secondary-button" type="button">Slow Full Lesson</button>
               <button id="stop-lesson-button" class="secondary-button" type="button">Stop</button>
             </div>
-          </section>
-        </details>
-
-        <details id="lesson-video" class="lesson-section" open>
-          <summary>Video</summary>
-          <section class="lesson-card video-panel" aria-label="Lesson video">
-            <p class="section-kicker">Video</p>
-            {% if lesson.video_embed %}
-              <div class="video-embed">
-                {{ lesson.video_embed | safe }}
-              </div>
-            {% elif lesson.video_url %}
-              <video class="lesson-video-player" controls preload="metadata">
-                <source src="{{ lesson.video_url }}">
-                Video material coming soon / 视频材料待补充
-              </video>
-            {% else %}
-              <div class="video-placeholder">
-                <h2>Video material coming soon</h2>
-                <p>视频材料待补充</p>
-              </div>
-            {% endif %}
           </section>
         </details>
 

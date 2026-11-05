@@ -9,6 +9,8 @@ from app.data_loader import (
     get_lesson,
     get_lessons,
     get_pronunciation_targets,
+    get_scene,
+    get_scene_catalog,
     get_vocab_entries,
 )
 from app.news_service import NEWS_CATEGORIES, get_news_headlines
@@ -61,6 +63,19 @@ def default_lesson():
     return lesson_page(lesson.get("slug") or lesson["id"])
 
 
+@main.route("/scenes")
+def scenes():
+    return render_template("scenes.html", scenes=get_scene_catalog())
+
+
+@main.route("/scenes/<scene_slug>")
+def scene_detail(scene_slug):
+    scene = get_scene(scene_slug)
+    if scene is None:
+        abort(404)
+    return render_template("scene_detail.html", scene=scene)
+
+
 @main.route("/lesson/<lesson_id>")
 def lesson_page(lesson_id):
     lesson = get_lesson(lesson_id)
@@ -104,7 +119,7 @@ def grammar_detail(slug):
 
 @main.route("/vocabulary")
 def vocabulary():
-    return render_template("vocabulary.html", entries=get_vocab_entries().values())
+    return render_template("vocabulary.html", entries=get_vocab_entries().values(), scenes=get_scene_catalog())
 
 
 @main.route("/news")

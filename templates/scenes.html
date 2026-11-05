@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>具体情境 · Spanish Claw</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body class="module-page scene-page">
+  <header class="site-header discovery-header"><a class="brand" href="{{ url_for('main.index') }}"><span class="brand-mark">SC</span><span>Spanish Claw</span></a><nav class="site-nav discovery-nav"><a href="{{ url_for('main.vocabulary') }}">情境词库</a><a href="{{ url_for('main.saved') }}">学习记录</a></nav></header>
+  <main class="module-shell scene-shell" data-scene-catalog>
+    <section class="module-page-hero"><p class="home-kicker">SCENE STUDIO</p><h1>先选身份，再进入真实对话。</h1><p>工作与生活两条路径，每张卡片都是一个明确角色、任务与高频表达的微型情境。</p></section>
+    <div class="scene-switch" role="tablist" aria-label="选择情境方向"><button class="scene-switch-button active" type="button" data-scene-filter="work" role="tab" aria-selected="true">工作情境 <small>服务业 · 工业 · 农业</small></button><button class="scene-switch-button" type="button" data-scene-filter="life" role="tab" aria-selected="false">生活情境 <small>衣 · 食 · 住 · 行</small></button></div>
+    {% for track, title, copy in [('work', '在工作中用西语完成任务', '从服务沟通、工厂协作到农贸交易，以角色与任务组织语言。'), ('life', '在生活中用西语解决事情', '从购物、用餐、租房到出行，同一主题切换不同身份与目标。')] %}
+    <section class="scene-track{% if track == 'life' %} is-hidden{% endif %}" data-scene-track="{{ track }}" aria-labelledby="{{ track }}-title">
+      <div class="scene-track-heading"><div><p class="home-kicker">{{ 'WORK' if track == 'work' else 'LIFE' }}</p><h2 id="{{ track }}-title">{{ title }}</h2><p>{{ copy }}</p></div><span class="scene-count">{{ scenes|selectattr('track', 'equalto', track)|list|length }} 个角色任务</span></div>
+      <div class="scene-sector-grid">
+        {% for scene in scenes if scene.track == track %}
+          <a class="scene-card scene-card--{{ loop.index % 4 }}" href="{{ url_for('main.scene_detail', scene_slug=scene.slug) }}" data-scene-card>
+            <span class="scene-card-icon" data-icon="{{ scene.icon }}" aria-hidden="true"></span><span class="scene-card-sector">{{ scene.sector }}</span><h3>{{ scene.title }}</h3><p>{{ scene.subtitle }}</p><div class="role-chips">{% for role in scene.roles %}<span>{{ role }}</span>{% endfor %}</div><b>进入对话 <span>→</span></b>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+  </main>
+  <div class="scene-loading" aria-live="polite" aria-hidden="true"><div class="paw-loader">● ● ● ●</div><p>零灵灵正在铺开情境地图…</p></div>
+  <script src="{{ url_for('static', filename='scene-catalog.js') }}"></script>
+</body></html>
