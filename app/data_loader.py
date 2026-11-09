@@ -34,7 +34,12 @@ def get_lesson(lesson_ref):
 
 
 def get_scene_catalog():
-    return load_json("scenes.json").get("scenes", [])
+    scenes = load_json("scenes.json").get("scenes", [])
+    stories = load_json("scene_stories.json").get("stories", {})
+    return [
+        {**scene, "lesson_dialogue": stories.get(scene.get("slug"), scene.get("dialogue", []))}
+        for scene in scenes
+    ]
 
 
 def get_scene(scene_slug):
@@ -51,7 +56,7 @@ def build_scene_lesson(scene):
     """Adapt a scene-card data record to the shared interactive lesson UI."""
     vocabulary = scene.get("vocabulary", [])
     roles = scene.get("roles", [])
-    dialogue = scene.get("dialogue", [])
+    dialogue = scene.get("lesson_dialogue") or scene.get("dialogue", [])
     characters = [
         {
             "name": role,

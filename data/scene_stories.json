@@ -1,0 +1,164 @@
+{
+  "stories": {
+    "retail-stock-order": [
+      ["Comerciante", "Buenos días. El fin de semana vendimos muchas camisetas y necesito reponer la tienda.", "早上好。周末我们卖了很多 T 恤，我需要给店里补货。"],
+      ["Mayorista", "Buenos días. ¿Qué modelos y qué tallas busca esta vez?", "早上好。这次您需要哪些款式和尺码？"],
+      ["Comerciante", "Busco un modelo sencillo. Necesito veinte unidades en talla M y diez en talla L.", "我想要一款简约款式。需要二十件 M 码和十件 L 码。"],
+      ["Mayorista", "Tenemos ese modelo en blanco, beige y azul. El beige está teniendo muy buena salida.", "这款有白色、米色和蓝色。米色最近卖得很好。"],
+      ["Comerciante", "Entonces prefiero beige. ¿Cuál es el precio al por mayor si llevo treinta unidades?", "那我选米色。如果拿三十件，批发价是多少？"],
+      ["Mayorista", "Con esa cantidad puedo hacerle un descuento del diez por ciento.", "这个数量我可以给您九折。"],
+      ["Comerciante", "Perfecto. ¿Puede enviar el pedido antes del viernes y preparar la factura?", "很好。您能在周五前发货并准备好发票吗？"],
+      ["Mayorista", "Claro. Confirmo treinta camisetas beige; saldrán mañana por la mañana.", "当然。我确认三十件米色 T 恤；明早发出。"]
+    ],
+    "hotel-check-in": [
+      ["Recepcionista", "Buenas tardes, bienvenido al Hotel Central. ¿Tiene una reserva?", "下午好，欢迎来到中央酒店。您有预订吗？"],
+      ["Huésped", "Sí, a nombre de Lin. Reservé dos noches por Internet.", "有，预订姓名是 Lin。我在网上订了两晚。"],
+      ["Recepcionista", "Perfecto. ¿Me puede mostrar su pasaporte, por favor?", "好的。请给我看一下您的护照好吗？"],
+      ["Huésped", "Aquí tiene. También quería saber si la habitación es tranquila.", "给您。另外我想确认房间是否安静。"],
+      ["Recepcionista", "Sí, su habitación da al patio interior y está en la cuarta planta.", "是的，您的房间朝内院，在四楼。"],
+      ["Huésped", "Muy bien. ¿El desayuno está incluido en la reserva?", "很好。早餐包含在预订里吗？"],
+      ["Recepcionista", "Sí, se sirve de siete a diez en el comedor de la planta baja.", "是的，早餐在一楼餐厅供应，时间是七点到十点。"],
+      ["Huésped", "Gracias. ¿Podría indicarme dónde está el ascensor?", "谢谢。您能告诉我电梯在哪里吗？"]
+    ],
+    "clinic-appointment": [
+      ["Recepcionista", "Buenos días, clínica San Marcos. ¿En qué puedo ayudarle?", "早上好，这里是圣马科斯诊所。有什么可以帮您？"],
+      ["Paciente", "Quisiera pedir cita con un médico para hoy, si es posible.", "如果可以，我想预约今天的医生。"],
+      ["Recepcionista", "Claro. ¿Qué síntomas tiene y desde cuándo se encuentra mal?", "当然。您有什么症状，什么时候开始不舒服的？"],
+      ["Paciente", "Me duele la garganta desde ayer y esta mañana también tengo fiebre.", "从昨天开始我嗓子疼，今天早上还有点发烧。"],
+      ["Recepcionista", "Entiendo. Tenemos una cita libre a las cuatro de la tarde.", "明白了。下午四点有一个空档。"],
+      ["Paciente", "Me viene bien. ¿Tengo que llevar mi tarjeta sanitaria?", "这个时间可以。我需要带医保卡吗？"],
+      ["Recepcionista", "Sí, por favor, y llegue diez minutos antes para registrarse.", "需要，请提前十分钟到，方便登记。"],
+      ["Paciente", "De acuerdo, estaré allí a las tres y cincuenta. Muchas gracias.", "好的，我三点五十到。非常感谢。"]
+    ],
+    "factory-quality-check": [
+      ["Inspectora", "Antes de enviar este lote, he encontrado varias etiquetas con el código equivocado.", "这批货发出前，我发现有几张标签的代码不对。"],
+      ["Operario", "¿Puede enseñarme una muestra para comprobar de qué línea viene?", "您能给我看一个样品吗？我确认一下来自哪条产线。"],
+      ["Inspectora", "Aquí tiene. El producto está bien, pero la fecha y el número de lote no coinciden.", "给您。产品本身没问题，但日期和批次号对不上。"],
+      ["Operario", "Voy a revisar la impresora y los registros de esta mañana.", "我去检查打印机和今天早上的记录。"],
+      ["Inspectora", "Por favor, separe las cajas afectadas y no las cargue todavía.", "请把受影响的箱子分开，暂时不要装车。"],
+      ["Operario", "De acuerdo. ¿Quiere que avisemos también al responsable de producción?", "好的。需要我们也通知生产负责人吗？"],
+      ["Inspectora", "Sí. Cuando encontremos la causa, haremos una segunda revisión del lote completo.", "需要。找到原因后，我们会对整批货做第二次检查。"],
+      ["Operario", "Entendido. Le aviso en cuanto terminemos la corrección.", "明白。修正完我马上通知您。"]
+    ],
+    "warehouse-dispatch": [
+      ["Encargado", "Buenos días. El pedido de Valencia está listo en el muelle tres.", "早上好。发往瓦伦西亚的订单已经在三号装卸口准备好了。"],
+      ["Conductor", "Perfecto. ¿Cuántos palés tengo que cargar hoy?", "很好。今天我需要装多少个托盘？"],
+      ["Encargado", "Son seis palés: cuatro de cajas pequeñas y dos de material frágil.", "一共六个托盘：四个是小箱子，两个是易碎品。"],
+      ["Conductor", "¿Los palés frágiles van al final para que no se muevan durante el viaje?", "易碎托盘是否最后装，这样路上不会移动？"],
+      ["Encargado", "Exacto. También hay que comprobar esta dirección antes de salir.", "正是。另外出发前还要确认这个地址。"],
+      ["Conductor", "La dirección coincide con mi hoja de ruta. ¿Hay un horario de entrega?", "地址和我的路线单一致。送达时间有要求吗？"],
+      ["Encargado", "El cliente recibe mercancía hasta las cinco. Llámelo si llega más tarde.", "客户收货到下午五点。如果会晚到，请给他打电话。"],
+      ["Conductor", "De acuerdo, haré la carga ahora y saldré en veinte minutos.", "好的，我现在装车，二十分钟后出发。"]
+    ],
+    "construction-site-briefing": [
+      ["Encargado", "Buenos días a todos. Hoy vamos a trabajar en la zona norte de la obra.", "大家早上好。今天我们在工地北区施工。"],
+      ["Trabajadora", "¿Qué tarea tenemos primero: instalar las tuberías o mover los materiales?", "我们先做什么：安装管道还是搬运材料？"],
+      ["Encargado", "Primero movemos el material. Después el equipo de tuberías entra en el edificio.", "先搬材料。之后管道组进入楼内施工。"],
+      ["Trabajadora", "¿Necesitamos casco, gafas y chaleco en esa zona?", "在那个区域需要安全帽、护目镜和反光背心吗？"],
+      ["Encargado", "Sí, el equipo de seguridad es obligatorio durante toda la jornada.", "需要，整个工作时间安全装备都是强制的。"],
+      ["Trabajadora", "La carretilla elevadora está cerca de la entrada. ¿Quién la va a utilizar?", "叉车在入口附近。谁来操作？"],
+      ["Encargado", "Solo Marta, que tiene la autorización. Los demás mantengan la distancia de seguridad.", "只有获得授权的 Marta 可以操作。其他人请保持安全距离。"],
+      ["Trabajadora", "Entendido. Empezamos cuando termine la revisión de seguridad.", "明白。安全检查结束后我们就开始。"]
+    ],
+    "farm-harvest-plan": [
+      ["Agricultora", "El tiempo ha mejorado y los tomates ya están maduros para la cosecha.", "天气好转了，番茄已经成熟，可以采收。"],
+      ["Trabajador", "¿Empezamos por el campo junto al invernadero?", "我们从温室旁边的田地开始吗？"],
+      ["Agricultora", "Sí, allí hay más fruta lista. Revisen primero que las cajas estén limpias.", "是的，那边成熟的果子更多。先检查箱子是否干净。"],
+      ["Trabajador", "Tenemos cuarenta cajas. ¿Las llenamos todas antes del mediodía?", "我们有四十个箱子。中午前全都装满吗？"],
+      ["Agricultora", "No hace falta llenarlas demasiado; así evitamos que los tomates se dañen.", "不用装得太满，这样可以避免番茄被压坏。"],
+      ["Trabajador", "¿Separamos los tomates pequeños de los grandes?", "小番茄和大番茄要分开吗？"],
+      ["Agricultora", "Sí, los grandes van para el mercado y los pequeños para el restaurante local.", "要。大的送到市场，小的送给本地餐厅。"],
+      ["Trabajador", "Perfecto. Avisaré cuando tengamos la primera carga preparada.", "好的。第一批准备好后我通知您。"]
+    ],
+    "produce-market-sale": [
+      ["Comprador", "Buenos días. Estoy buscando verduras frescas para un restaurante del centro.", "早上好。我在为市中心一家餐厅找新鲜蔬菜。"],
+      ["Agricultor", "Buenos días. Estos tomates y calabacines son de esta mañana.", "早上好。这些番茄和西葫芦都是今天早上采的。"],
+      ["Comprador", "Se ven muy bien. ¿Cuánto cuesta el kilo de tomates?", "看起来很好。番茄每公斤多少钱？"],
+      ["Agricultor", "Tres euros el kilo, pero puedo mejorar el precio si compra bastante cantidad.", "每公斤三欧元，但如果买得多，我可以给更好的价格。"],
+      ["Comprador", "Necesito diez kilos de tomates y cinco de calabacines. ¿Me hace descuento?", "我需要十公斤番茄和五公斤西葫芦。能给我优惠吗？"],
+      ["Agricultor", "Le dejo todo a dos euros con ochenta el kilo y le regalo una caja de hierbas.", "我全部按每公斤两欧八给您，再送您一盒香草。"],
+      ["Comprador", "Me parece bien. ¿Puede pesar cada producto por separado?", "可以。您能把每样产品分开称吗？"],
+      ["Agricultor", "Claro. Le preparo el pedido y le entrego el ticket ahora mismo.", "当然。我现在给您备货并开票。"]
+    ],
+    "clothes-wholesale": [
+      ["Comerciante", "Estoy preparando la colección de primavera para mi tienda y busco prendas fáciles de combinar.", "我正在为店铺准备春季系列，想找容易搭配的衣服。"],
+      ["Mayorista", "Tenemos este modelo de camisa en tres colores y varias tallas.", "这款衬衫有三种颜色和多个尺码。"],
+      ["Comerciante", "Me gustan el beige y el azul claro. ¿Cuál es el pedido mínimo?", "我喜欢米色和浅蓝色。最低起订量是多少？"],
+      ["Mayorista", "El mínimo son doce unidades por color, pero puede mezclar las tallas.", "每个颜色最低十二件，但尺码可以混搭。"],
+      ["Comerciante", "Entonces quiero doce beige y doce azul, sobre todo en tallas M y L.", "那我每种颜色要十二件，主要要 M 和 L 码。"],
+      ["Mayorista", "Perfecto. Si añade pantalones, aplicamos un descuento por conjunto.", "好的。如果再加裤子，我们可以给套装优惠。"],
+      ["Comerciante", "Añada seis pantalones beige. ¿La entrega llega antes de la próxima semana?", "再加六条米色裤子。能在下周前送到吗？"],
+      ["Mayorista", "Sí, le enviaré la confirmación y el número de seguimiento esta tarde.", "可以，今天下午我会把确认单和物流单号发给您。"]
+    ],
+    "clothes-shopping": [
+      ["Cliente", "Hola. Estoy buscando una chaqueta para el invierno, pero no sé qué talla necesito.", "你好。我在找一件冬季外套，但不确定自己需要什么尺码。"],
+      ["Dependienta", "Claro. ¿Prefiere una chaqueta más corta o una que llegue hasta la cadera?", "当然。您想要短款还是到胯部的长度？"],
+      ["Cliente", "Prefiero una sencilla y cómoda para llevar todos los días.", "我更想要一件简约、日常穿着舒服的。"],
+      ["Dependienta", "Esta chaqueta está disponible en beige, gris y negro. ¿Quiere probársela?", "这件外套有米色、灰色和黑色。您想试穿吗？"],
+      ["Cliente", "Sí, por favor. Normalmente uso la talla M, pero a veces me queda grande.", "好的。我平常穿 M 码，但有时会偏大。"],
+      ["Dependienta", "El probador está al fondo. Le llevo también una talla menos para comparar.", "试衣间在里面。我也给您拿小一码对比。"],
+      ["Cliente", "La talla M me queda un poco ancha. Me llevo la pequeña en color beige.", "M 码有点宽。我买小一码的米色。"],
+      ["Dependienta", "Perfecto. Puede cambiarla dentro de treinta días con el ticket.", "好的。凭小票三十天内可以更换。"]
+    ],
+    "market-grocery": [
+      ["Cliente", "Buenas tardes. Quiero comprar ingredientes frescos para preparar la cena.", "下午好。我想买些新鲜食材做晚餐。"],
+      ["Vendedora", "Claro. Hoy tenemos naranjas de Valencia, tomates locales y verduras recién llegadas.", "当然。今天有瓦伦西亚橙子、本地番茄和刚到的蔬菜。"],
+      ["Cliente", "¿De dónde son estas naranjas? Parecen muy dulces.", "这些橙子产自哪里？看起来很甜。"],
+      ["Vendedora", "Son de Valencia y no llevan mucho tiempo almacenadas.", "来自瓦伦西亚，储存时间不长。"],
+      ["Cliente", "Entonces póngame un kilo de naranjas y medio kilo de tomates.", "那请给我一公斤橙子和半公斤番茄。"],
+      ["Vendedora", "¿Quiere también una bolsa de espinacas? Van muy bien para una sopa.", "还要一袋菠菜吗？做汤很合适。"],
+      ["Cliente", "Sí, buena idea. ¿Puede pesar todo junto y darme una bolsa reutilizable?", "要，好主意。能把这些一起称一下并给我一个可重复使用的袋子吗？"],
+      ["Vendedora", "Por supuesto. Son ocho euros con veinte en total.", "当然。一共是八欧二。"]
+    ],
+    "restaurant-order": [
+      ["Camarero", "Buenas noches. ¿Ya saben qué van a tomar o necesitan unos minutos más?", "晚上好。你们已经决定点什么了吗，还是还需要几分钟？"],
+      ["Cliente", "Tenemos una duda: una de mis amigas es alérgica a los frutos secos.", "我们有个问题：我的一位朋友对坚果过敏。"],
+      ["Camarero", "Gracias por avisar. Puedo señalarles los platos que no llevan frutos secos.", "谢谢您提醒。我可以给您标出不含坚果的菜。"],
+      ["Cliente", "¿Qué nos recomienda para compartir entre dos personas?", "您推荐两个人分享什么菜？"],
+      ["Camarero", "La sopa de verduras y el arroz con setas son buenas opciones hoy.", "今天蔬菜汤和蘑菇饭都是不错的选择。"],
+      ["Cliente", "Entonces queremos una sopa, un arroz y una botella de agua sin gas.", "那我们要一份汤、一份饭和一瓶无气泡水。"],
+      ["Camarero", "Perfecto. ¿Desean pan antes de que llegue la comida?", "好的。菜上来前需要面包吗？"],
+      ["Cliente", "Sí, por favor. Y cuando terminemos, le pediremos la cuenta.", "需要，谢谢。吃完后我们会向您要账单。"]
+    ],
+    "apartment-viewing": [
+      ["Inquilina", "Hola, vi el anuncio del apartamento y me gustaría visitarlo hoy.", "你好，我看到了这套公寓的广告，想今天来看看。"],
+      ["Agente", "Claro. Estamos delante del edificio. Es un piso de un dormitorio y está amueblado.", "当然。我们就在楼前。这是一居室，带家具。"],
+      ["Inquilina", "Me interesa porque trabajo cerca del centro. ¿Cuánto cuesta el alquiler al mes?", "我感兴趣是因为我在市中心附近工作。每月租金多少？"],
+      ["Agente", "Son ochocientos euros, y los gastos de comunidad están incluidos.", "每月八百欧元，物业费包含在内。"],
+      ["Inquilina", "¿La luz y el agua se pagan aparte?", "水电费需要另外付吗？"],
+      ["Agente", "Sí, se pagan según el consumo. El contrato mínimo es de un año.", "是的，按用量支付。最短合同是一年。"],
+      ["Inquilina", "¿Está cerca del metro y hay supermercados en la zona?", "离地铁近吗？附近有超市吗？"],
+      ["Agente", "La estación está a cinco minutos y hay un supermercado justo en la esquina.", "地铁站步行五分钟，拐角就有超市。"]
+    ],
+    "home-repair": [
+      ["Inquilino", "Buenos días. El grifo de la cocina gotea desde ayer y el agua cae al suelo.", "早上好。厨房水龙头从昨天开始漏水，水滴到地上。"],
+      ["Técnico", "Entiendo. ¿Puede cerrar la llave de paso debajo del fregadero?", "明白。您可以先关掉水槽下面的总阀吗？"],
+      ["Inquilino", "Sí, ya la cerré, pero no sé si el problema está en el grifo o en la tubería.", "可以，我已经关了，但不知道问题在水龙头还是管道。"],
+      ["Técnico", "Primero revisaré la junta y después comprobaré la presión del agua.", "我先检查密封圈，再查看水压。"],
+      ["Inquilino", "¿Necesita que retire las cosas del armario?", "需要我把柜子里的东西拿出来吗？"],
+      ["Técnico", "Sí, por favor. Así puedo trabajar con seguridad y no se moja nada.", "需要，请这样做。这样我可以安全施工，也不会弄湿东西。"],
+      ["Inquilino", "¿Cuánto tiempo cree que tardará la reparación?", "您觉得修理需要多长时间？"],
+      ["Técnico", "Si solo cambiamos la junta, estará listo en media hora.", "如果只更换密封圈，半小时就能修好。"]
+    ],
+    "airport-check-in": [
+      ["Agente", "Buenos días. ¿A qué destino viaja hoy?", "早上好。您今天飞往哪里？"],
+      ["Pasajera", "Viajo a Barcelona y solo llevo esta maleta para facturar.", "我去巴塞罗那，只有这一件行李要托运。"],
+      ["Agente", "Perfecto. ¿Tiene su pasaporte y la tarjeta de embarque?", "好的。您带护照和登机牌了吗？"],
+      ["Pasajera", "Sí, aquí los tiene. ¿La maleta cumple con el límite de peso?", "有，都在这里。行李符合重量限制吗？"],
+      ["Agente", "Pesa dieciocho kilos, así que está dentro del límite permitido.", "行李十八公斤，在允许范围内。"],
+      ["Pasajera", "Muchas gracias. ¿Por qué puerta sale el vuelo?", "非常感谢。航班从哪个登机口出发？"],
+      ["Agente", "La puerta todavía no está asignada. Mire las pantallas después del control de seguridad.", "登机口还未分配。通过安检后请看屏幕。"],
+      ["Pasajera", "De acuerdo. ¿Con cuánta antelación debo estar en la puerta?", "好的。我需要提前多久到登机口？"]
+    ],
+    "metro-directions": [
+      ["Visitante", "Disculpe, ¿sabe cómo puedo llegar al Museo del Prado en metro?", "打扰一下，您知道我怎么坐地铁去普拉多博物馆吗？"],
+      ["Pasajera", "Sí. Está bastante cerca, pero tiene que hacer un cambio de línea.", "知道。距离不算远，但您需要换乘一次。"],
+      ["Visitante", "¿Qué línea debo tomar desde esta estación?", "从这个站我应该坐哪条线？"],
+      ["Pasajera", "Tome la línea dos hasta Sol y allí cambie a la línea uno.", "乘二号线到 Sol 站，然后换乘一号线。"],
+      ["Visitante", "¿En qué estación tengo que bajar?", "我应该在哪一站下车？"],
+      ["Pasajera", "Baje en Atocha. Desde allí hay unos diez minutos caminando.", "在 Atocha 下车。从那里步行大约十分钟。"],
+      ["Visitante", "¿Puedo pagar el billete con tarjeta o necesito efectivo?", "我可以刷卡买票吗，还是需要现金？"],
+      ["Pasajera", "Puede pagar con tarjeta en las máquinas. Siga los carteles azules para la línea dos.", "您可以在自动售票机刷卡。沿着蓝色指示牌去二号线。"]
+    ]
+  }
+}
