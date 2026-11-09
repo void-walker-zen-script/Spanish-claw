@@ -3,6 +3,7 @@ from flask import Blueprint, abort, jsonify, render_template, request
 from app.ai.base_provider import ProviderUnavailableError
 from app.ai.provider_manager import get_available_providers, resolve_ask_provider
 from app.data_loader import (
+    build_scene_lesson,
     get_default_lesson,
     get_grammar_essentials,
     get_grammar_module,
@@ -74,6 +75,18 @@ def scene_detail(scene_slug):
     if scene is None:
         abort(404)
     return render_template("scene_detail.html", scene=scene)
+
+
+@main.route("/scenes/<scene_slug>/lesson")
+def scene_lesson(scene_slug):
+    scene = get_scene(scene_slug)
+    if scene is None:
+        abort(404)
+    return render_template(
+        "lesson.html",
+        lesson=build_scene_lesson(scene),
+        vocab_entries=get_vocab_entries(),
+    )
 
 
 @main.route("/lesson/<lesson_id>")

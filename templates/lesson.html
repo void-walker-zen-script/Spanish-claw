@@ -6,11 +6,16 @@
     <title>{{ lesson.title }} - Spanish Claw</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
-  <body>
+  <body{% if lesson.is_scene_lesson %} class="scene-lesson-page"{% endif %}>
     <header class="site-header">
       <a class="brand" href="{{ url_for('main.index') }}">Spanish Claw</a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a aria-current="page" href="{{ url_for('main.default_lesson') }}">Lesson</a>
+        {% if lesson.is_scene_lesson %}
+          <a aria-current="page" href="{{ url_for('main.scenes') }}">具体情境</a>
+          <a href="{{ url_for('main.scene_detail', scene_slug=lesson.scene_slug) }}">返回情境概览</a>
+        {% else %}
+          <a aria-current="page" href="{{ url_for('main.default_lesson') }}">Lesson</a>
+        {% endif %}
         <a href="{{ url_for('main.pronunciation') }}">Pronunciation</a>
         <a href="{{ url_for('main.saved') }}">Saved</a>
         <a href="{{ url_for('main.about') }}">About</a>
@@ -114,6 +119,9 @@
                     {% if item.english %}
                       <p class="translation-line">{{ item.english }}</p>
                     {% endif %}
+                    {% if item.chinese %}
+                      <p class="translation-line translation-line-zh">{{ item.chinese }}</p>
+                    {% endif %}
                     {% if item.structure_hint_zh or item.structure_hint_en %}
                       <p class="structure-hint"><strong>结构提示：</strong> {{ item.structure_hint_zh or item.structure_hint_en }}</p>
                     {% endif %}
@@ -152,6 +160,9 @@
                     </p>
                     {% if item.english %}
                       <p class="translation-line">{{ item.english }}</p>
+                    {% endif %}
+                    {% if item.chinese %}
+                      <p class="translation-line translation-line-zh">{{ item.chinese }}</p>
                     {% endif %}
                     {% if item.structure_hint_zh or item.structure_hint_en %}
                       <p class="structure-hint"><strong>结构提示：</strong> {{ item.structure_hint_zh or item.structure_hint_en }}</p>
@@ -216,6 +227,10 @@
                       <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='verb-conjugation') }}">Verb Conjugation</a></li>
                       <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='ser-vs-estar') }}">Ser vs Estar</a></li>
                       <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='gender-number') }}">Gender &amp; Number</a></li>
+                    {% elif lesson.is_scene_lesson %}
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='common-sentence-patterns') }}">Common Sentence Patterns</a></li>
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='question-words') }}">Question Words</a></li>
+                      <li><a class="text-link" href="{{ url_for('main.grammar_detail', slug='verb-conjugation') }}">Verb Conjugation</a></li>
                     {% endif %}
                   </ul>
                 </dd>

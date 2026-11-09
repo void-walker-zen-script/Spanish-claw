@@ -1817,3 +1817,22 @@ a:focus-visible,
 @keyframes catalogReveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes pawBounce{to{transform:translateY(-8px) scale(1.1)}}
 @media(max-width:900px){.scene-sector-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vocab-scene-board{grid-template-columns:repeat(3,minmax(0,1fr))}.grammar-branches{grid-template-columns:repeat(2,1fr)}.grammar-branches::before{display:none}.scene-detail-grid{grid-template-columns:1fr}.news-list{grid-template-columns:1fr}}
 @media(max-width:560px){.scene-switch{padding:4px;gap:5px}.scene-switch-button{padding:13px;font-size:15px}.scene-switch-button small{font-size:10px}.scene-sector-grid,.vocab-scene-board{grid-template-columns:1fr}.scene-track-heading,.scene-detail-hero{align-items:flex-start;flex-direction:column}.scene-detail-hero{padding:26px}.scene-orb{width:86px;height:86px}.grammar-branches{grid-template-columns:1fr}.news-card{grid-template-columns:92px 1fr;min-height:150px}.news-card-copy{padding:16px}.news-card-copy a{font-size:16px}}
+
+/* Warm scene-lesson filter: share the homepage's oatmeal and apricot palette. */
+.scene-lesson-page { --bg:#f6f0e6; --surface:#fffaf3; --surface-soft:#efe4d4; --line:#e3d6c5; --text:#302d29; --muted:#746c62; --primary:#8d6547; --primary-dark:#5d4838; --focus:#c99762; background:radial-gradient(circle at 12% 8%,rgba(239,213,184,.5),transparent 28%),linear-gradient(135deg,#f8f2e9 0%,#f5ede1 55%,#ede1d0 100%); }
+.scene-lesson-page .site-header { border-color:#e2d5c4; background:rgba(248,242,233,.9); }
+.scene-lesson-page .site-nav a[aria-current="page"],.scene-lesson-page .site-nav a:hover { color:#775338; }
+.scene-lesson-page .lesson-toc { border-color:#e2d5c4; border-radius:22px; background:linear-gradient(180deg,rgba(255,252,247,.95),rgba(241,228,211,.84)); box-shadow:0 15px 34px rgba(91,63,38,.09); }
+.scene-lesson-page .lesson-toc a:hover,.scene-lesson-page .lesson-toc a:focus-visible { background:rgba(183,137,94,.13); color:#775338; }
+.scene-lesson-page .lesson-meta { border-color:#e1d1bd; border-radius:24px; background:linear-gradient(135deg,rgba(255,250,243,.98),rgba(238,216,190,.8)); box-shadow:0 18px 45px rgba(99,70,42,.08); }
+.scene-lesson-page .lesson-header-details span { border-color:rgba(141,101,71,.18); background:rgba(255,253,248,.72); color:#775338; }
+.scene-lesson-page .lesson-cards .lesson-card,.scene-lesson-page .audio-control-card,.scene-lesson-page .transcript,.scene-lesson-page .insight-card { border-color:#e4d6c5; background:rgba(255,251,245,.9); box-shadow:0 14px 34px rgba(99,70,42,.06); }
+.scene-lesson-page .lesson-cards .lesson-card li::before { background:#bd8655; }
+.scene-lesson-page .transcript { background:linear-gradient(180deg,rgba(246,234,218,.74),rgba(255,251,245,.92)); }
+.scene-lesson-page .narration-block { border-left-color:#b49270; background:#f8efe3; }
+.scene-lesson-page .dialogue-block { border-left-color:#a9744e; background:#fffaf4; box-shadow:0 12px 28px rgba(96,67,40,.07); }
+.scene-lesson-page .token-clickable { border-color:rgba(169,116,78,.26); background:rgba(241,220,194,.55); color:#68482f; }
+.scene-lesson-page .sentence:hover,.scene-lesson-page .sentence.selected { background:rgba(243,226,204,.55); }
+.scene-lesson-page .translation-line-zh { color:#7a6250; font-weight:650; }
+.scene-lesson-page .primary-button { background:#735338; }
+.scene-lesson-page .primary-button:hover { background:#533b28; }
